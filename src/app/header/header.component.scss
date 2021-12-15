@@ -1,9 +1,24 @@
+h1 {
+  margin: 0 auto;
+}
 .sidenav-container {
   height: 100%;
 }
 
 .sidenav {
   width: 200px;
+}
+.github {
+  img {
+    margin: 5px 0;
+  }
+  span {
+    margin-left: 0.8rem;
+  }
+}
+
+button {
+  width: 100px;
 }
 
 .sidenav .mat-toolbar {
