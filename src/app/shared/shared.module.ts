@@ -8,8 +8,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MainComponent } from '../main/main.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
-const components = [HeaderComponent];
+const components = [HeaderComponent, MainComponent];
 
 const modules = [
   LayoutModule,
@@ -20,6 +26,11 @@ const modules = [
   MatListModule,
   MatSlideToggleModule,
   MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  HttpClientModule,
+  ReactiveFormsModule,
+  MatProgressSpinnerModule,
 ];
 
 @NgModule({
