@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
-import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs';
+import { apiEnvironment } from '../../environments/environment.api';
 import { Summoner } from '../models/summoner';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Summoner } from '../models/summoner';
 })
 export class RiotService {
   private BASE_URL = 'https://eun1.api.riotgames.com/lol/';
-  private API_KEY = `?api_key=${environment.API_KEY}`;
+  private API_KEY = `?api_key=${apiEnvironment.API_KEY}`;
 
   constructor(private http: HttpClient) {}
 

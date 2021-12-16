@@ -14,8 +14,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DocumentationComponent } from '../documentation/documentation.component';
 
-const components = [HeaderComponent, MainComponent];
+const components = [HeaderComponent, MainComponent, DocumentationComponent];
 
 const modules = [
   LayoutModule,
