@@ -15,6 +15,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DocumentationComponent } from '../documentation/documentation.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 const components = [HeaderComponent, MainComponent, DocumentationComponent];
 
@@ -32,6 +34,8 @@ const modules = [
   HttpClientModule,
   ReactiveFormsModule,
   MatProgressSpinnerModule,
+  RouterModule,
+  AppRoutingModule,
 ];
 
 @NgModule({
