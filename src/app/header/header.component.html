@@ -9,9 +9,9 @@
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/documentation">Documentation</a>
-      <a mat-list-item routerLink="">Link 2</a>
-      <a mat-list-item routerLink="">Link 3</a>
+      <a mat-list-item routerLink="/find-summoner">Find Summoner</a>
+      <a mat-list-item routerLink="/champions">LoL Champions</a>
+      <a mat-list-item routerLink="/documentation">API Documentation</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -35,10 +35,15 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <mat-slide-toggle color="accent" (change)="onDarkModeSwitched($event)"
+      <mat-slide-toggle
+        checked="true"
+        color="accent"
+        (change)="onDarkModeSwitched($event)"
         >Dark Mode</mat-slide-toggle
       >
     </mat-toolbar>
-    <router-outlet></router-outlet>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
