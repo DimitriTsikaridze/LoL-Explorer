@@ -14,10 +14,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DocumentationComponent } from '../documentation/documentation.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
+import { DocumentationComponent } from '../documentation/documentation.component';
 import { ChampionsComponent } from '../champions/champions.component';
+import { HomeComponent } from '../home/home.component';
 
 const components = [
   HeaderComponent,
@@ -45,7 +46,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [...components],
+  declarations: [...components, HomeComponent],
   imports: [CommonModule, ...modules],
   exports: [...modules, ...components],
 })
