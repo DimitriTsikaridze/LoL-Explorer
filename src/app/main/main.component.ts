@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Summoner } from '../models/summoner';
-import { RiotService } from '../services/riot.service';
+import { SummonerService } from '../services/summoner.service';
 
 @Component({
   selector: 'app-main',
@@ -15,18 +15,20 @@ export class MainComponent implements OnInit {
 
   showSpinner = false;
 
-  constructor(private riotService: RiotService) {}
+  constructor(private summonerService: SummonerService) {}
 
   ngOnInit(): void {}
 
   onGetSummoner() {
     this.showSpinner = true;
-    this.riotService
+    this.summonerService
       .getSummoner(this.summonerFormControl.value)
       .subscribe((summonerObj: Summoner) => {
         this.summonerObject = summonerObj;
         this.summonerObject.profileImageURL =
-          this.riotService.getSummonerProfileIcon(summonerObj.profileIconId);
+          this.summonerService.getSummonerProfileIcon(
+            summonerObj.profileIconId
+          );
         this.showSpinner = false;
       });
   }

@@ -7,7 +7,7 @@ import { Summoner } from '../models/summoner';
 @Injectable({
   providedIn: 'root',
 })
-export class RiotService {
+export class SummonerService {
   private BASE_URL = 'https://eun1.api.riotgames.com/lol/';
   private API_KEY = `?api_key=${apiEnvironment.API_KEY}`;
 

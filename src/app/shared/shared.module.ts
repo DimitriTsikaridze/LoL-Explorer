@@ -17,8 +17,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DocumentationComponent } from '../documentation/documentation.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
+import { ChampionsComponent } from '../champions/champions.component';
 
-const components = [HeaderComponent, MainComponent, DocumentationComponent];
+const components = [
+  HeaderComponent,
+  MainComponent,
+  DocumentationComponent,
+  ChampionsComponent,
+];
 
 const modules = [
   LayoutModule,
