@@ -1,6 +1,8 @@
 <section class="champion-card" (click)="onChampionClick(champion.id)">
-  <img [src]="champion.imageURL" alt="champion-image" />
-  <h4 class="champion-name">{{ champion.name }}</h4>
+  <div class="top-content">
+    <img [src]="champion.imageURL" alt="champion-image" />
+    <h4 class="champion-name">{{ champion.name }}</h4>
+  </div>
   <article>
     <p>{{ champion.blurb }}</p>
   </article>
