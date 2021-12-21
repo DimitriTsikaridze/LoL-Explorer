@@ -14,7 +14,5 @@ export class SingleChampionComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onChampionClick(championID: string) {
-    console.table(this.champion);
-  }
+  onChampionClick(championID: string) {}
 }
