@@ -1,5 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { Champion } from '../models/champion-response';
 import { ChampionsService } from '../services/champions.service';
 
@@ -14,10 +13,8 @@ export class ChampionsComponent implements OnInit {
   constructor(private championsService: ChampionsService) {}
 
   ngOnInit(): void {
-    this.championsService
-      .getChampions('splash', 3)
-      .subscribe((championsData) => {
-        this.champions = championsData;
-      });
+    this.championsService.getChampions('tiles').subscribe((championsData) => {
+      this.champions = championsData;
+    });
   }
 }
