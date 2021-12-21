@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
 import { Champion, ChampionResponse } from '../models/champion-response';
 
 @Injectable({
@@ -18,7 +18,11 @@ export class ChampionsService {
 
   getChampions(
     imageType: 'splash' | 'loading' | 'tiles' | 'centered',
-    championAmount?: number
+// <<<<<<< zuka-theme
+//     championAmount?: number
+// =======
+//     championAmount: numbers
+// >>>>>>> main
   ) {
     return this.http.get<ChampionResponse>(this.URL).pipe(
       map((value: ChampionResponse) => {
