@@ -16,7 +16,10 @@ export class ChampionsService {
 
   constructor(private http: HttpClient) {}
 
-  getChampions(imageType: 'splash' | 'loading' | 'tiles' | 'centered') {
+  getChampions(
+    imageType: 'splash' | 'loading' | 'tiles' | 'centered',
+    championAmount?: number
+  ) {
     return this.http.get<ChampionResponse>(this.URL).pipe(
       map((value: ChampionResponse) => {
         for (let champion in value.data) {
@@ -29,7 +32,7 @@ export class ChampionsService {
             imageURL: `${this.champiosURL}${imageType}/${value.data[champion].id}_0.jpg`,
           });
         }
-        return this.champions;
+        return this.champions.slice(0, championAmount);
       })
     );
   }
