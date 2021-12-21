@@ -29,6 +29,7 @@ export class ChampionsService {
             name: value.data[champion].name,
             blurb: value.data[champion].blurb,
             title: value.data[champion].title,
+            tags: value.data[champion].tags,
             imageURL: `${this.champiosURL}${imageType}/${value.data[champion].id}_0.jpg`,
           });
         }
