@@ -10,9 +10,11 @@ import { Champion } from '../../models/champion-response';
 export class SingleChampionComponent implements OnInit {
   @Input() champion!: Champion;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
-  onChampionClick(championID: string) {}
+  onChampionClick(championID: string) {
+    this.router.navigate(['/champions', championID]);
+  }
 }

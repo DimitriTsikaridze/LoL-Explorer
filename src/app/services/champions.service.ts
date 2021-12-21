@@ -10,19 +10,15 @@ export class ChampionsService {
   private URL =
     'http://ddragon.leagueoflegends.com/cdn/11.24.1/data/en_US/champion.json';
 
-  private champiosURL = 'https://ddragon.leagueoflegends.com/cdn/img/champion/';
-
-  readonly champions: Champion[] = [];
+  readonly championsURL =
+    'https://ddragon.leagueoflegends.com/cdn/img/champion/';
+  private champions: Champion[] = [];
 
   constructor(private http: HttpClient) {}
 
   getChampions(
     imageType: 'splash' | 'loading' | 'tiles' | 'centered',
-// <<<<<<< zuka-theme
-//     championAmount?: number
-// =======
-//     championAmount: numbers
-// >>>>>>> main
+    championAmount?: number
   ) {
     return this.http.get<ChampionResponse>(this.URL).pipe(
       map((value: ChampionResponse) => {
@@ -34,7 +30,7 @@ export class ChampionsService {
             blurb: value.data[champion].blurb,
             title: value.data[champion].title,
             tags: value.data[champion].tags,
-            imageURL: `${this.champiosURL}${imageType}/${value.data[champion].id}_0.jpg`,
+            imageURL: `${this.championsURL}${imageType}/${value.data[champion].id}_0.jpg`,
           });
         }
         return this.champions.slice(0, championAmount);
