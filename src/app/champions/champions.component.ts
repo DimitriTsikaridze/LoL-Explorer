@@ -12,18 +12,10 @@ export class ChampionsComponent implements OnInit {
   constructor(private championsService: ChampionsService) {}
 
   ngOnInit(): void {
-// <<<<<<< zuka-theme
-//     this.championsService.getChampions('splash').subscribe((championsData) => {
-//       this.champions = championsData;
-//     });
-// =======
-//     this.championsService
-//       .getChampions('tiles', 5)
-//       .subscribe((championsData) => {
-//         this.champions = championsData;
-//       });
-// >>>>>>> main
+    this.championsService
+      .getChampions('splash', 4)
+      .subscribe((championsData) => {
+        this.champions = championsData;
+      });
   }
-
-  onGetChampions() {}
 }
