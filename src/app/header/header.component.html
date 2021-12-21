@@ -1,29 +1,21 @@
-<header></header>
-
-<a mat-list-item routerLink="/home">Home</a>
-<a mat-list-item routerLink="/find-summoner">Find Summoner</a>
-<a mat-list-item routerLink="/champions">LoL Champions</a>
-<a mat-list-item routerLink="/documentation">API Documentation</a>
-
-<a
-  class="github"
-  href="https://github.com/DimitriTsikaridze/Angular-Firebase"
-  target="_blank"
-  mat-button
->
-  <img src="../../assets/GitHub-Mark-Light-32px.png" alt="github-logo" />
-  <span>GitHub</span>
-</a>
-
-<h1>League of Legends API</h1>
-
-<mat-slide-toggle
-  checked="true"
-  color="accent"
-  (change)="onDarkModeSwitched($event)"
-  >Dark Mode</mat-slide-toggle
->
-
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+<header>
+  <ul>
+    <h3>League of Legends API</h3>
+    <li>
+      <a routerLinkActive="active-route" routerLink="/home">HOME</a>
+    </li>
+    <li>
+      <a routerLinkActive="active-route" routerLink="/find-summoner"
+        >SUMMONERS</a
+      >
+    </li>
+    <li>
+      <a routerLinkActive="active-route" routerLink="/champions">CHAMPIONS</a>
+    </li>
+    <li>
+      <a routerLinkActive="active-route" routerLink="/documentation"
+        >DOCUMENTATION</a
+      >
+    </li>
+  </ul>
+</header>
