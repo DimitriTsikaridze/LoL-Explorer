@@ -1,5 +1,5 @@
 <button (click)="onGetChampions()" mat-raised-button>Get Champions</button>
-<div class="container">
+<div *ngIf="champions" class="container">
   <div *ngFor="let champion of champions">
     <div class="img-wrapper">
       <h2>{{ champion.name }}</h2>
