@@ -20,15 +20,39 @@
       transition: 0.2s;
     }
   }
-
-  &-name {
-    position: absolute;
-    color: red;
-    left: 15px;
-    bottom: 15px;
-    color: white;
+}
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: calc(100% - 30px);
+  left: 15px;
+  bottom: 15px;
+  color: white;
+  h4 {
     font-size: 1.5rem;
-    z-index: 10;
+  }
+  h5 {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
+
+.tags {
+  display: flex;
+  gap: 1rem;
+  h6 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 2px solid white;
+    border-radius: 16px;
+    padding: 5px 12px;
+    transition: 0.2s;
+    &:hover {
+      color: white;
+      background-color: #ff3f34;
+    }
   }
 }
 

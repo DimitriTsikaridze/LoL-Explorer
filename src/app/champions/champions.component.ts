@@ -12,10 +12,8 @@ export class ChampionsComponent implements OnInit {
   constructor(private championsService: ChampionsService) {}
 
   ngOnInit(): void {
-    this.championsService
-      .getChampions('splash', 4)
-      .subscribe((championsData) => {
-        this.champions = championsData;
-      });
+    this.championsService.getChampions('splash').subscribe((championsData) => {
+      this.champions = championsData;
+    });
   }
 }
