@@ -1,40 +1,29 @@
-h1 {
-  margin: 0 auto;
+header {
+  background-color: #1e272e;
+  color: white;
+  border-bottom: 3px solid #ff3f34;
 }
-.sidenav-container {
-  height: 100%;
+ul {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 2rem;
 }
 
-.sidenav {
-  width: 200px;
+h3 {
+  margin-right: auto;
+  font-weight: 500;
 }
-.github {
+
+a {
+  font-size: 1rem;
+  color: white;
   transition: 0.2s;
-  img {
-    margin: 8px 0;
-  }
-  span {
-    margin-left: 0.8rem;
-  }
   &:hover {
-    background: rgba(0, 0, 0, 0.4);
+    color: #ff3f34;
   }
 }
 
-button {
-  width: 100px;
-}
-
-.sidenav .mat-toolbar {
-  background: inherit;
-}
-
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-.container {
-  padding: 1.5rem;
+.active-route {
+  color: #ff3f34;
 }
