@@ -19,12 +19,14 @@ import { AppRoutingModule } from '../app-routing.module';
 import { DocumentationComponent } from '../documentation/documentation.component';
 import { ChampionsComponent } from '../champions/champions.component';
 import { HomeComponent } from '../home/home.component';
+import { SingleChampionComponent } from '../champions/single-champion/single-champion.component';
 
 const components = [
   HeaderComponent,
   MainComponent,
   DocumentationComponent,
   ChampionsComponent,
+  SingleChampionComponent,
 ];
 
 const modules = [
