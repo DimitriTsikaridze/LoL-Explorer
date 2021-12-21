@@ -1,5 +1,5 @@
-<section class="champion-card" (click)="onChampionClick(champion.id)">
-  <div class="top-content">
+<section class="champion-card">
+  <div (click)="onChampionClick(champion.id)" class="top-content">
     <img [src]="champion.imageURL" alt="champion-image" />
     <div class="details">
       <div class="champion-details">

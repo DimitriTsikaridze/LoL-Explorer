@@ -20,6 +20,7 @@ import { ChampionsComponent } from '../champions/champions.component';
 import { HomeComponent } from '../home/home.component';
 import { SingleChampionComponent } from '../champions/single-champion/single-champion.component';
 import { SearchSummonerComponent } from '../search-summoner/search-summoner.component';
+import { ChampionDetailsComponent } from '../champion-details/champion-details.component';
 
 const components = [
   HeaderComponent,
@@ -28,6 +29,7 @@ const components = [
   SingleChampionComponent,
   SearchSummonerComponent,
   HomeComponent,
+  ChampionDetailsComponent,
 ];
 
 const modules = [
