@@ -1,22 +1,26 @@
-.champion-image {
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
-}
-.champion-card {
-  position: relative;
-  &:hover .champion-lore {
-    bottom: 10px;
+.champion {
+  &-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
   }
-
-  &:hover {
-    cursor: pointer;
+  &-name {
+    position: absolute;
+    left: 15px;
+    top: 40%;
+    color: white;
+    font-size: 1.5rem;
   }
 }
 
-.champion-lore {
-  transition: 0.2s;
-  position: absolute;
-  bottom: 0;
-  margin: 5px;
+article {
+  border-top: 4px solid #ff3f34;
+  background-color: #1e272e;
+  padding: 15px 10px;
+  p {
+    height: 100px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+  }
 }

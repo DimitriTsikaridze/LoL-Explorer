@@ -16,7 +16,7 @@ export class ChampionsService {
 
   constructor(private http: HttpClient) {}
 
-  getChampions(imageType: 'splash' | 'loading') {
+  getChampions(imageType: 'splash' | 'loading' | 'tiles' | 'centered') {
     return this.http.get<ChampionResponse>(this.URL).pipe(
       map((value: ChampionResponse) => {
         for (let champion in value.data) {
