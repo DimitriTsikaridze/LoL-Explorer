@@ -1,10 +1,6 @@
 <button (click)="onGetChampions()" mat-raised-button>Get Champions</button>
 <div *ngIf="champions" class="container">
   <div *ngFor="let champion of champions">
-    <div class="img-wrapper">
-      <h2>{{ champion.name }}</h2>
-      <img class="champ-image" [src]="champion.imageURL" alt="" />
-      <p class="champ-lore">{{ champion.blurb }}</p>
-    </div>
+    <app-single-champion [champion]="champion"></app-single-champion>
   </div>
 </div>

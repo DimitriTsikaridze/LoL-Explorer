@@ -1,0 +1,22 @@
+.champion-image {
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.img-wrapper {
+  position: relative;
+  &:hover .champion-lore {
+    bottom: 10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.champion-lore {
+  transition: 0.2s;
+  position: absolute;
+  bottom: 0;
+  margin: 5px;
+}
