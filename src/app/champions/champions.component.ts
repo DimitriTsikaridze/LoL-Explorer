@@ -11,11 +11,13 @@ export class ChampionsComponent implements OnInit {
   constructor(private championsService: ChampionsService) {}
   champions!: Champion[];
 
-  ngOnInit(): void {}
-
-  onGetChampions() {
-    this.championsService.getChampions('splash').subscribe((championsData) => {
-      this.champions = championsData.slice(0, 3);
-    });
+  ngOnInit(): void {
+    this.championsService
+      .getChampions('tiles', 5)
+      .subscribe((championsData) => {
+        this.champions = championsData;
+      });
   }
+
+  onGetChampions() {}
 }
