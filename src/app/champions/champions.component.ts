@@ -15,7 +15,7 @@ export class ChampionsComponent implements OnInit {
 
   onGetChampions() {
     this.championsService.getChampions('splash').subscribe((championsData) => {
-      this.champions = championsData;
+      this.champions = championsData.slice(0, 3);
     });
   }
 }

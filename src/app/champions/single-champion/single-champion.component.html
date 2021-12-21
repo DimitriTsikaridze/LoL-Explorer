@@ -1,4 +1,4 @@
-<div class="img-wrapper">
+<div class="champion-card" (click)="onChampionClick(champion.id)">
   <h2>{{ champion.name }}</h2>
   <img class="champion-image" [src]="champion.imageURL" alt="champion-image" />
   <p class="champion-lore">{{ champion.blurb }}</p>
