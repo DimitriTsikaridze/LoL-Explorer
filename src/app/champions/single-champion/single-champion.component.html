@@ -1,5 +1,7 @@
-<div class="champion-card" (click)="onChampionClick(champion.id)">
-  <h2>{{ champion.name }}</h2>
-  <img class="champion-image" [src]="champion.imageURL" alt="champion-image" />
-  <p class="champion-lore">{{ champion.blurb }}</p>
-</div>
+<section class="champion-card" (click)="onChampionClick(champion.id)">
+  <img [src]="champion.imageURL" alt="champion-image" />
+  <h4 class="champion-name">{{ champion.name }}</h4>
+  <article>
+    <p>{{ champion.blurb }}</p>
+  </article>
+</section>
