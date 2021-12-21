@@ -8,7 +8,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MainComponent } from '../main/main.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -20,13 +19,15 @@ import { DocumentationComponent } from '../documentation/documentation.component
 import { ChampionsComponent } from '../champions/champions.component';
 import { HomeComponent } from '../home/home.component';
 import { SingleChampionComponent } from '../champions/single-champion/single-champion.component';
+import { SearchSummonerComponent } from '../search-summoner/search-summoner.component';
 
 const components = [
   HeaderComponent,
-  MainComponent,
   DocumentationComponent,
   ChampionsComponent,
   SingleChampionComponent,
+  SearchSummonerComponent,
+  HomeComponent,
 ];
 
 const modules = [
@@ -48,7 +49,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [...components, HomeComponent],
+  declarations: [...components],
   imports: [CommonModule, ...modules],
   exports: [...modules, ...components],
 })

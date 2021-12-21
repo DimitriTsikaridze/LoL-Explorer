@@ -10,5 +10,6 @@ export interface Champion {
   name: string;
   blurb: string;
   title: string;
+  tags: string[];
   imageURL: string;
 }
