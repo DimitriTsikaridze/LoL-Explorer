@@ -8,15 +8,21 @@ import { ChampionsService } from '../services/champions.service';
   styleUrls: ['./champions.component.scss'],
 })
 export class ChampionsComponent implements OnInit {
-  constructor(private championsService: ChampionsService) {}
   champions!: Champion[];
+  constructor(private championsService: ChampionsService) {}
 
   ngOnInit(): void {
-    this.championsService
-      .getChampions('tiles', 5)
-      .subscribe((championsData) => {
-        this.champions = championsData;
-      });
+// <<<<<<< zuka-theme
+//     this.championsService.getChampions('splash').subscribe((championsData) => {
+//       this.champions = championsData;
+//     });
+// =======
+//     this.championsService
+//       .getChampions('tiles', 5)
+//       .subscribe((championsData) => {
+//         this.champions = championsData;
+//       });
+// >>>>>>> main
   }
 
   onGetChampions() {}

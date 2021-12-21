@@ -12,13 +12,17 @@ export class ChampionsService {
 
   private champiosURL = 'https://ddragon.leagueoflegends.com/cdn/img/champion/';
 
-  private champions: Champion[] = [];
+  readonly champions: Champion[] = [];
 
   constructor(private http: HttpClient) {}
 
   getChampions(
     imageType: 'splash' | 'loading' | 'tiles' | 'centered',
-    championAmount: number
+// <<<<<<< zuka-theme
+//     championAmount?: number
+// =======
+//     championAmount: numbers
+// >>>>>>> main
   ) {
     return this.http.get<ChampionResponse>(this.URL).pipe(
       map((value: ChampionResponse) => {
@@ -29,6 +33,7 @@ export class ChampionsService {
             name: value.data[champion].name,
             blurb: value.data[champion].blurb,
             title: value.data[champion].title,
+            tags: value.data[champion].tags,
             imageURL: `${this.champiosURL}${imageType}/${value.data[champion].id}_0.jpg`,
           });
         }

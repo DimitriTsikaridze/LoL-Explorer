@@ -1,22 +1,68 @@
-.champion-image {
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
-}
-.champion-card {
+.top-content {
   position: relative;
-  &:hover .champion-lore {
-    bottom: 10px;
-  }
-
+  overflow: hidden;
   &:hover {
     cursor: pointer;
   }
+  &:hover img {
+    transform: scale(1.1);
+    z-index: -1;
+  }
 }
 
-.champion-lore {
-  transition: 0.2s;
+.champion {
+  &-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.2s;
+
+    img {
+      transition: 0.2s;
+    }
+  }
+}
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: absolute;
-  bottom: 0;
-  margin: 5px;
+  width: calc(100% - 30px);
+  left: 15px;
+  bottom: 15px;
+  color: white;
+  h4 {
+    font-size: 1.5rem;
+  }
+  h5 {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
+
+.tags {
+  display: flex;
+  gap: 1rem;
+  h6 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 2px solid white;
+    border-radius: 16px;
+    padding: 5px 12px;
+    transition: 0.2s;
+    &:hover {
+      color: white;
+      background-color: #ff3f34;
+    }
+  }
+}
+
+article {
+  border-top: 4px solid #ff3f34;
+  background-color: #1e272e;
+  padding: 15px 10px;
+  p {
+    height: 100px;
+    color: white;
+    font-size: 14px;
+  }
 }
