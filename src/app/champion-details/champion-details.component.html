@@ -1,6 +1,6 @@
 <div *ngIf="champion" class="container">
-  <h1>{{ champion.name }}</h1>
-  <div class="container">
-    <img [src]="champion.imageURL" alt="champion-image" />
-  </div>
+  <img [src]="champion.imageURL" alt="champion-image" />
+  <button (click)="onGoBack()" class="back-btn" mat-raised-button>
+    Go Back
+  </button>
 </div>

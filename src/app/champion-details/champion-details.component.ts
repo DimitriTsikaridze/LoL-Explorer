@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChampionDetails } from '../models/champion-details';
@@ -13,6 +14,7 @@ export class ChampionDetailsComponent implements OnInit {
   champion!: ChampionDetails;
 
   constructor(
+    private location: Location,
     private route: ActivatedRoute,
     private championDetailsService: ChampionDetailsService
   ) {}
@@ -21,5 +23,9 @@ export class ChampionDetailsComponent implements OnInit {
     this.championDetailsService
       .getSingleChampion(this.route.snapshot.params['id'])
       .subscribe((data) => (this.champion = data));
+  }
+
+  onGoBack() {
+    this.location.back();
   }
 }
