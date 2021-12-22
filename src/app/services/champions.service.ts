@@ -12,7 +12,7 @@ export class ChampionsService {
 
   readonly championsURL =
     'https://ddragon.leagueoflegends.com/cdn/img/champion/';
-  private champions: Champion[] = [];
+  readonly champions: Champion[] = [];
 
   constructor(private http: HttpClient) {}
 
