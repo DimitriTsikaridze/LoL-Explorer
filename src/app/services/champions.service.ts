@@ -16,24 +16,22 @@ export class ChampionsService {
 
   constructor(private http: HttpClient) {}
 
-  getChampions(
-    imageType: 'splash' | 'loading' | 'tiles' | 'centered',
-    championAmount?: number
-  ) {
+  getChampions(imageType: 'splash' | 'loading' | 'tiles' | 'centered') {
     return this.http.get<ChampionResponse>(this.URL).pipe(
       map((value: ChampionResponse) => {
         for (let champion in value.data) {
+          const { id, key, name, blurb, title, tags } = value.data[champion];
           this.champions.push({
-            id: value.data[champion].id,
-            key: value.data[champion].key,
-            name: value.data[champion].name,
-            blurb: value.data[champion].blurb,
-            title: value.data[champion].title,
-            tags: value.data[champion].tags,
+            id: id,
+            key: key,
+            name: name,
+            blurb: blurb,
+            title: title,
+            tags: tags,
             imageURL: `${this.championsURL}${imageType}/${value.data[champion].id}_0.jpg`,
           });
         }
-        return this.champions.slice(0, championAmount);
+        return this.champions;
       })
     );
   }
