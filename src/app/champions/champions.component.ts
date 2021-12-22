@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Champion } from '../models/champion-response';
 import { ChampionsService } from '../services/champions.service';
 
@@ -9,6 +9,8 @@ import { ChampionsService } from '../services/champions.service';
 })
 export class ChampionsComponent implements OnInit {
   champions!: Champion[];
+
+  private championAmount = 0;
 
   constructor(private championsService: ChampionsService) {}
 
