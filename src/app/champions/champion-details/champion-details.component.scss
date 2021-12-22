@@ -1,0 +1,34 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.champion-description {
+  position: absolute;
+  bottom: 5rem;
+  left: 3rem;
+  color: white;
+
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+img {
+  border-bottom-left-radius: 8rem;
+  border-bottom-right-radius: 8rem;
+}
+
+.back-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
