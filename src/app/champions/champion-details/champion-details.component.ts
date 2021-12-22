@@ -1,9 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ChampionDetails } from '../models/champion-details';
+import { ChampionDetails } from '../../models/champion-details';
 
-import { ChampionDetailsService } from '../services/champion-details.service';
+import { ChampionDetailsService } from '../../services/champion-details.service';
 
 @Component({
   selector: 'app-champion-details',
