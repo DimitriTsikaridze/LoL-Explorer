@@ -4,10 +4,9 @@
   gap: 3rem;
   padding: 2rem;
   color: white;
-  min-height: 100vh;
+  min-height: calc(100vh - 71px);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
 }
 
 h2 {
