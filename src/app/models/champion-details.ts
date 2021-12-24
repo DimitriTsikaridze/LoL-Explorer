@@ -5,7 +5,7 @@ export interface ChampionDetails {
   title: string;
   lore: string;
   allyTips?: string;
-  enemtTips?: string;
+  enemyTips?: string;
   tags?: string[];
   imageURL: string;
 }

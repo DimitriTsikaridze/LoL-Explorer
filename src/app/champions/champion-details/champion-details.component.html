@@ -1,14 +1,33 @@
-<div *ngIf="champion" class="container">
-  <div class="img-wrapper">
-    <img [src]="champion.imageURL" alt="champion-image" />
-    <div class="champion-description">
-      <h2>{{ champion.name }}</h2>
-      <h3>{{ champion.title }}</h3>
-    </div>
+<div
+  *ngIf="champion"
+  [ngStyle]="{ 'background-image': 'url(' + champion.imageURL + ')' }"
+  class="container"
+>
+  <div class="champion-description">
+    <h2>{{ champion.name }}</h2>
+    <h3>{{ champion.title }}</h3>
   </div>
-  <p class="champion-lore">{{ champion.lore }}</p>
 
-  <button (click)="onGoBack()" class="back-btn" mat-raised-button>
-    Go Back
-  </button>
+  <article class="champion-lore">
+    <h3>Lore</h3>
+    <p>{{ champion.lore }}</p>
+  </article>
+  <article class="ally-tips">
+    <h3>Ally Tips</h3>
+    <p>{{ champion.allyTips }}</p>
+  </article>
+  <article class="enemy-tips">
+    <h3>Enemy Tips</h3>
+    <p>{{ champion.enemyTips }}</p>
+  </article>
+
+  <div class="btns">
+    <button (click)="onGoBack()" class="back-btn" mat-raised-button>
+      Go Back
+    </button>
+
+    <button (click)="onGoNext()" class="next-btn" mat-raised-button>
+      Next
+    </button>
+  </div>
 </div>

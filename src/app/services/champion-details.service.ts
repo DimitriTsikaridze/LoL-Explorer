@@ -23,13 +23,16 @@ export class ChampionDetailsService {
       .get<ChampionDetails>(`${this.championDetailsURL}${championID}.json`)
       .pipe(
         map((value: any) => {
-          const { id, key, lore, name, title } = value.data[championID];
+          const { id, key, lore, name, title, allytips, enemytips } =
+            value.data[championID];
           this.champion = {
             id: id,
             key: key,
             lore: lore,
             name: name,
             title: title,
+            allyTips: allytips,
+            enemyTips: enemytips,
             imageURL: `${this.championsService.championsURL}splash/${championID}_0.jpg`,
           };
           return this.champion;
