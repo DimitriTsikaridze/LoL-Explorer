@@ -28,4 +28,6 @@ export class ChampionDetailsComponent implements OnInit {
   onGoBack() {
     this.location.back();
   }
+
+  onGoNext() {}
 }
