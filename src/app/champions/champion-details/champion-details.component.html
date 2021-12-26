@@ -12,18 +12,20 @@
     <h3>Lore</h3>
     <p>{{ champion.lore }}</p>
   </article>
-  <article class="ally champion-tips">
-    <h3>Ally Tips</h3>
-    <p *ngFor="let tip of champion.allyTips; let i = index">
-      {{ i + 1 }}) {{ tip }}
-    </p>
-  </article>
-  <article class="enemy champion-tips">
-    <h3>Enemy Tips</h3>
-    <p *ngFor="let tip of champion.enemyTips; let i = index">
-      {{ i + 1 }}) {{ tip }}
-    </p>
-  </article>
+  <section class="tips-section">
+    <article class="ally champion-tips">
+      <h3>Ally Tips</h3>
+      <p *ngFor="let tip of champion.allyTips; let i = index">
+        {{ i + 1 }}) {{ tip }}
+      </p>
+    </article>
+    <article class="enemy champion-tips">
+      <h3>Enemy Tips</h3>
+      <p *ngFor="let tip of champion.enemyTips; let i = index">
+        {{ i + 1 }}) {{ tip }}
+      </p>
+    </article>
+  </section>
 
   <div class="btns">
     <button (click)="onGoBack()" class="back-btn" mat-raised-button>
