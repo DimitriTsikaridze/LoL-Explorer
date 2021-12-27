@@ -1,8 +1,6 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ChampionDetails } from '../../models/champion-details';
-
 import { ChampionDetailsService } from '../../services/champion-details.service';
 
 @Component({
@@ -15,7 +13,6 @@ export class ChampionDetailsComponent implements OnInit {
   championNames: string[] = [];
 
   constructor(
-    private location: Location,
     private route: ActivatedRoute,
     private router: Router,
     private championDetailsService: ChampionDetailsService
@@ -23,6 +20,7 @@ export class ChampionDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.championNames = this.championDetailsService.getChampionNames();
+
     this.route.params.subscribe((params) => {
       this.championDetailsService
         .getSingleChampion(params['id'])
@@ -30,14 +28,17 @@ export class ChampionDetailsComponent implements OnInit {
     });
   }
 
-  previousChampion() {
-    this.location.back();
+  previousChampion(id: string) {
+    this.router.navigate([
+      '/champions',
+      this.championNames[this.championNames.indexOf(id) - 1],
+    ]);
   }
 
-  nextChampion() {
-    let currentChampion = this.route.snapshot.params['id'];
-    let nextChampion = this.championNames.indexOf(currentChampion);
-    this.router.navigate(['/champions', this.championNames[nextChampion + 1]]);
-    console.log();
+  nextChampion(id: string) {
+    this.router.navigate([
+      '/champions',
+      this.championNames[this.championNames.indexOf(id) + 1],
+    ]);
   }
 }
