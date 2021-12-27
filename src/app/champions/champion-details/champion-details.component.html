@@ -29,24 +29,16 @@
       </article>
     </section>
   </section>
-
-  <div class="btns">
-    <button
+  <div class="arrows">
+    <i
       *ngIf="!(champion.id === 'Aatrox')"
       (click)="previousChampion(champion.id)"
-      class="back-btn"
-      mat-raised-button
-    >
-      Go Back
-    </button>
-
-    <button
+      class="fas fa-arrow-left"
+    ></i>
+    <i
       *ngIf="!(champion.id === 'Zyra')"
       (click)="nextChampion(champion.id)"
-      class="next-btn"
-      mat-raised-button
-    >
-      Next
-    </button>
+      class="fas fa-arrow-right"
+    ></i>
   </div>
 </div>
