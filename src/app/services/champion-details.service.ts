@@ -12,6 +12,7 @@ export class ChampionDetailsService {
     'https://ddragon.leagueoflegends.com/cdn/11.24.1/data/en_US/champion/';
 
   private champion!: ChampionDetails;
+  private championNames: string[] = [];
 
   constructor(
     private http: HttpClient,
@@ -38,5 +39,12 @@ export class ChampionDetailsService {
           return this.champion;
         })
       );
+  }
+
+  getChampionNames() {
+    for (let i = 0; i < this.championsService.champions.length; i++) {
+      this.championNames.push(this.championsService.champions[i].id);
+    }
+    return this.championNames;
   }
 }
