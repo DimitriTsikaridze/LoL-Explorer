@@ -4,7 +4,7 @@
   gap: 5rem;
   padding: 2rem 4rem;
   color: white;
-  min-height: calc(100vh - 71px);
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -25,9 +25,21 @@ h3 {
   }
 }
 
-.champion-tips {
-  p {
-    margin-bottom: 0.5rem;
+.champion {
+  &-container {
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 1rem;
+  }
+
+  &-lore {
+    margin-bottom: 3rem;
+  }
+
+  &-tips {
+    p {
+      margin-bottom: 0.5rem;
+    }
   }
 }
 
