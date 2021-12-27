@@ -10,18 +10,17 @@
 
   <section class="champion-container">
     <article class="champion-lore">
-      <h3>Lore</h3>
+      <h4>Lore</h4>
       <p>{{ champion.lore }}</p>
     </article>
     <article class="ally champion-tips">
-      <h3>Ally Tips</h3>
+      <h4>Ally Tips</h4>
       <p *ngFor="let tip of champion.allyTips; let i = index">
         {{ i + 1 }}) {{ tip }}
       </p>
     </article>
     <article class="enemy champion-tips">
-      <h3>Enemy Tips</h3>
-
+      <h4>Enemy Tips</h4>
       <p *ngFor="let tip of champion.enemyTips; let i = index">
         {{ i + 1 }}) {{ tip }}
       </p>

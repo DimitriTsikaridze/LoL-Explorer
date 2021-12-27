@@ -9,14 +9,22 @@
   background-size: cover;
 }
 
-h2 {
-  font-size: 3rem;
-}
-h3 {
-  font-size: 2rem;
-}
-
 .champion {
+  &-description {
+    h2,
+    h3 {
+      padding-left: 1rem;
+    }
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
+
   &-container {
     backdrop-filter: blur(30px);
     border-radius: 24px;
@@ -25,8 +33,9 @@ h3 {
     flex-direction: column;
     max-width: 650px;
     gap: 2rem;
-    h3 {
+    h4 {
       margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
     p {
       line-height: 24px;
@@ -46,6 +55,7 @@ h3 {
     font-size: 3rem;
     top: 50%;
     transform: translateY(-50%);
+    transition: 0.3s;
     &:hover {
       cursor: pointer;
     }
@@ -53,8 +63,14 @@ h3 {
 
   .fa-arrow-left {
     left: 1.5rem;
+    &:hover {
+      left: 1.2rem;
+    }
   }
   .fa-arrow-right {
     right: 1.5rem;
+    &:hover {
+      right: 1.2rem;
+    }
   }
 }
