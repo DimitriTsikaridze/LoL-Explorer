@@ -31,11 +31,19 @@
   </section>
 
   <div class="btns">
-    <button (click)="previousChampion()" class="back-btn" mat-raised-button>
+    <button
+      (click)="previousChampion(champion.id)"
+      class="back-btn"
+      mat-raised-button
+    >
       Go Back
     </button>
 
-    <button (click)="nextChampion()" class="next-btn" mat-raised-button>
+    <button
+      (click)="nextChampion(champion.id)"
+      class="next-btn"
+      mat-raised-button
+    >
       Next
     </button>
   </div>
