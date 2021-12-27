@@ -8,23 +8,27 @@
     <h3>{{ champion.title }}</h3>
   </div>
 
-  <article class="champion-lore">
-    <h3>Lore</h3>
-    <p>{{ champion.lore }}</p>
-  </article>
-  <section class="tips-section">
-    <article class="ally champion-tips">
-      <h3>Ally Tips</h3>
-      <p *ngFor="let tip of champion.allyTips; let i = index">
-        {{ i + 1 }}) {{ tip }}
-      </p>
+  <section class="champion-container">
+    <article class="champion-lore">
+      <h3>Lore</h3>
+      <p>{{ champion.lore }}</p>
     </article>
-    <article class="enemy champion-tips">
-      <h3>Enemy Tips</h3>
-      <p *ngFor="let tip of champion.enemyTips; let i = index">
-        {{ i + 1 }}) {{ tip }}
-      </p>
-    </article>
+    <section class="tips-section">
+      <article class="ally champion-tips">
+        <h3>Ally Tips</h3>
+        <p *ngFor="let tip of champion.allyTips; let i = index">
+          {{ i + 1 }}) {{ tip }}
+        </p>
+      </article>
+      <article class="enemy champion-tips">
+        <h3>Enemy Tips</h3>
+
+        <p>There is NO enemy Tips</p>
+        <p *ngFor="let tip of champion.enemyTips; let i = index">
+          {{ i + 1 }}) {{ tip }}
+        </p>
+      </article>
+    </section>
   </section>
 
   <div class="btns">
