@@ -32,6 +32,7 @@
 
   <div class="btns">
     <button
+      *ngIf="!(champion.id === 'Aatrox')"
       (click)="previousChampion(champion.id)"
       class="back-btn"
       mat-raised-button
@@ -40,6 +41,7 @@
     </button>
 
     <button
+      *ngIf="!(champion.id === 'Zyra')"
       (click)="nextChampion(champion.id)"
       class="next-btn"
       mat-raised-button
