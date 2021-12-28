@@ -19,7 +19,9 @@ export class ChampionDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.championNames = this.championDetailsService.getChampionNames();
+    this.championDetailsService
+      .getChampionNames()
+      .subscribe((data) => (this.championNames = data));
 
     this.route.params.subscribe((params) => {
       this.championDetailsService

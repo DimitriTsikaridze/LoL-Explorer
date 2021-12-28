@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { fromEventPattern, map, tap } from 'rxjs';
 import { ChampionDetails } from '../models/champion-details';
+import { ChampionResponse } from '../models/champion-response';
 import { ChampionsService } from './champions.service';
 
 @Injectable({
@@ -42,9 +43,13 @@ export class ChampionDetailsService {
   }
 
   getChampionNames() {
-    for (let i = 0; i < this.championsService.champions.length; i++) {
-      this.championNames.push(this.championsService.champions[i].id);
-    }
-    return this.championNames;
+    return this.http.get(this.championsService.URL).pipe(
+      map((value: any) => {
+        for (let name in value.data) {
+          this.championNames.push(name);
+        }
+        return this.championNames;
+      })
+    );
   }
 }
