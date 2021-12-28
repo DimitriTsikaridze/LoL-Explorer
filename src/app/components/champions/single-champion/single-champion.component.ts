@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Champion } from '../../models/champion-response';
+import { Router } from '@angular/router';
+import { Champion } from '../../../models/champion-response';
 
 @Component({
   selector: 'app-single-champion',

@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Champion } from '../models/champion-response';
-import { ChampionsService } from '../services/champions.service';
+import { Component, OnInit } from '@angular/core';
+import { Champion } from '../../models/champion-response';
+import { ChampionsService } from '../../services/champions.service';
 
 @Component({
   selector: 'app-champions',

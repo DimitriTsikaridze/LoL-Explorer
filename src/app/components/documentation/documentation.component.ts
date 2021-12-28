@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChampionsService } from '../services/champions.service';
+import { ChampionsService } from '../../services/champions.service';
 
 @Component({
   selector: 'app-documentation',
