@@ -5,14 +5,4 @@ import { Component, HostBinding } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  private isDark = true;
-  @HostBinding('class')
-  get checkTheme() {
-    return this.isDark ? 'dark-theme' : 'light-theme';
-  }
-
-  switchMode(isDarkTheme: boolean) {
-    this.isDark = isDarkTheme;
-  }
-}
+export class AppComponent {}
