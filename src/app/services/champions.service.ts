@@ -7,11 +7,12 @@ import { Champion, ChampionResponse } from '../models/champion-response';
   providedIn: 'root',
 })
 export class ChampionsService {
-  private URL =
+  readonly URL =
     'http://ddragon.leagueoflegends.com/cdn/11.24.1/data/en_US/champion.json';
 
   readonly championsURL =
     'https://ddragon.leagueoflegends.com/cdn/img/champion/';
+
   readonly champions: Champion[] = [];
 
   constructor(private http: HttpClient) {}
