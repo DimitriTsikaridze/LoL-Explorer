@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ChampionDetails } from '../../../models/champion-details';
 import { ChampionDetailsService } from '../../../services/champion-details.service';
@@ -11,6 +11,7 @@ import { ChampionDetailsService } from '../../../services/champion-details.servi
 export class ChampionDetailsComponent implements OnInit {
   champion!: ChampionDetails;
   championNames: string[] = [];
+  currentId!: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,10 +25,21 @@ export class ChampionDetailsComponent implements OnInit {
       .subscribe((data) => (this.championNames = data));
 
     this.route.params.subscribe((params) => {
+      this.currentId = params['id'];
       this.championDetailsService
         .getSingleChampion(params['id'])
         .subscribe((champion) => (this.champion = champion));
     });
+  }
+
+  @HostListener('document:keyup', ['$event'])
+  handleKeyboardEvent(event: any) {
+    if (event.key === 'ArrowRight') {
+      this.nextChampion(this.currentId);
+    }
+    if (event.key === 'ArrowLeft') {
+      this.previousChampion(this.currentId);
+    }
   }
 
   previousChampion(id: string) {

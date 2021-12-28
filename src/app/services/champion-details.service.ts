@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { fromEventPattern, map, tap } from 'rxjs';
+import { Router } from '@angular/router';
+import { map } from 'rxjs';
 import { ChampionDetails } from '../models/champion-details';
-import { ChampionResponse } from '../models/champion-response';
 import { ChampionsService } from './champions.service';
 
 @Injectable({
@@ -17,7 +17,8 @@ export class ChampionDetailsService {
 
   constructor(
     private http: HttpClient,
-    private championsService: ChampionsService
+    private championsService: ChampionsService,
+    private router: Router
   ) {}
 
   getSingleChampion(championID: string) {
