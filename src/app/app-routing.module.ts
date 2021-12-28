@@ -4,7 +4,7 @@ import { ChampionDetailsComponent } from './components/champions/champion-detail
 import { ChampionsComponent } from './components/champions/champions.component';
 import { DocumentationComponent } from './components/documentation/documentation.component';
 import { HomeComponent } from './components/home/home.component';
-import { SearchSummonerComponent } from './search-summoner/search-summoner.component';
+import { SearchSummonerComponent } from './components/search-summoner/search-summoner.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
