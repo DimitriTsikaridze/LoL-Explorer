@@ -7,13 +7,13 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { DocumentationComponent } from './documentation/documentation.component';
-import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { DocumentationComponent } from './components/documentation/documentation.component';
+import { HomeComponent } from './components/home/home.component';
 import { SearchSummonerComponent } from './search-summoner/search-summoner.component';
-import { ChampionsComponent } from './champions/champions.component';
-import { SingleChampionComponent } from './champions/single-champion/single-champion.component';
-import { ChampionDetailsComponent } from './champions/champion-details/champion-details.component';
+import { ChampionsComponent } from './components/champions/champions.component';
+import { SingleChampionComponent } from './components/champions/single-champion/single-champion.component';
+import { ChampionDetailsComponent } from './components/champions/champion-details/champion-details.component';
 
 const components = [
   HeaderComponent,

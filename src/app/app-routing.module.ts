@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChampionDetailsComponent } from './champions/champion-details/champion-details.component';
-import { ChampionsComponent } from './champions/champions.component';
-import { DocumentationComponent } from './documentation/documentation.component';
-import { HomeComponent } from './home/home.component';
+import { ChampionDetailsComponent } from './components/champions/champion-details/champion-details.component';
+import { ChampionsComponent } from './components/champions/champions.component';
+import { DocumentationComponent } from './components/documentation/documentation.component';
+import { HomeComponent } from './components/home/home.component';
 import { SearchSummonerComponent } from './search-summoner/search-summoner.component';
 
 const routes: Routes = [
