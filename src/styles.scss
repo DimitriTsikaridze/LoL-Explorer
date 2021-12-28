@@ -1,52 +1,10 @@
-@use "@angular/material" as mat;
-
-@include mat.core();
-
-$angular-firebase-primary: mat.define-palette(mat.$indigo-palette);
-$angular-firebase-accent: mat.define-palette(
-  mat.$pink-palette,
-  A200,
-  A100,
-  A400
-);
-
-$angular-firebase-warn: mat.define-palette(mat.$red-palette);
-
-$angular-firebase-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $angular-firebase-primary,
-      accent: $angular-firebase-accent,
-      warn: $angular-firebase-warn,
-    ),
-  )
-);
-$angular-firebase-theme-dark: mat.define-dark-theme(
-  (
-    color: (
-      primary: $angular-firebase-primary,
-      accent: $angular-firebase-accent,
-      warn: $angular-firebase-warn,
-    ),
-  )
-);
-
-.dark-theme {
-  @include mat.all-component-themes($angular-firebase-theme-dark);
-}
-.light-theme {
-  @include mat.all-component-themes($angular-firebase-theme);
-}
-
-/* You can add global styles to this file, and also import other style files */
-:root {
-  font-size: 16px;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+:root {
+  font-size: 16px;
 }
 
 li {
@@ -62,7 +20,6 @@ body {
   height: 100%;
 }
 body {
-  margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
