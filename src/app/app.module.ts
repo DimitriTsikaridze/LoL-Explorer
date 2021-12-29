@@ -14,6 +14,7 @@ import { SearchSummonerComponent } from './components/search-summoner/search-sum
 import { ChampionsComponent } from './components/champions/champions.component';
 import { SingleChampionComponent } from './components/champions/single-champion/single-champion.component';
 import { ChampionDetailsComponent } from './components/champions/champion-details/champion-details.component';
+import { ErrorComponent } from './components/error/error.component';
 
 const components = [
   HeaderComponent,
@@ -33,7 +34,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...components],
+  declarations: [AppComponent, ...components, ErrorComponent],
   imports: [BrowserModule, BrowserAnimationsModule, ...modules],
   providers: [],
   bootstrap: [AppComponent],
