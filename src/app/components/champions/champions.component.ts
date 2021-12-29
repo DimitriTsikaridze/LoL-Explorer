@@ -10,8 +10,6 @@ import { ChampionsService } from '../../services/champions.service';
 export class ChampionsComponent implements OnInit {
   champions!: Champion[];
 
-  private championAmount = 0;
-
   constructor(private championsService: ChampionsService) {}
 
   ngOnInit(): void {

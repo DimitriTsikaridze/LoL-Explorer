@@ -15,6 +15,7 @@ import { ChampionsComponent } from './components/champions/champions.component';
 import { SingleChampionComponent } from './components/champions/single-champion/single-champion.component';
 import { ChampionDetailsComponent } from './components/champions/champion-details/champion-details.component';
 import { ErrorComponent } from './components/error/error.component';
+import { TitleComponent } from './components/title/title.component';
 
 const components = [
   HeaderComponent,
@@ -34,7 +35,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...components, ErrorComponent],
+  declarations: [AppComponent, ...components, ErrorComponent, TitleComponent],
   imports: [BrowserModule, BrowserAnimationsModule, ...modules],
   providers: [],
   bootstrap: [AppComponent],
