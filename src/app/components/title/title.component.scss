@@ -1,0 +1,19 @@
+h1 {
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  margin: 2rem 0;
+  color: #1e272e;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h1:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: -10%;
+  background-color: #ff3f34;
+  height: 5px;
+  width: 120%;
+}
