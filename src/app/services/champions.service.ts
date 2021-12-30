@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs';
+import { map } from 'rxjs';
 import { Champion, ChampionResponse } from '../models/champion-response';
 
 @Injectable({

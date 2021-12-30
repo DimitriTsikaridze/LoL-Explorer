@@ -1,4 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { Champion } from '../../../models/champion-response';
 
@@ -6,6 +11,7 @@ import { Champion } from '../../../models/champion-response';
   selector: 'app-single-champion',
   templateUrl: './single-champion.component.html',
   styleUrls: ['./single-champion.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SingleChampionComponent implements OnInit {
   @Input() champion!: Champion;
