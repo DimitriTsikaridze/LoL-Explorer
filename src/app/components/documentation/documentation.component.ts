@@ -7,7 +7,7 @@ import { ChampionsService } from '../../services/champions.service';
   styleUrls: ['./documentation.component.scss'],
 })
 export class DocumentationComponent implements OnInit {
-  constructor(private championService: ChampionsService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }
