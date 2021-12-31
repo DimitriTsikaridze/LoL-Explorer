@@ -1,7 +1,9 @@
+@import "../../../styles/palette.scss";
+
 header {
-  background-color: #1e272e;
+  background-color: $dark-blue;
   color: white;
-  border-bottom: 4px solid #ff3f34;
+  border-bottom: 4px solid $red;
   height: 71px;
 }
 ul {
@@ -21,10 +23,10 @@ a {
   color: white;
   transition: 0.2s;
   &:hover {
-    color: #ff3f34;
+    color: $red;
   }
 }
 
 .active-route {
-  color: #ff3f34;
+  color: $red;
 }

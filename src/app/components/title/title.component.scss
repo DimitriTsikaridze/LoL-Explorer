@@ -1,3 +1,5 @@
+@import "../../../styles/palette.scss";
+
 h1 {
   text-transform: uppercase;
   position: relative;
@@ -13,7 +15,7 @@ h1:after {
   position: absolute;
   bottom: -10px;
   left: -10%;
-  background-color: #ff3f34;
+  background-color: $red;
   height: 5px;
   width: 120%;
 }

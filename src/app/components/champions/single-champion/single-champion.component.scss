@@ -1,3 +1,5 @@
+@import "../../../../styles/palette.scss";
+
 .top-content {
   position: relative;
   overflow: hidden;
@@ -42,7 +44,7 @@
   display: flex;
   gap: 1rem;
   h6 {
-    background-color: #1e272e8c;
+    background-color: $dark-blue;
     font-size: 0.8rem;
     font-weight: 500;
     border: 2px solid white;
@@ -51,14 +53,14 @@
     transition: 0.2s;
     &:hover {
       color: white;
-      background-color: #ff3f34;
+      background-color: $red;
     }
   }
 }
 
 article {
-  border-top: 4px solid #ff3f34;
-  background-color: #1e272e;
+  border-top: 4px solid $red;
+  background-color: $dark-blue;
   padding: 15px 10px;
   p {
     height: 100px;
