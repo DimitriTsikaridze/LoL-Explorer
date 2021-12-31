@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { map } from 'rxjs';
 import { ChampionDetails } from '../models/champion-details';
 import { ChampionsService } from './champions.service';
@@ -17,8 +16,7 @@ export class ChampionDetailsService {
 
   constructor(
     private http: HttpClient,
-    private championsService: ChampionsService,
-    private router: Router
+    private championsService: ChampionsService
   ) {}
 
   getSingleChampion(championID: string) {
