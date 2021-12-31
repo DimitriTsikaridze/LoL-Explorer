@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostListener,
-  OnInit,
-} from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ChampionDetails } from '../../../models/champion-details';
 import { ChampionDetailsService } from '../../../services/champion-details.service';
@@ -38,7 +33,7 @@ export class ChampionDetailsComponent implements OnInit {
   }
 
   @HostListener('document:keyup', ['$event'])
-  handleKeyboardEvent(event: any) {
+  handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key === 'ArrowRight') {
       this.nextChampion(this.currentId);
     }
