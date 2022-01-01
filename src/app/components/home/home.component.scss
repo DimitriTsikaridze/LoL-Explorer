@@ -1,0 +1,15 @@
+@import "../../../styles/palette.scss";
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+
+  img {
+    border-radius: 16px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
