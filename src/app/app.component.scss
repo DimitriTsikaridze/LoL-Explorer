@@ -1,0 +1,28 @@
+@import "../styles/palette.scss";
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  background-color: $dark-blue;
+  width: 200px;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.mat-list {
+  color: white;
+}
+
+@media only screen and (max-width: 920px) {
+  .hamburger-menu {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: white;
+  }
+}

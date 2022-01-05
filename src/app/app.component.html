@@ -1,4 +1,21 @@
-<app-header></app-header>
-<main>
-  <router-outlet></router-outlet>
-</main>
+<mat-sidenav-container>
+  <mat-sidenav mode="over" #sidenav>
+    <mat-nav-list>
+      <a class="mat-list" mat-list-item routerLink="/home">HOME</a>
+      <a class="mat-list" mat-list-item routerLink="/search-summoner"
+        >SEARCH SUMMONER</a
+      >
+      <a class="mat-list" mat-list-item routerLink="/champions">CHAMPIONS</a>
+      <a class="mat-list" mat-list-item routerLink="/documentation"
+        >DOCUMENTATION</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header></app-header>
+    <button class="hamburger-menu" mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
