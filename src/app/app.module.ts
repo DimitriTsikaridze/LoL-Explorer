@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -16,6 +18,10 @@ import { SingleChampionComponent } from './components/champions/single-champion/
 import { ChampionDetailsComponent } from './components/champions/champion-details/champion-details.component';
 import { ErrorComponent } from './components/error/error.component';
 import { TitleComponent } from './components/title/title.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 
 const components = [
   HeaderComponent,
@@ -25,6 +31,8 @@ const components = [
   ChampionsComponent,
   SingleChampionComponent,
   ChampionDetailsComponent,
+  ErrorComponent,
+  TitleComponent,
 ];
 
 const modules = [
@@ -32,11 +40,23 @@ const modules = [
   ReactiveFormsModule,
   RouterModule,
   AppRoutingModule,
+  MatSidenavModule,
+  MatIconModule,
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...components, ErrorComponent, TitleComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, ...modules],
+  declarations: [AppComponent, ...components],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    ...modules,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
