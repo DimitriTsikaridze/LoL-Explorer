@@ -80,3 +80,32 @@
     background-position: center;
   }
 }
+
+@media only screen and (max-width: 550px) {
+  .champion-container {
+    backdrop-filter: unset;
+    background-color: rgba(51, 51, 51, 0.582);
+  }
+
+  .container {
+    padding: 2rem;
+  }
+
+  .arrows {
+    i {
+      font-size: 1.5rem;
+    }
+    .fa-arrow-left {
+      left: 0.5rem;
+      &:hover {
+        left: 0.5rem;
+      }
+    }
+    .fa-arrow-right {
+      right: 0.5rem;
+      &:hover {
+        right: 0.5rem;
+      }
+    }
+  }
+}
