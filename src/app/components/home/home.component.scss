@@ -18,3 +18,9 @@
     }
   }
 }
+
+@media only screen and (max-width: 570px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
