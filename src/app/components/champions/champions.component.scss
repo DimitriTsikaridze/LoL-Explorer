@@ -11,3 +11,10 @@ h1 {
 .container {
   margin: 0 2rem 2rem 2rem;
 }
+
+@media only screen and (max-width: 570px) {
+  .container {
+    grid-template-columns: minmax(300px, 1fr);
+    padding: 0;
+  }
+}
