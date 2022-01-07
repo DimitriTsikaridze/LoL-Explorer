@@ -42,21 +42,17 @@ const modules = [
   AppRoutingModule,
   MatSidenavModule,
   MatIconModule,
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  LayoutModule,
 ];
 
 @NgModule({
   declarations: [AppComponent, ...components],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ...modules,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-  ],
+  imports: [BrowserModule, BrowserAnimationsModule, ...modules],
   providers: [],
   bootstrap: [AppComponent],
 })

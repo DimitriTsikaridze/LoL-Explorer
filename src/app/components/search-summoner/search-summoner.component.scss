@@ -1,0 +1,37 @@
+@import "../../../styles/palette.scss";
+
+.search-bar {
+  display: flex;
+  max-width: 540px;
+  margin: 0 auto;
+  border-radius: 16px;
+  padding: 12px 16px;
+  transition: 0.2s;
+  &:focus-within {
+    border-color: transparent;
+    box-shadow: 0 0 5px 1px $red;
+  }
+
+  // &:focus-within i {
+  //   color: red;
+  // }
+
+  input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+
+  i {
+    transition: 0.2s;
+    margin-left: auto;
+    cursor: pointer;
+  }
+  border: 2px solid $dark-blue;
+}
