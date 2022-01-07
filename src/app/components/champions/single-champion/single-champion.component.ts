@@ -5,7 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { Champion } from '../../../models/champion-response';
+import { Champion } from '../models/champion-response';
 
 @Component({
   selector: 'app-single-champion',
