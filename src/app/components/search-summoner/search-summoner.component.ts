@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { SearchSummonerService } from './search-summoner.service';
+import { SearchSummonerService } from './services/search-summoner.service';
 
 @Component({
   selector: 'app-search-summoner',
@@ -11,6 +11,7 @@ export class SearchSummonerComponent implements OnInit {
   constructor(private searchSummoner: SearchSummonerService) {}
 
   summonerName: FormControl = new FormControl('AlphaFrog');
+  summonerImage!: string;
 
   ngOnInit(): void {}
 
