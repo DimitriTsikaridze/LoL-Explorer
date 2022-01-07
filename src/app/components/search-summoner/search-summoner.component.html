@@ -1,1 +1,10 @@
 <app-title title="Search Summoner"></app-title>
+<div class="search-bar">
+  <input
+    [formControl]="summonerName"
+    spellcheck="false"
+    type="text"
+    placeholder="Summoner Name"
+  />
+  <i (click)="onGetSummoner()" class="fas fa-search"></i>
+</div>
