@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { ChampionDetails } from '../models/champion-details';
-import { ChampionsService } from './champions.service';
+import { ChampionsService } from '../../services/champions.service';
 
 @Injectable({
   providedIn: 'root',

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import { apiEnvironment } from '../../../environments/environment.api';
-import { SummonerInfo } from './summoner-info';
+import { apiEnvironment } from '../../../../environments/environment.api';
+import { SummonerInfo } from '../models/summoner-info';
 
 @Injectable({
   providedIn: 'root',
