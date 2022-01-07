@@ -12,9 +12,11 @@ export class SearchSummonerService {
     'https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
 
   private profileIconURL =
-    'http://ddragon.leagueoflegends.com/cdn/12.1.1/img/profileicon/588.png';
+    'http://ddragon.leagueoflegends.com/cdn/12.1.1/img/profileicon/';
 
-  summonerInfo!: SummonerInfo;
+  private summonerInfo!: SummonerInfo;
+
+  summonerDetails: any = {};
 
   constructor(private http: HttpClient) {}
 
