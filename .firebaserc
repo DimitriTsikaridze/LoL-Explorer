@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lolapi-19ff6": {
+      "hosting": {
+        "league-of-legends-api": [
+          "lolapi-19ff6"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lolapi-19ff6"
+  }
+}
