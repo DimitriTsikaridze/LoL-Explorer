@@ -8,7 +8,7 @@ import { Champion, ChampionResponse } from '../models/champion-response';
 })
 export class ChampionsService {
   readonly URL =
-    'http://ddragon.leagueoflegends.com/cdn/11.24.1/data/en_US/champion.json';
+    'https://ddragon.leagueoflegends.com/cdn/11.24.1/data/en_US/champion.json';
 
   readonly championsURL =
     'https://ddragon.leagueoflegends.com/cdn/img/champion/';

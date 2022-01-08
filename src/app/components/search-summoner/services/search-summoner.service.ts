@@ -11,13 +11,13 @@ export class SearchSummonerService {
   private championMasteriesURL = `https://eun1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/`;
 
   private championsURL =
-    'http://ddragon.leagueoflegends.com/cdn/12.1.1/data/en_US/champion.json';
+    'https://ddragon.leagueoflegends.com/cdn/12.1.1/data/en_US/champion.json';
 
   private summonerURL =
     'https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
 
   private profileIconURL =
-    'http://ddragon.leagueoflegends.com/cdn/12.1.1/img/profileicon/';
+    'https://ddragon.leagueoflegends.com/cdn/12.1.1/img/profileicon/';
   private championIconURL =
     'https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/';
 
