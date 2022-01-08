@@ -8,5 +8,4 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 })
 export class TitleComponent {
   @Input() title!: string;
-  @Input() underlineWidth!: number;
 }
