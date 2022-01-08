@@ -16,8 +16,6 @@ export class SearchSummonerService {
 
   private summonerInfo!: SummonerInfo;
 
-  summonerDetails: any = {};
-
   constructor(private http: HttpClient) {}
 
   getSummonerInfo(name: string) {
@@ -27,15 +25,13 @@ export class SearchSummonerService {
       )
       .pipe(
         map((value: SummonerInfo) => {
-          const { id, accountId, puuid, name, profileIconId, summonerLevel } =
-            value;
+          const { accountId, name, profileIconId, summonerLevel } = value;
           this.summonerInfo = {
             name: name,
             accountId: accountId,
-            puuid: puuid,
-            id: id,
             profileIconId: profileIconId,
             summonerLevel: summonerLevel,
+            summonerProfileURL: `${this.profileIconURL}${profileIconId}.png`,
           };
           return this.summonerInfo;
         })

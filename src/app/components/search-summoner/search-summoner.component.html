@@ -8,3 +8,13 @@
   />
   <i (click)="onGetSummoner()" class="fas fa-search"></i>
 </div>
+<div *ngIf="summonerInfo" class="summoner-profile">
+  <div class="profile-icon">
+    <img [src]="summonerInfo.summonerProfileURL" alt="summoner-img" />
+    <div class="summoner-level">
+      <span>{{ summonerInfo.summonerLevel }}</span>
+    </div>
+  </div>
+
+  <h2>{{ summonerInfo.name }}</h2>
+</div>
