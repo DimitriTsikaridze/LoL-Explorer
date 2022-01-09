@@ -20,15 +20,25 @@
 </div>
 
 <app-title title="HIGHEST MASTERY CHAMPIONS"></app-title>
-<div class="container">
+<div *ngIf="championMasteries" class="container">
   <div class="champion-overview" *ngFor="let champion of championMasteries">
-    <img [src]="champion.championImgURL" alt="champion-icon" />
+    <img
+      class="champion-icon"
+      (click)="navigateToChampionDetails(champion.championName!)"
+      [src]="champion.championImgURL"
+      alt="champion-icon"
+    />
     <h4>{{ champion.championName | uppercase }}</h4>
     <div class="stats">
       <div class="points">
+        <img
+          src="../../../assets/searc-summoner/mastery.svg"
+          alt="mastery-icon"
+        />
         <h5>{{ champion.championPoints | number | uppercase }} pts</h5>
       </div>
       <div class="level">
+        <img src="../../../assets/searc-summoner/level.svg" alt="level-icon" />
         <h5>{{ champion.championLevel }} lvl</h5>
       </div>
     </div>
