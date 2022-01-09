@@ -1,5 +1,9 @@
 @import "../../../styles/palette.scss";
 
+section {
+  padding: 1rem;
+}
+
 .search-bar {
   display: flex;
   max-width: 540px;
@@ -61,7 +65,9 @@
 .container {
   margin: 47px 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+
   gap: 76px;
   text-align: center;
 
@@ -100,5 +106,11 @@
       justify-content: center;
       gap: 10px;
     }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    gap: 30px;
   }
 }
