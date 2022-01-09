@@ -1,46 +1,51 @@
-<app-title title="Search Summoner"></app-title>
-<div class="search-bar">
-  <input
-    [formControl]="summonerName"
-    spellcheck="false"
-    type="text"
-    placeholder="Summoner Name"
-  />
-  <i (click)="onGetSummoner()" class="fas fa-search"></i>
-</div>
-<div *ngIf="summonerInfo" class="summoner-profile">
-  <div class="profile-icon">
-    <img [src]="summonerInfo.summonerProfileURL" alt="summoner-img" />
-    <div class="summoner-level">
-      <span>{{ summonerInfo.summonerLevel }}</span>
-    </div>
-  </div>
-
-  <h2>{{ summonerInfo.name }}</h2>
-</div>
-
-<app-title title="HIGHEST MASTERY CHAMPIONS"></app-title>
-<div *ngIf="championMasteries" class="container">
-  <div class="champion-overview" *ngFor="let champion of championMasteries">
-    <img
-      class="champion-icon"
-      (click)="navigateToChampionDetails(champion.championName!)"
-      [src]="champion.championImgURL"
-      alt="champion-icon"
+<section>
+  <app-title title="Search Summoner"></app-title>
+  <div class="search-bar">
+    <input
+      [formControl]="summonerName"
+      spellcheck="false"
+      type="text"
+      placeholder="Summoner Name"
     />
-    <h4>{{ champion.championName | uppercase }}</h4>
-    <div class="stats">
-      <div class="points">
-        <img
-          src="../../../assets/searc-summoner/mastery.svg"
-          alt="mastery-icon"
-        />
-        <h5>{{ champion.championPoints | number | uppercase }} pts</h5>
+    <i (click)="onGetSummoner()" class="fas fa-search"></i>
+  </div>
+  <div *ngIf="summonerInfo" class="summoner-profile">
+    <div class="profile-icon">
+      <img [src]="summonerInfo.summonerProfileURL" alt="summoner-img" />
+      <div class="summoner-level">
+        <span>{{ summonerInfo.summonerLevel }}</span>
       </div>
-      <div class="level">
-        <img src="../../../assets/searc-summoner/level.svg" alt="level-icon" />
-        <h5>{{ champion.championLevel }} lvl</h5>
+    </div>
+
+    <h2>{{ summonerInfo.name }}</h2>
+  </div>
+
+  <app-title title="HIGHEST MASTERY CHAMPIONS"></app-title>
+  <div *ngIf="championMasteries" class="container">
+    <div class="champion-overview" *ngFor="let champion of championMasteries">
+      <img
+        class="champion-icon"
+        (click)="navigateToChampionDetails(champion.championName!)"
+        [src]="champion.championImgURL"
+        alt="champion-icon"
+      />
+      <h4>{{ champion.championName | uppercase }}</h4>
+      <div class="stats">
+        <div class="points">
+          <img
+            src="../../../assets/searc-summoner/mastery.svg"
+            alt="mastery-icon"
+          />
+          <h5>{{ champion.championPoints | number | uppercase }} pts</h5>
+        </div>
+        <div class="level">
+          <img
+            src="../../../assets/searc-summoner/level.svg"
+            alt="level-icon"
+          />
+          <h5>{{ champion.championLevel }} lvl</h5>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>

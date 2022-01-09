@@ -2,6 +2,7 @@
 
 h1 {
   text-transform: uppercase;
+  text-align: center;
   position: relative;
   display: inline-block;
   margin: 2rem 0;
@@ -18,4 +19,10 @@ h1:after {
   background-color: $red;
   height: 5px;
   width: 120%;
+}
+
+@media only screen and (max-width: 550px) {
+  h1::after {
+    all: unset;
+  }
 }
