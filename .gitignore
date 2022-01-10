@@ -46,6 +46,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
+environment.api.ts
+
 # Firebase
 .firebase
 *-debug.log
