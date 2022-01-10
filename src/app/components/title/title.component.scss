@@ -20,9 +20,3 @@ h1:after {
   height: 5px;
   width: 120%;
 }
-
-@media only screen and (max-width: 550px) {
-  h1::after {
-    all: unset;
-  }
-}

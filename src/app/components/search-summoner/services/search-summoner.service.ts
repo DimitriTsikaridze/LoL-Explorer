@@ -32,7 +32,7 @@ export class SearchSummonerService {
   getSummonerInfo(name: string) {
     return this.http
       .get<SummonerInfo>(
-        `${this.summonerURL}${name}?api_key=${apiEnvironment.API_KEY}`
+        `${this.summonerURL}${name}?api_key=${apiEnvironment.key}`
       )
       .pipe(
         map((value: SummonerInfo) => {
@@ -70,7 +70,7 @@ export class SearchSummonerService {
   getChampionMasteries(summonerID: string) {
     return this.http
       .get(
-        `${this.championMasteriesURL}${summonerID}?api_key=${apiEnvironment.API_KEY}`
+        `${this.championMasteriesURL}${summonerID}?api_key=${apiEnvironment.key}`
       )
       .pipe(
         map((data: any) => {
