@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs';
+import { map } from 'rxjs';
 import { apiEnvironment } from '../../../../environments/environment.api';
 import { SummonerInfo } from '../models/summoner-info';
 
@@ -61,7 +61,6 @@ export class SearchSummonerService {
               key: champion.key,
             });
           }
-          console.log(this.championKeys.slice(0, 2));
         })
       )
       .subscribe();
@@ -74,20 +73,16 @@ export class SearchSummonerService {
       )
       .pipe(
         map((data: any) => {
-          console.log(data.slice(0, 2));
           for (let i = 0; i < data.length; i++) {
             this.championMastery.push({
               championId: data[i].championId,
               championPoints: data[i].championPoints,
               championLevel: data[i].championLevel,
-              championName: this.championKeys[i].name,
+              championName: data[i].champName,
               championImgURL: `${this.championIconURL}${this.championKeys[i].name}_0.jpg`,
             });
           }
           return this.championMastery;
-        }),
-        tap((data) => {
-          console.log(data.slice(0, 2));
         })
       );
   }
