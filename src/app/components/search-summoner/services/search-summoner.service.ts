@@ -59,6 +59,7 @@ export class SearchSummonerService {
             this.championKeys.push({
               name: champion.name,
               key: champion.key,
+              id: champion.id,
             });
           }
         })
@@ -73,13 +74,16 @@ export class SearchSummonerService {
       )
       .pipe(
         map((data: any) => {
-          for (let i = 0; i < data.length; i++) {
+          for (let i = 0; i < 3; i++) {
+            let champObj = this.championKeys.find(
+              (val: any) => val.key == data[i].championId
+            );
             this.championMastery.push({
               championId: data[i].championId,
               championPoints: data[i].championPoints,
               championLevel: data[i].championLevel,
-              championName: data[i].champName,
-              championImgURL: `${this.championIconURL}${this.championKeys[i].name}_0.jpg`,
+              championName: champObj.name,
+              championImgURL: `${this.championIconURL}${champObj.id}_0.jpg`,
             });
           }
           return this.championMastery;

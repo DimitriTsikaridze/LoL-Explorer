@@ -17,12 +17,11 @@ export class SearchSummonerComponent implements OnInit {
   ) {}
 
   summonerName: FormControl = new FormControl('AlphaFrog');
+
   summonerInfo!: SummonerInfo;
   championMasteries!: ChampionMastery[];
 
-  ngOnInit(): void {
-    this.onGetSummoner();
-  }
+  ngOnInit(): void {}
 
   onGetSummoner() {
     this.searchSummonerService
@@ -33,7 +32,7 @@ export class SearchSummonerComponent implements OnInit {
         this.searchSummonerService
           .getChampionMasteries(this.summonerInfo.id)
           .subscribe((data) => {
-            this.championMasteries = data.slice(0, 3);
+            this.championMasteries = data;
           });
       });
   }

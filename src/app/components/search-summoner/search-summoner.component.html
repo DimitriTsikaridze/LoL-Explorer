@@ -29,14 +29,14 @@
         [src]="champion.championImgURL"
         alt="champion-icon"
       />
-      <h4>{{ champion.championName | uppercase }}</h4>
+      <h4>{{ champion.championName }}</h4>
       <div class="stats">
         <div class="points">
           <img
             src="../../../assets/components/searc-summoner/mastery.svg"
             alt="mastery-icon"
           />
-          <h5>{{ champion.championPoints | number | uppercase }} pts</h5>
+          <h5>{{ champion.championPoints | number }} pts</h5>
         </div>
         <div class="level">
           <img
