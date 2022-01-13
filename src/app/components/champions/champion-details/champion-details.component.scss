@@ -3,7 +3,7 @@
 .champion-image {
   position: absolute;
   width: 100%;
-  max-height: 600px;
+  height: 600px;
   object-fit: cover;
   object-position: top;
   border-bottom-left-radius: 80px;
@@ -12,7 +12,33 @@
 
 .champion-details {
   position: absolute;
-  top: 50%;
+  top: 500px;
   background-color: $dark-blue;
+  margin: 0 140px;
   color: white;
+  border: 3px solid $red;
+  border-radius: 12px;
+}
+
+.champion-name {
+  position: absolute;
+  top: -90px;
+  left: 0;
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+}
+.champion-role {
+  h3 {
+    font-size: 1.4rem;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
 }
