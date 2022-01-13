@@ -38,7 +38,6 @@ export class ChampionDetailsService {
             imageURL: `${this.championsService.championsURL}splash/${championID}_0.jpg`,
             difficulty: value.data[championID].info.difficulty,
           };
-          console.log(this.champion);
           return this.champion;
         })
       );

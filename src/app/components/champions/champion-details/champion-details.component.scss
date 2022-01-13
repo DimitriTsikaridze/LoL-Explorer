@@ -45,9 +45,15 @@
   flex-direction: column;
   padding: 30px;
   justify-content: center;
+  position: relative;
   h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
+    position: absolute;
+    top: -15px;
+    background-color: $dark-blue;
+    left: 50%;
+    transform: translateX(-50%);
   }
   h4 {
     font-size: 1rem;
@@ -57,11 +63,19 @@
 }
 
 .champion-difficulty {
+  h3 {
+    width: 80%;
+  }
   h4 {
     font-size: 22px;
   }
   span {
-    color: red;
+    color: $red;
+  }
+}
+.champion-role {
+  h3 {
+    width: 50%;
   }
 }
 
