@@ -15,6 +15,7 @@ export class ChampionDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private championDetailsService: ChampionDetailsService
   ) {}
 
@@ -29,5 +30,28 @@ export class ChampionDetailsComponent implements OnInit {
         .getSingleChampion(params['id'])
         .subscribe((champion) => (this.champion = champion));
     });
+  }
+  @HostListener('document:keyup', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === 'ArrowRight') {
+      this.nextChampion(this.currentId);
+    }
+    if (event.key === 'ArrowLeft') {
+      this.previousChampion(this.currentId);
+    }
+  }
+
+  previousChampion(id: string) {
+    this.router.navigate([
+      '/champions',
+      this.championNames[this.championNames.indexOf(id) - 1],
+    ]);
+  }
+
+  nextChampion(id: string) {
+    this.router.navigate([
+      '/champions',
+      this.championNames[this.championNames.indexOf(id) + 1],
+    ]);
   }
 }
