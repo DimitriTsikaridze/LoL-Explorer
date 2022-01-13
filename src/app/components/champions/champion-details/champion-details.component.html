@@ -1,7 +1,16 @@
 <div *ngIf="champion" class="container">
   <img class="champion-image" [src]="champion.imageURL" alt="champion-image" />
   <section class="champion-details">
-    <div class="role"></div>
+    <div class="champion-name">
+      <h1>{{ champion.name }}</h1>
+      <h2>{{ champion.title }}</h2>
+    </div>
+
+    <div class="champion-role">
+      <h3>ROLE</h3>
+      <h4>{{ champion.tags[0] }}</h4>
+      <h4>{{ champion.tags[1] }}</h4>
+    </div>
     <div class="difficulty"></div>
     <article class="description">
       {{ champion.lore }}
