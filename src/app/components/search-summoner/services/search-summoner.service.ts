@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { apiEnvironment } from '../../../../environments/environment.api';
+import { ChampionKeys } from '../models/champion-keys';
+import { ChampionMastery } from '../models/champion-mastery';
 import { SummonerInfo } from '../models/summoner-info';
 
 @Injectable({
@@ -23,9 +25,7 @@ export class SearchSummonerService {
 
   private summonerInfo!: SummonerInfo;
 
-  private championKeys: any = [];
-
-  championMastery: any = [];
+  private championKeys: ChampionKeys[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -54,7 +54,7 @@ export class SearchSummonerService {
       .get(this.championsURL)
       .pipe(
         map((value: any) => {
-          let championsData: any = Object.values(value.data);
+          const championsData: any = Object.values(value.data);
           for (let champion of championsData) {
             this.championKeys.push({
               name: champion.name,
@@ -68,6 +68,7 @@ export class SearchSummonerService {
   }
 
   getChampionMasteries(summonerID: string) {
+    const championMastery: ChampionMastery[] = [];
     return this.http
       .get(
         `${this.championMasteriesURL}${summonerID}?api_key=${apiEnvironment.key}`
@@ -78,15 +79,15 @@ export class SearchSummonerService {
             let champObj = this.championKeys.find(
               (val: any) => val.key == data[i].championId
             );
-            this.championMastery.push({
+            championMastery.push({
               championId: data[i].championId,
               championPoints: data[i].championPoints,
               championLevel: data[i].championLevel,
-              championName: champObj.name,
-              championImgURL: `${this.championIconURL}${champObj.id}_0.jpg`,
+              championName: champObj?.name,
+              championImgURL: `${this.championIconURL}${champObj?.id}_0.jpg`,
             });
           }
-          return this.championMastery;
+          return championMastery;
         })
       );
   }
