@@ -15,7 +15,6 @@ export class ChampionDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private championDetailsService: ChampionDetailsService
   ) {}
 
@@ -28,9 +27,7 @@ export class ChampionDetailsComponent implements OnInit {
       this.currentId = params['id'];
       this.championDetailsService
         .getSingleChampion(params['id'])
-        .subscribe(
-          (champion) => ((this.champion = champion), console.log(this.champion))
-        );
+        .subscribe((champion) => (this.champion = champion));
     });
   }
 }
