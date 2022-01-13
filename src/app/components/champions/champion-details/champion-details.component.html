@@ -1,41 +1,22 @@
-<div
-  *ngIf="champion"
-  [ngStyle]="{ backgroundImage: 'url(' + champion.imageURL + ')' }"
-  class="container"
->
-  <div class="champion-description">
-    <h2>{{ champion.name }}</h2>
-    <h3>{{ champion.title }}</h3>
-  </div>
+<div *ngIf="champion" class="container">
+  <img class="champion-image" [src]="champion.imageURL" alt="champion-image" />
+  <section class="champion-details">
+    <div class="champion-name">
+      <h1>{{ champion.name }}</h1>
+      <h2>{{ champion.title }}</h2>
+    </div>
 
-  <section class="champion-container">
+    <div class="champion-role stats">
+      <h3>ROLE</h3>
+      <h4>{{ champion.tags[0] }}</h4>
+      <h4>{{ champion.tags[1] }}</h4>
+    </div>
+    <div class="champion-difficulty stats">
+      <h3>DIFFICULTY</h3>
+      <h4>{{ champion.difficulty }} <span>/</span> 10</h4>
+    </div>
     <article class="champion-lore">
-      <h4>Lore</h4>
-      <p>{{ champion.lore }}</p>
-    </article>
-    <article class="ally champion-tips">
-      <h4>Ally Tips</h4>
-      <p *ngFor="let tip of champion.allyTips; let i = index">
-        {{ i + 1 }}) {{ tip }}
-      </p>
-    </article>
-    <article class="enemy champion-tips">
-      <h4>Enemy Tips</h4>
-      <p *ngFor="let tip of champion.enemyTips; let i = index">
-        {{ i + 1 }}) {{ tip }}
-      </p>
+      {{ champion.lore }}
     </article>
   </section>
-  <div class="arrows">
-    <i
-      *ngIf="!(champion.id === 'Aatrox')"
-      (click)="previousChampion(champion.id)"
-      class="fas fa-arrow-left"
-    ></i>
-    <i
-      *ngIf="!(champion.id === 'Zyra')"
-      (click)="nextChampion(champion.id)"
-      class="fas fa-arrow-right"
-    ></i>
-  </div>
 </div>

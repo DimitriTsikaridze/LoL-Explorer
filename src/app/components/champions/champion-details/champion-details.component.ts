@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ChampionDetails } from './models/champion-details';
 import { ChampionDetailsService } from './services/champion-details.service';
 
@@ -15,7 +15,6 @@ export class ChampionDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private championDetailsService: ChampionDetailsService
   ) {}
 
@@ -24,35 +23,11 @@ export class ChampionDetailsComponent implements OnInit {
       .getChampionNames()
       .subscribe((data) => (this.championNames = data));
 
-    this.route.params.subscribe((params) => {
+    this.route.params.subscribe((params: Params) => {
       this.currentId = params['id'];
       this.championDetailsService
         .getSingleChampion(params['id'])
         .subscribe((champion) => (this.champion = champion));
     });
-  }
-
-  @HostListener('document:keyup', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.key === 'ArrowRight') {
-      this.nextChampion(this.currentId);
-    }
-    if (event.key === 'ArrowLeft') {
-      this.previousChampion(this.currentId);
-    }
-  }
-
-  previousChampion(id: string) {
-    this.router.navigate([
-      '/champions',
-      this.championNames[this.championNames.indexOf(id) - 1],
-    ]);
-  }
-
-  nextChampion(id: string) {
-    this.router.navigate([
-      '/champions',
-      this.championNames[this.championNames.indexOf(id) + 1],
-    ]);
   }
 }
