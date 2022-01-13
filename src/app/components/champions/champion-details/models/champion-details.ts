@@ -8,4 +8,5 @@ export interface ChampionDetails {
   enemyTips: string;
   tags: string[];
   imageURL: string;
+  difficulty: number;
 }
