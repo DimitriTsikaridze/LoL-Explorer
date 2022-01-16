@@ -16,11 +16,9 @@ export class ChampionsComponent implements OnInit {
     if (this.championsService.champions.length) {
       this.champions = this.championsService.champions;
     } else {
-      this.championsService
-        .getChampions('splash')
-        .subscribe((championsData) => {
-          this.champions = championsData;
-        });
+      this.championsService.getChampions().subscribe((championsData) => {
+        this.champions = championsData;
+      });
     }
   }
 }
