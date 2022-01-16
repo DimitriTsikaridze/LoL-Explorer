@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { apiEnvironment } from '../../../../environments/environment.api';
+import { RiotApiService } from '../../../riot-api.service';
 import { ChampionKeys } from '../models/champion-keys';
 import { ChampionMastery } from '../models/champion-mastery';
 import { SummonerInfo } from '../models/summoner-info';
@@ -10,29 +11,16 @@ import { SummonerInfo } from '../models/summoner-info';
   providedIn: 'root',
 })
 export class SearchSummonerService {
-  private championMasteriesURL = `https://eun1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/`;
-
-  private championsURL =
-    'https://ddragon.leagueoflegends.com/cdn/12.1.1/data/en_US/champion.json';
-
-  private summonerURL =
-    'https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
-
-  private profileIconURL =
-    'https://ddragon.leagueoflegends.com/cdn/12.1.1/img/profileicon/';
-  private championIconURL =
-    'https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/';
-
   private summonerInfo!: SummonerInfo;
 
   private championKeys: ChampionKeys[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private riotAPI: RiotApiService) {}
 
   getSummonerInfo(name: string) {
     return this.http
       .get<SummonerInfo>(
-        `${this.summonerURL}${name}?api_key=${apiEnvironment.key}`
+        `${this.riotAPI.summonerURL}${name}?api_key=${apiEnvironment.key}`
       )
       .pipe(
         map((value: SummonerInfo) => {
@@ -42,7 +30,7 @@ export class SearchSummonerService {
             id: id,
             profileIconId: profileIconId,
             summonerLevel: summonerLevel,
-            summonerProfileURL: `${this.profileIconURL}${profileIconId}.png`,
+            summonerProfileURL: `${this.riotAPI.profileIconURL}${profileIconId}.png`,
           };
           return this.summonerInfo;
         })
@@ -51,7 +39,7 @@ export class SearchSummonerService {
 
   getChampionKeys() {
     return this.http
-      .get(this.championsURL)
+      .get(this.riotAPI.championsURL)
       .pipe(
         map((value: any) => {
           const championsData: any = Object.values(value.data);
@@ -71,7 +59,7 @@ export class SearchSummonerService {
     const championMastery: ChampionMastery[] = [];
     return this.http
       .get(
-        `${this.championMasteriesURL}${summonerID}?api_key=${apiEnvironment.key}`
+        `${this.riotAPI.championMasteriesURL}${summonerID}?api_key=${apiEnvironment.key}`
       )
       .pipe(
         map((data: any) => {
@@ -84,7 +72,7 @@ export class SearchSummonerService {
               championPoints: data[i].championPoints,
               championLevel: data[i].championLevel,
               championName: champObj?.name,
-              championImgURL: `${this.championIconURL}${champObj?.id}_0.jpg`,
+              championImgURL: `${this.riotAPI.championIconURL}${champObj?.id}_0.jpg`,
             });
           }
           return championMastery;
