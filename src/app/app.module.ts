@@ -18,10 +18,10 @@ import { SingleChampionComponent } from './components/champions/single-champion/
 import { ChampionDetailsComponent } from './components/champions/champion-details/champion-details.component';
 import { ErrorComponent } from './components/error/error.component';
 import { TitleComponent } from './components/title/title.component';
-import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const components = [
   HeaderComponent,
@@ -47,12 +47,16 @@ const modules = [
   MatSidenavModule,
   MatIconModule,
   MatListModule,
-  LayoutModule,
 ];
 
 @NgModule({
   declarations: [AppComponent, ...components],
-  imports: [BrowserModule, BrowserAnimationsModule, ...modules],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule,
+    ...modules,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
