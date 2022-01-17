@@ -1,6 +1,8 @@
+@import "../../../styles/palette.scss";
+
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
@@ -10,6 +12,32 @@ h1 {
 }
 .container {
   margin: 0 2rem 2rem 2rem;
+}
+
+::ng-deep {
+  .pagination {
+    &-previous,
+    &-next {
+      display: none !important;
+    }
+
+    .ngx-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      a:hover {
+        border-radius: 50%;
+      }
+      .current {
+        background-color: $red;
+        border-radius: 50%;
+      }
+    }
+
+    .ng-star-inserted {
+      font-size: 20px;
+    }
+  }
 }
 
 @media only screen and (max-width: 570px) {
