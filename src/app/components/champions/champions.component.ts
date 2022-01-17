@@ -9,6 +9,7 @@ import { ChampionsService } from './services/champions.service';
 })
 export class ChampionsComponent implements OnInit {
   champions!: Champion[];
+  p: number = 1;
 
   constructor(private championsService: ChampionsService) {}
 
