@@ -72,7 +72,7 @@ export class SearchSummonerService {
               championPoints: data[i].championPoints,
               championLevel: data[i].championLevel,
               championName: champObj?.name,
-              championImgURL: `${this.riotAPI.championIconURL}${champObj?.id}_0.jpg`,
+              championImgURL: `${this.riotAPI.championIconURL}tiles/${champObj?.id}_0.jpg`,
             });
           }
           return championMastery;
