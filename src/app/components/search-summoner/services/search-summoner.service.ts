@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { apiEnvironment } from '../../../../environments/environment.api';
-import { RiotApiService } from '../../../riot-api.service';
+import { RiotApiService } from '../../../shared/riot-api.service';
 import { ChampionKeys } from '../models/champion-keys';
 import { ChampionMastery } from '../models/champion-mastery';
 import { SummonerInfo } from '../models/summoner-info';
