@@ -25,7 +25,7 @@
     <div class="champion-overview" *ngFor="let champion of championMasteries">
       <img
         class="champion-icon"
-        (click)="navigateToChampionDetails(champion.championName!)"
+        (click)="navigateToChampionDetails(champion.championIdName!)"
         [src]="champion.championImgURL"
         alt="champion-icon"
       />
