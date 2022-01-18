@@ -67,12 +67,14 @@ export class SearchSummonerService {
             let champObj = this.championKeys.find(
               (val: any) => val.key == data[i].championId
             );
+            console.log(champObj);
             championMastery.push({
               championId: data[i].championId,
               championPoints: data[i].championPoints,
               championLevel: data[i].championLevel,
               championName: champObj?.name,
               championImgURL: `${this.riotAPI.championIconURL}tiles/${champObj?.id}_0.jpg`,
+              championIdName: champObj?.id!,
             });
           }
           return championMastery;
