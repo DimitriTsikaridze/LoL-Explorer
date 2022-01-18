@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { ChampionDetails } from '../models/champion-details';
-import { RiotApiService } from '../../../../riot-api.service';
+import { RiotApiService } from '../../../../shared/riot-api.service';
 
 @Injectable({
   providedIn: 'root',

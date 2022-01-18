@@ -5,8 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,11 +15,7 @@ import { ChampionsComponent } from './components/champions/champions.component';
 import { SingleChampionComponent } from './components/champions/single-champion/single-champion.component';
 import { ChampionDetailsComponent } from './components/champions/champion-details/champion-details.component';
 import { ErrorComponent } from './components/error/error.component';
-import { TitleComponent } from './components/title/title.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatListModule } from '@angular/material/list';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { SharedModule } from './shared/shared.module';
 
 const components = [
   HeaderComponent,
@@ -32,7 +26,6 @@ const components = [
   SingleChampionComponent,
   ChampionDetailsComponent,
   ErrorComponent,
-  TitleComponent,
 ];
 
 const modules = [
@@ -40,23 +33,12 @@ const modules = [
   ReactiveFormsModule,
   RouterModule,
   AppRoutingModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatButtonModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatListModule,
+  SharedModule,
 ];
 
 @NgModule({
   declarations: [AppComponent, ...components],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    NgxPaginationModule,
-    ...modules,
-  ],
+  imports: [BrowserModule, BrowserAnimationsModule, ...modules],
   providers: [],
   bootstrap: [AppComponent],
 })
