@@ -10,7 +10,7 @@ import { ChampionDetailsService } from './services/champion-details.service';
 })
 export class ChampionDetailsComponent implements OnInit {
   champion!: ChampionDetails;
-  championNames: string[] = [];
+  championNames!: string[];
   currentId!: string;
 
   constructor(
