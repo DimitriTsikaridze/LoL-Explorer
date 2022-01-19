@@ -67,7 +67,6 @@ export class SearchSummonerService {
             let champObj = this.championKeys.find(
               (val: any) => val.key == data[i].championId
             );
-            console.log(champObj);
             championMastery.push({
               championId: data[i].championId,
               championPoints: data[i].championPoints,
