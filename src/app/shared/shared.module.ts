@@ -20,12 +20,11 @@ const modules = [
   MatIconModule,
   MatListModule,
   NgxPaginationModule,
-  ReactiveFormsModule,
 ];
 
 @NgModule({
   declarations: [components],
-  imports: [CommonModule, modules],
+  imports: [CommonModule, ReactiveFormsModule],
   exports: [components, modules],
 })
 export class SharedModule {}
