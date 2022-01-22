@@ -16,7 +16,7 @@ export class SearchSummonerComponent implements OnInit {
     private router: Router
   ) {}
 
-  summonerName: FormControl = new FormControl('AlphaFrog');
+  summonerName: FormControl = new FormControl();
 
   summonerInfo!: SummonerInfo;
   championMasteries!: ChampionMastery[];
