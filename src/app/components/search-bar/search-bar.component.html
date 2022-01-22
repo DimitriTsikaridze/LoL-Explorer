@@ -1,4 +1,4 @@
-<div class="search-bar">
+<div [ngStyle]="{ 'max-width.px': maxWidth }" class="search-bar">
   <input
     [formControl]="valueControl"
     spellcheck="false"

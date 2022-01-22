@@ -15,6 +15,7 @@ import { FormControl } from '@angular/forms';
 })
 export class SearchBarComponent {
   @Input() valueControl!: FormControl;
+  @Input() maxWidth!: number;
 
   @Output() clickEvent = new EventEmitter();
 
