@@ -7,8 +7,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SearchBarComponent } from '../components/search-bar/search-bar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
-const components = [TitleComponent];
+const components = [TitleComponent, SearchBarComponent];
 
 const modules = [
   MatSidenavModule,
@@ -18,11 +20,12 @@ const modules = [
   MatIconModule,
   MatListModule,
   NgxPaginationModule,
+  ReactiveFormsModule,
 ];
 
 @NgModule({
   declarations: [components],
-  imports: [CommonModule],
+  imports: [CommonModule, modules],
   exports: [components, modules],
 })
 export class SharedModule {}
