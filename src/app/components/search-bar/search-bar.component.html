@@ -1,4 +1,9 @@
 <div class="search-bar">
-  <input spellcheck="false" type="text" placeholder="Summoner Name" />
+  <input
+    [formControl]="valueControl"
+    spellcheck="false"
+    type="text"
+    placeholder="Summoner Name"
+  />
   <i (click)="onClick()" class="fas fa-search"></i>
 </div>
