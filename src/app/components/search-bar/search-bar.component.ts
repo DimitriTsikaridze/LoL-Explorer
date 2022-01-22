@@ -2,9 +2,10 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
-  OnInit,
+  Input,
   Output,
 } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search-bar',
@@ -13,6 +14,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchBarComponent {
+  @Input() valueControl!: FormControl;
+
   @Output() clickEvent = new EventEmitter();
 
   onClick() {

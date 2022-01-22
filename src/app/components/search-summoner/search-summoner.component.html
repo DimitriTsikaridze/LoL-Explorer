@@ -1,6 +1,9 @@
 <section>
   <app-title title="Search Summoner"></app-title>
-  <app-search-bar (clickEvent)="onGetSummoner()"></app-search-bar>
+  <app-search-bar
+    [valueControl]="summonerName"
+    (clickEvent)="onGetSummoner()"
+  ></app-search-bar>
 
   <div *ngIf="summonerInfo" class="summoner-profile">
     <div class="profile-icon">
