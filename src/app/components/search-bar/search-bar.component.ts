@@ -14,7 +14,7 @@ import { FormControl } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchBarComponent {
-  @Input() valueControl!: FormControl;
+  @Input() valueControl = new FormControl();
   @Input() maxWidth: number = 540;
   @Input() placeHolder = 'Default Text';
 
