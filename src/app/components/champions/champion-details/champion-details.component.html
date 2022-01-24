@@ -1,4 +1,10 @@
 <div *ngIf="champion" class="container">
+  <img
+    src="../../../../assets/components/champions/back-arrow.svg"
+    class="back-arrow"
+    alt="arrow"
+    (click)="onBack()"
+  />
   <img class="champion-image" [src]="champion.imageURL" alt="champion-image" />
   <section class="champion-details">
     <div class="champion-name">

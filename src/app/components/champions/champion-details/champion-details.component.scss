@@ -1,5 +1,9 @@
 @import "../../../../styles/palette.scss";
 
+.container {
+  position: relative;
+}
+
 .champion-image {
   position: absolute;
   width: 100%;
@@ -10,9 +14,17 @@
   border-bottom-right-radius: 80px;
 }
 
+.back-arrow {
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  left: 10vw;
+  cursor: pointer;
+}
+
 .champion-details {
   position: absolute;
-  top: 500px;
+  top: 440px;
   background-color: $dark-blue;
   margin: 0 10vw;
   color: white;
@@ -83,6 +95,10 @@
 }
 
 @media only screen and (max-width: 1200px) {
+  .back-arrow {
+    left: 50px;
+  }
+
   .champion-details {
     margin: 50px;
     padding: 30px;
@@ -99,6 +115,9 @@
 }
 
 @media only screen and (max-width: 700px) {
+  .back-arrow {
+    left: 20px;
+  }
   .champion-name {
     left: 50%;
     transform: translateX(-50%);
