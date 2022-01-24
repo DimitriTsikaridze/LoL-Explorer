@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { Champion } from '../models/champion-response';
 
@@ -8,10 +13,13 @@ import { Champion } from '../models/champion-response';
   styleUrls: ['./single-champion.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SingleChampionComponent {
+export class SingleChampionComponent implements OnInit {
   @Input() champion!: Champion;
+  @Input() index!: number;
 
   constructor(private router: Router) {}
+
+  ngOnInit(): void {}
 
   onChampionClick(championID: string) {
     this.router.navigate(['/champions', championID]);
