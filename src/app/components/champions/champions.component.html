@@ -6,10 +6,14 @@
 <div class="container">
   <div
     *ngFor="
-      let champion of champions | paginate: { itemsPerPage: 6, currentPage: p }
+      let champion of champions | paginate: { itemsPerPage: 6, currentPage: p };
+      let i = index
     "
   >
-    <app-single-champion [champion]="champion"></app-single-champion>
+    <app-single-champion
+      [index]="i"
+      [champion]="champion"
+    ></app-single-champion>
   </div>
 </div>
 <pagination-controls

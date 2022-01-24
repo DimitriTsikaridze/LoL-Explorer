@@ -16,9 +16,12 @@
     border-radius: 16px;
     overflow: hidden;
     transition: 0.2s;
+    animation-name: fadeInDown;
+    // animation-duration: 3000ms;
 
     img {
       transition: 0.3s;
+      object-fit: contain;
     }
   }
 }

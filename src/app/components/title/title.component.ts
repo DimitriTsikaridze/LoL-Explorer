@@ -4,7 +4,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   selector: 'app-title',
   template: `
     <div>
-      <h1>{{ title }}</h1>
+      <h1 class="animate__animated animate__fadeInDown">{{ title }}</h1>
     </div>
   `,
   styleUrls: ['./title.component.scss'],

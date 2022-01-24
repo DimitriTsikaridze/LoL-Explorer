@@ -1,18 +1,20 @@
-<section class="champion-card">
-  <div (click)="onChampionClick(champion.id)" class="top-content">
-    <img [src]="champion.imageURL" alt="champion-image" />
-    <div class="details">
-      <div class="champion-details">
-        <h4>{{ champion.name }}</h4>
-        <h5>{{ champion.title }}</h5>
-      </div>
-      <div class="tags">
-        <h6>{{ champion.tags[0] | uppercase }}</h6>
-        <h6 *ngIf="champion.tags[1]">{{ champion.tags[1] | uppercase }}</h6>
+<div class="container animate__animated animate__fadeIn">
+  <section class="champion-card">
+    <div (click)="onChampionClick(champion.id)" class="top-content">
+      <img [src]="champion.imageURL" alt="champion-image" />
+      <div class="details">
+        <div class="champion-details">
+          <h4>{{ champion.name }}</h4>
+          <h5>{{ champion.title }}</h5>
+        </div>
+        <div class="tags">
+          <h6>{{ champion.tags[0] | uppercase }}</h6>
+          <h6 *ngIf="champion.tags[1]">{{ champion.tags[1] | uppercase }}</h6>
+        </div>
       </div>
     </div>
-  </div>
-  <article>
-    <p>{{ champion.blurb }}</p>
-  </article>
-</section>
+    <article>
+      <p>{{ champion.blurb }}</p>
+    </article>
+  </section>
+</div>
