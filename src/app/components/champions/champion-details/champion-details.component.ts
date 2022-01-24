@@ -31,6 +31,11 @@ export class ChampionDetailsComponent implements OnInit {
         .subscribe((champion) => (this.champion = champion));
     });
   }
+
+  onBack() {
+    this.router.navigate(['/champions']);
+  }
+
   @HostListener('document:keyup', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key === 'ArrowRight') {
