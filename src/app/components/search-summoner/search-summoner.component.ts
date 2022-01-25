@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ChampionMastery } from './models/champion-mastery';
@@ -10,7 +10,7 @@ import { SearchSummonerService } from './services/search-summoner.service';
   templateUrl: './search-summoner.component.html',
   styleUrls: ['./search-summoner.component.scss'],
 })
-export class SearchSummonerComponent implements OnInit {
+export class SearchSummonerComponent {
   constructor(
     private searchSummonerService: SearchSummonerService,
     private router: Router
@@ -18,12 +18,12 @@ export class SearchSummonerComponent implements OnInit {
 
   summonerName: FormControl = new FormControl();
 
-  summonerInfo!: SummonerInfo;
-  championMasteries!: ChampionMastery[];
-
-  ngOnInit(): void {}
+  summonerInfo!: SummonerInfo | null;
+  championMasteries!: ChampionMastery[] | null;
 
   onGetSummoner() {
+    this.summonerInfo = null;
+    this.championMasteries = null;
     this.searchSummonerService
       .getSummonerInfo(this.summonerName.value)
       .subscribe((data) => {

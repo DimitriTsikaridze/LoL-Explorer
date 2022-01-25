@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { fromEvent } from 'rxjs';
 import { ChampionDetails } from './models/champion-details';
 import { ChampionDetailsService } from './services/champion-details.service';
 
@@ -9,7 +10,7 @@ import { ChampionDetailsService } from './services/champion-details.service';
   styleUrls: ['./champion-details.component.scss'],
 })
 export class ChampionDetailsComponent implements OnInit {
-  champion!: ChampionDetails;
+  champion!: ChampionDetails | null;
   championNames!: string[];
   currentId!: string;
 
@@ -39,24 +40,24 @@ export class ChampionDetailsComponent implements OnInit {
   @HostListener('document:keyup', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key === 'ArrowRight') {
+      this.champion = null;
       this.nextChampion(this.currentId);
     }
     if (event.key === 'ArrowLeft') {
+      this.champion = null;
       this.previousChampion(this.currentId);
     }
   }
 
   previousChampion(id: string) {
-    this.router.navigate([
-      '/champions',
-      this.championNames[this.championNames.indexOf(id) - 1],
-    ]);
+    let currentChampion =
+      this.championNames[this.championNames.indexOf(id) - 1];
+    this.router.navigate(['/champions', currentChampion]);
   }
 
   nextChampion(id: string) {
-    this.router.navigate([
-      '/champions',
-      this.championNames[this.championNames.indexOf(id) + 1],
-    ]);
+    let currentChampion =
+      this.championNames[this.championNames.indexOf(id) + 1];
+    this.router.navigate(['/champions', currentChampion]);
   }
 }
