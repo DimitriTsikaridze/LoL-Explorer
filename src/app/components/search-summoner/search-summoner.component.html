@@ -17,9 +17,12 @@
     <h2>{{ summonerInfo.name }}</h2>
   </div>
 
-  <app-title title="HIGHEST MASTERY CHAMPIONS"></app-title>
+  <app-title *ngIf="summonerInfo" title="HIGHEST MASTERY CHAMPIONS"></app-title>
   <div *ngIf="championMasteries" class="container">
-    <div class="champion-overview" *ngFor="let champion of championMasteries">
+    <div
+      class="champion-overview animate__animated animate__fadeIn"
+      *ngFor="let champion of championMasteries"
+    >
       <img
         class="champion-icon"
         (click)="navigateToChampionDetails(champion.championIdName!)"

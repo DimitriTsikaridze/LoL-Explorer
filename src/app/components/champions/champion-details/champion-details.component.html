@@ -5,8 +5,12 @@
     alt="arrow"
     (click)="onBack()"
   />
-  <img class="champion-image" [src]="champion.imageURL" alt="champion-image" />
-  <section class="champion-details">
+  <img
+    class="champion-image animate__animated animate__fadeIn"
+    [src]="champion.imageURL"
+    alt="champion-image"
+  />
+  <section class="champion-details animate__animated animate__fadeInUp">
     <div class="champion-name">
       <h1>{{ champion.name }}</h1>
       <h2>{{ champion.title }}</h2>
