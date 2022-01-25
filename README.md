@@ -16,7 +16,7 @@ Clone repository, go to [Riot Developer Portal](https://developer.riotgames.com/
 
 ```js
 export const apiEnvironment = {
-  API_KEY: "YOUR_API_KEY",
+  key: "YOUR_API_KEY",
 };
 ```
 
