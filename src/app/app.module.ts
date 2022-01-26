@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { DocumentationComponent } from './components/documentation/documentation.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchSummonerComponent } from './components/search-summoner/search-summoner.component';
 import { ChampionsComponent } from './components/champions/champions.component';
@@ -18,7 +17,6 @@ import { SharedModule } from './shared/shared.module';
 
 const components = [
   HeaderComponent,
-  DocumentationComponent,
   SearchSummonerComponent,
   HomeComponent,
   ChampionsComponent,
