@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { fromEvent } from 'rxjs';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { ChampionDetails } from './models/champion-details';
 import { ChampionDetailsService } from './services/champion-details.service';
 
@@ -13,6 +13,8 @@ export class ChampionDetailsComponent implements OnInit {
   champion!: ChampionDetails | null;
   championNames!: string[];
   currentId!: string;
+  leftArrow = faArrowLeft;
+  rightArrow = faArrowRight;
 
   constructor(
     private route: ActivatedRoute,
@@ -40,22 +42,22 @@ export class ChampionDetailsComponent implements OnInit {
   @HostListener('document:keyup', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key === 'ArrowRight') {
-      this.champion = null;
       this.nextChampion(this.currentId);
     }
     if (event.key === 'ArrowLeft') {
-      this.champion = null;
       this.previousChampion(this.currentId);
     }
   }
 
   previousChampion(id: string) {
+    this.champion = null;
     let currentChampion =
       this.championNames[this.championNames.indexOf(id) - 1];
     this.router.navigate(['/champions', currentChampion]);
   }
 
   nextChampion(id: string) {
+    this.champion = null;
     let currentChampion =
       this.championNames[this.championNames.indexOf(id) + 1];
     this.router.navigate(['/champions', currentChampion]);
