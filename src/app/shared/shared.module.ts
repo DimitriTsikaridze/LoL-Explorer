@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchBarComponent } from '../components/search-bar/search-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const components = [TitleComponent, SearchBarComponent];
 
@@ -20,11 +21,12 @@ const modules = [
   MatIconModule,
   MatListModule,
   NgxPaginationModule,
+  FontAwesomeModule,
 ];
 
 @NgModule({
   declarations: [components],
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule],
   exports: [components, modules],
 })
 export class SharedModule {}
