@@ -1,32 +1,46 @@
-<div *ngIf="champion" class="container">
-  <img
-    src="../../../../assets/components/champions/back-arrow.svg"
-    class="back-arrow"
-    alt="arrow"
-    (click)="onBack()"
-  />
-  <img
-    class="champion-image animate__animated animate__fadeInDown"
-    [src]="champion.imageURL"
-    alt="champion-image"
-  />
-  <section class="champion-details animate__animated animate__fadeInUp">
-    <div class="champion-name">
-      <h1>{{ champion.name }}</h1>
-      <h2>{{ champion.title }}</h2>
-    </div>
+<div *ngIf="champion" class="wrapper">
+  <fa-icon
+    (click)="previousChampion(champion.id)"
+    class="left-arrow"
+    [icon]="leftArrow"
+  ></fa-icon>
+  <fa-icon
+    (click)="nextChampion(champion.id)"
+    class="right-arrow"
+    [icon]="rightArrow"
+  ></fa-icon>
 
-    <div class="champion-role stats">
-      <h3>ROLE</h3>
-      <h4>{{ champion.tags[0] }}</h4>
-      <h4>{{ champion.tags[1] }}</h4>
-    </div>
-    <div class="champion-difficulty stats">
-      <h3>DIFFICULTY</h3>
-      <h4>{{ champion.difficulty }} <span>/</span> 10</h4>
-    </div>
-    <article class="champion-lore">
-      {{ champion.lore }}
-    </article>
-  </section>
+  <div class="container">
+    <img
+      src="../../../../assets/components/champions/back-arrow.svg"
+      class="back-arrow"
+      alt="arrow"
+      (click)="onBack()"
+    />
+    <img
+      class="champion-image animate__animated animate__fadeInDown"
+      [src]="champion.imageURL"
+      alt="champion-image"
+    />
+
+    <section class="champion-details animate__animated animate__fadeInUp">
+      <div class="champion-name">
+        <h1>{{ champion.name }}</h1>
+        <h2>{{ champion.title }}</h2>
+      </div>
+
+      <div class="champion-role stats">
+        <h3>ROLE</h3>
+        <h4>{{ champion.tags[0] }}</h4>
+        <h4>{{ champion.tags[1] }}</h4>
+      </div>
+      <div class="champion-difficulty stats">
+        <h3>DIFFICULTY</h3>
+        <h4>{{ champion.difficulty }} <span>/</span> 10</h4>
+      </div>
+      <article class="champion-lore">
+        {{ champion.lore }}
+      </article>
+    </section>
+  </div>
 </div>

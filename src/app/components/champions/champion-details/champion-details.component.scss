@@ -4,6 +4,24 @@
   position: relative;
 }
 
+.left-arrow,
+.right-arrow {
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.left-arrow {
+  left: 50px;
+}
+.right-arrow {
+  right: 50px;
+}
+
 .champion-image {
   position: absolute;
   width: 100%;
