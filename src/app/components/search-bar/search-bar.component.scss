@@ -21,7 +21,7 @@
 
   fa-icon {
     transition: 0.2s;
-    cursor: pointer;
+    cursor: url("../../../assets/hover.png"), auto;
   }
   border: 2px solid $dark-blue;
 }
