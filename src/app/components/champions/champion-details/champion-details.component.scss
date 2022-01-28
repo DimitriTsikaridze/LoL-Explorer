@@ -11,7 +11,7 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  cursor: pointer;
+  cursor: url("../../../../assets/hover.png"), auto;
   font-size: 2rem;
 }
 
@@ -37,7 +37,7 @@
   z-index: 1;
   top: 30px;
   left: 10vw;
-  cursor: pointer;
+  cursor: url("../../../../assets/hover.png"), auto;
 }
 
 .champion-details {
