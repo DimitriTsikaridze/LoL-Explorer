@@ -25,12 +25,16 @@ h1 {
       display: flex;
       justify-content: center;
       gap: 5px;
+      a {
+        cursor: url("../../../assets/hover.png"), auto;
+      }
       a:hover {
         border-radius: 50%;
       }
       .current {
         background-color: $red;
         border-radius: 50%;
+        cursor: url("../../../assets/hover.png"), auto;
       }
     }
 
