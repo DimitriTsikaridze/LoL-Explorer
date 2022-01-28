@@ -14,6 +14,7 @@ import { SingleChampionComponent } from './components/champions/single-champion/
 import { ChampionDetailsComponent } from './components/champions/champion-details/champion-details.component';
 import { ErrorComponent } from './components/error/error.component';
 import { SharedModule } from './shared/shared.module';
+import { ChampionRotationsComponent } from './components/champion-rotations/champion-rotations.component';
 
 const components = [
   HeaderComponent,
@@ -23,6 +24,7 @@ const components = [
   SingleChampionComponent,
   ChampionDetailsComponent,
   ErrorComponent,
+  ChampionRotationsComponent,
 ];
 
 const modules = [
