@@ -41,10 +41,10 @@ export class ChampionDetailsComponent implements OnInit {
 
   @HostListener('document:keyup', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.key === 'ArrowRight') {
+    if (event.key === 'ArrowRight' && this.currentId != 'Zyra') {
       this.nextChampion(this.currentId);
     }
-    if (event.key === 'ArrowLeft') {
+    if (event.key === 'ArrowLeft' && this.currentId != 'Aatrox') {
       this.previousChampion(this.currentId);
     }
   }
