@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { RotationService } from './services/rotation.service';
 
 @Component({
@@ -10,9 +9,15 @@ import { RotationService } from './services/rotation.service';
 export class ChampionRotationsComponent implements OnInit {
   constructor(private champRotations: RotationService) {}
 
-  champion$!: Observable<any>;
+  champion!: any;
 
   ngOnInit(): void {
-    this.champion$ = this.champRotations.getFreeChampionIDs();
+    if (this.champRotations.freeChampion.length) {
+      this.champion = this.champRotations.freeChampion;
+    } else {
+      this.champRotations
+        .getFreeChampionIDs()
+        .subscribe((data) => (this.champion = data));
+    }
   }
 }
