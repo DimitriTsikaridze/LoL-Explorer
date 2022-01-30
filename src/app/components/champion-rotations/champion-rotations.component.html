@@ -1,7 +1,7 @@
 <app-title title="FREE CHAMPIONS"></app-title>
 
 <div class="container">
-  <ng-container *ngFor="let champion of champion$ | async">
+  <ng-container *ngFor="let champion of champion">
     <img [src]="champion.imageURL" alt="champion-img" />
   </ng-container>
 </div>
