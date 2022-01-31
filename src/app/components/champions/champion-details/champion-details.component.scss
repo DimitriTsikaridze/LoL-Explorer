@@ -112,9 +112,18 @@
   }
 }
 
+.skins {
+  position: relative;
+  top: 700px;
+}
+
 @media only screen and (max-width: 1200px) {
   .back-arrow {
     left: 50px;
+  }
+
+  .skins {
+    top: 800px;
   }
 
   .champion-details {
@@ -136,6 +145,17 @@
   .back-arrow {
     left: 20px;
   }
+
+  .left-arrow,
+  .right-arrow {
+    top: 300px;
+  }
+  .left-arrow {
+    left: 10px;
+  }
+  .right-arrow {
+    right: 10px;
+  }
   .champion-name {
     left: 50%;
     transform: translateX(-50%);
@@ -145,10 +165,13 @@
     object-position: center;
     border-radius: 0;
   }
+  .champion-details {
+    top: 250px;
+  }
 
   .champion-details {
     grid-template-columns: 1fr;
-    margin: 0 20px;
+    margin: 0 10px;
   }
 
   .champion-lore {

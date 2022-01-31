@@ -17,6 +17,7 @@ import { SharedModule } from './shared/shared.module';
 import { ChampionRotationsComponent } from './components/champion-rotations/champion-rotations.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SkinsComponent } from './components/champions/champion-details/skins/skins.component';
 
 const components = [
   HeaderComponent,
@@ -37,7 +38,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...components],
+  declarations: [AppComponent, ...components, SkinsComponent],
   imports: [BrowserModule, BrowserAnimationsModule, ...modules, ServiceWorkerModule.register('ngsw-worker.js', {
   enabled: environment.production,
   // Register the ServiceWorker as soon as the app is stable
