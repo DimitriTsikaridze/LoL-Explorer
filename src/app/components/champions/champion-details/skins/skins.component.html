@@ -1,1 +1,12 @@
 <app-title title="{{ champion.name }} Skins"></app-title>
+
+<div class="skins-container">
+  <ng-container *ngFor="let skin of skins">
+    <img
+      src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/{{
+        skin
+      }}"
+      alt="champion-skin"
+    />
+  </ng-container>
+</div>

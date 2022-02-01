@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ChampionDetails } from '../models/champion-details';
+import { SkinServiceService } from './skin-service.service';
 
 @Component({
   selector: 'app-skins',
@@ -8,8 +9,13 @@ import { ChampionDetails } from '../models/champion-details';
 })
 export class SkinsComponent implements OnInit {
   @Input() champion!: ChampionDetails;
+  skins: string[] = [];
 
-  constructor() {}
+  constructor(private skinService: SkinServiceService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.skinService.getSkins(this.champion.key).subscribe((data) => {
+      this.skins = data;
+    });
+  }
 }
