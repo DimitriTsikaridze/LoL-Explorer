@@ -1,0 +1,24 @@
+.skins-container {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+img {
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, rgb(0 0 0 / 23%) 0px 6px 6px;
+  cursor: url("../../../../../assets/hover.png"), auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .skins-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .skins-container {
+    grid-template-columns: 1fr;
+  }
+}
