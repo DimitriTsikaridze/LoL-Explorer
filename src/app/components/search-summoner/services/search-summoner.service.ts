@@ -23,9 +23,10 @@ export class SearchSummonerService {
       )
       .pipe(
         map((info: SummonerInfo) => {
-          const { id, summonerLevel, profileIconId } = info;
+          const { id, summonerLevel, profileIconId, name } = info;
           this.summonerInfo = {
             id: id,
+            name: name,
             summonerLevel: summonerLevel,
             profileIconId: profileIconId,
             championMasteries: [],
@@ -51,6 +52,7 @@ export class SearchSummonerService {
               championPoints: championPoints,
             });
           }
+
           return this.summonerInfo;
         })
       );
