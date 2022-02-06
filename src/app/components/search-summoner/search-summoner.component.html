@@ -26,8 +26,10 @@
   <app-title title="HIGHEST MASTERY CHAMPIONS"></app-title>
   <div class="container">
     <div
-      class="champion-overview animate__animated animate__fadeIn"
-      *ngFor="let champion of summonerInfo.championMasteries"
+      class="champion-overview champion-{{
+        i
+      }} animate__animated animate__fadeIn"
+      *ngFor="let champion of summonerInfo.championMasteries; let i = index"
       (click)="onChampionClick(champion.championName!)"
     >
       <img
@@ -36,6 +38,13 @@
           champion.championId
         }}/{{ champion.championId }}000.jpg"
         alt="champion-icon"
+      />
+      <img
+        class="mastery"
+        src="https://raw.communitydragon.org/latest/game/assets/ux/mastery/mastery_icon_{{
+          champion.championLevel
+        }}.png"
+        alt="champion-mastery"
       />
       <h4>{{ champion.championName }}</h4>
       <div class="stats">

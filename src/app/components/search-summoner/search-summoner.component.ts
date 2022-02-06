@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CdragonChampionsService } from '../../services/cdragon-champions.service';
@@ -10,7 +10,7 @@ import { SearchSummonerService } from './services/search-summoner.service';
   templateUrl: './search-summoner.component.html',
   styleUrls: ['./search-summoner.component.scss'],
 })
-export class SearchSummonerComponent {
+export class SearchSummonerComponent implements OnInit {
   constructor(
     private summonerService: SearchSummonerService,
     private cDragon: CdragonChampionsService,
@@ -19,6 +19,10 @@ export class SearchSummonerComponent {
 
   summonerName: FormControl = new FormControl('alphafrog');
   summonerInfo!: SummonerInfo;
+
+  ngOnInit(): void {
+    this.onGetSummoner();
+  }
 
   onGetSummoner() {
     this.summonerService
