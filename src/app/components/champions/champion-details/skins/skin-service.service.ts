@@ -14,6 +14,7 @@ export class SkinServiceService {
   constructor(private http: HttpClient) {}
 
   getSkins(id: string) {
+    this.skins.length = 0;
     return this.http.get(`${this.SKINS_URL}${id}.json`).pipe(
       map((data: any) => {
         data.skins.forEach((skin: any) => {

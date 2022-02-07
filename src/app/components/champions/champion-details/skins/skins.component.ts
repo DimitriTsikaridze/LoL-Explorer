@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ChampionDetails } from '../models/champion-details';
 import { SkinServiceService } from './skin-service.service';
 
@@ -9,13 +10,11 @@ import { SkinServiceService } from './skin-service.service';
 })
 export class SkinsComponent implements OnInit {
   @Input() champion!: ChampionDetails;
-  skins: string[] = [];
+  skins!: Observable<string[]>;
 
   constructor(private skinService: SkinServiceService) {}
 
   ngOnInit(): void {
-    this.skinService.getSkins(this.champion.key).subscribe((data) => {
-      this.skins = data;
-    });
+    this.skins = this.skinService.getSkins(this.champion.key);
   }
 }
