@@ -2,11 +2,14 @@
 
 <div class="skins-container">
   <ng-container *ngFor="let skin of skins | async">
-    <img
-      src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/{{
-        skin
-      }}"
-      alt="champion-skin"
-    />
+    <a [href]="skinURL" target="_blank">
+      <img
+        (click)="onNavigateToSkin(skin)"
+        src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/{{
+          skin
+        }}"
+        alt="champion-skin"
+      />
+    </a>
   </ng-container>
 </div>
