@@ -2,7 +2,9 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(400px, 1fr));
+  margin-inline: auto;
+  margin-inline: 1rem;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 1rem;
 }
@@ -10,10 +12,8 @@
 h1 {
   margin-top: 2rem;
 }
-.container {
-  margin: 0 2rem 2rem 2rem;
-}
 
+//pagination control styles
 ::ng-deep {
   .pagination {
     &-previous,
@@ -44,16 +44,15 @@ h1 {
   }
 }
 
-@media only screen and (max-width: 1330px) {
+@media only screen and (max-width: 1200px) {
   .container {
-    grid-template-columns: repeat(2, minmax(350px, 1fr));
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 650px) {
   .container {
     grid-template-columns: 1fr;
-    padding: 0;
-    margin: 1rem;
+    margin: 0;
   }
 }

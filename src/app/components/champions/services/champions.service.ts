@@ -24,7 +24,7 @@ export class ChampionsService {
             blurb: blurb,
             title: title,
             tags: tags,
-            imageURL: `${this.riotAPI.championIconURL}splash/${value.data[champion].id}_0.jpg`,
+            imageURL: `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-tiles/${value.data[champion].key}/${value.data[champion].key}000.jpg`,
           });
         }
         return this.champions;

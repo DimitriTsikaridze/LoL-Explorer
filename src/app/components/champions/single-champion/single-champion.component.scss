@@ -19,8 +19,10 @@
     animation-name: fadeInDown;
 
     img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
       transition: 0.3s;
-      object-fit: contain;
     }
   }
 }
@@ -64,15 +66,15 @@ article {
   border-top: 4px solid $red;
   background-color: $dark-blue;
   padding: 15px 10px;
+  // min-height: 100px;
   p {
-    min-height: 100px;
     color: white;
     font-size: 14px;
     line-height: 1.3em;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 750px) {
   .tags {
     flex-direction: column;
     text-align: center;
