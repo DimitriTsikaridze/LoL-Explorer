@@ -1,15 +1,16 @@
 <app-title title="{{ champion.name }} Skins"></app-title>
 
 <div class="skins-container">
-  <ng-container *ngFor="let skin of skins | async">
+  <div class="skin" *ngFor="let skin of skins | async">
+    <app-title [title]="skin.name"></app-title>
     <a [href]="skinURL" target="_blank">
       <img
         (click)="onNavigateToSkin(skin)"
         src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/{{
-          skin
+          skin.url
         }}"
         alt="champion-skin"
       />
     </a>
-  </ng-container>
+  </div>
 </div>

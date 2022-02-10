@@ -11,6 +11,11 @@ img {
   cursor: url("../../../../../assets/hover.png"), auto;
 }
 
+.skin {
+  display: flex;
+  flex-direction: column;
+}
+
 @media only screen and (max-width: 1200px) {
   .skins-container {
     grid-template-columns: 1fr 1fr;

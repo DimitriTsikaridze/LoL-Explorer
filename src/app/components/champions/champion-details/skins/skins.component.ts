@@ -10,7 +10,7 @@ import { SkinServiceService } from './skin-service.service';
 })
 export class SkinsComponent implements OnInit {
   @Input() champion!: ChampionDetails;
-  skins!: Observable<string[]>;
+  skins!: Observable<any[]>;
   skinURL: string = '';
 
   constructor(private skinService: SkinServiceService) {}
