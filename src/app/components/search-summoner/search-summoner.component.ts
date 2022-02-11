@@ -17,12 +17,10 @@ export class SearchSummonerComponent implements OnInit {
     private router: Router
   ) {}
 
-  summonerName: FormControl = new FormControl('alphafrog');
+  summonerName: FormControl = new FormControl('AlphaFrog');
   summonerInfo!: SummonerInfo;
 
-  ngOnInit(): void {
-    this.onGetSummoner();
-  }
+  ngOnInit(): void {}
 
   onGetSummoner() {
     this.summonerService
