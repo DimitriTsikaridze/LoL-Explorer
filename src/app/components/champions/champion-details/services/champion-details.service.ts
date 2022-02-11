@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
 import { ChampionDetails } from '../models/champion-details';
 import { RiotApiService } from '../../../../shared/riot-api.service';
 
@@ -34,6 +34,7 @@ export class ChampionDetailsService {
             tags: tags,
             imageURL: `${this.riotAPI.championIconURL}splash/${championID}_0.jpg`,
             difficulty: value.data[championID].info.difficulty,
+            skins: value.data[championID].skins,
           };
           return this.champion;
         })

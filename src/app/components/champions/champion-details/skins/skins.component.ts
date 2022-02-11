@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ChampionDetails } from '../models/champion-details';
-import { SkinServiceService } from './skin-service.service';
+import { ChampionDetails, Skin } from '../models/champion-details';
 
 @Component({
   selector: 'app-skins',
@@ -9,17 +7,27 @@ import { SkinServiceService } from './skin-service.service';
   styleUrls: ['./skins.component.scss'],
 })
 export class SkinsComponent implements OnInit {
-  @Input() champion!: ChampionDetails;
-  skins!: Observable<any[]>;
-  skinURL: string = '';
+  private SKIN_URL =
+    'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/';
 
-  constructor(private skinService: SkinServiceService) {}
+  @Input() champion!: ChampionDetails;
+  skins: Skin[] = [];
+
+  constructor() {}
 
   ngOnInit(): void {
-    this.skins = this.skinService.getSkins(this.champion.key);
+    this.getSkins(this.champion.key);
   }
 
-  onNavigateToSkin(id: any) {
-    this.skinURL = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/${id}`;
+  getSkins(key: string) {
+    for (let i = 1; i < this.champion.skins.length; i++) {
+      let { num, id, name } = this.champion.skins[i];
+      this.skins.push({
+        num: num,
+        id: id,
+        name: name,
+        url: `${this.SKIN_URL}${key}/${id}.jpg`,
+      });
+    }
   }
 }

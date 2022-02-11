@@ -9,4 +9,12 @@ export interface ChampionDetails {
   tags: string[];
   imageURL: string;
   difficulty: number;
+  skins: Skin[];
+}
+
+export interface Skin {
+  num: string;
+  id: string;
+  name: string;
+  url: string;
 }
