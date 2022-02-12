@@ -2,9 +2,8 @@
 
 .container {
   display: grid;
-  margin-inline: auto;
-  margin-inline: 1rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(300px, 450px));
+  justify-content: center;
   gap: 1rem;
   padding: 1rem;
 }
@@ -46,7 +45,7 @@ h1 {
 
 @media only screen and (max-width: 1200px) {
   .container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(300px, 450px));
   }
 }
 
