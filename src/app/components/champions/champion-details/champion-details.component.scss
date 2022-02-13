@@ -40,10 +40,14 @@
   cursor: url("../../../../assets/hover.png"), auto;
 }
 
-.champion-details {
+.section {
   position: absolute;
   top: 440px;
+}
+
+.champion-details {
   background-color: $dark-blue;
+  position: relative;
   margin: 0 10vw;
   color: white;
   border: 3px solid $red;
@@ -114,16 +118,11 @@
 
 .skins {
   position: relative;
-  top: 700px;
 }
 
 @media only screen and (max-width: 1200px) {
   .back-arrow {
     left: 50px;
-  }
-
-  .skins {
-    top: 800px;
   }
 
   .champion-details {
@@ -165,10 +164,6 @@
     object-position: center;
     border-radius: 0;
   }
-  .champion-details {
-    top: 250px;
-  }
-
   .champion-details {
     grid-template-columns: 1fr;
     margin: 0 10px;

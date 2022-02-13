@@ -25,27 +25,31 @@
       alt="champion-image"
     />
 
-    <section class="champion-details animate__animated animate__fadeInUp">
-      <div class="champion-name">
-        <h1>{{ champion.name }}</h1>
-        <h2>{{ champion.title }}</h2>
+    <section class="section animate__animated animate__fadeInUp">
+      <div class="champion-details">
+        <div class="champion-name">
+          <h1>{{ champion.name }}</h1>
+          <h2>{{ champion.title }}</h2>
+        </div>
+
+        <div class="champion-role stats">
+          <h3>ROLE</h3>
+          <h4>{{ champion.tags[0] }}</h4>
+          <h4>{{ champion.tags[1] }}</h4>
+        </div>
+        <div class="champion-difficulty stats">
+          <h3>DIFFICULTY</h3>
+          <h4>{{ champion.difficulty }} <span>/</span> 10</h4>
+        </div>
+        <article class="champion-lore">
+          {{ champion.lore }}
+        </article>
       </div>
 
-      <div class="champion-role stats">
-        <h3>ROLE</h3>
-        <h4>{{ champion.tags[0] }}</h4>
-        <h4>{{ champion.tags[1] }}</h4>
+      <app-title title="{{ champion.name }} Skins"></app-title>
+      <div class="skins">
+        <app-skins [champion]="champion"></app-skins>
       </div>
-      <div class="champion-difficulty stats">
-        <h3>DIFFICULTY</h3>
-        <h4>{{ champion.difficulty }} <span>/</span> 10</h4>
-      </div>
-      <article class="champion-lore">
-        {{ champion.lore }}
-      </article>
     </section>
-  </div>
-  <div class="skins">
-    <app-skins [champion]="champion"></app-skins>
   </div>
 </div>
