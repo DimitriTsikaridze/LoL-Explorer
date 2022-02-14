@@ -28,6 +28,7 @@ const components = [
   ChampionDetailsComponent,
   ErrorComponent,
   ChampionRotationsComponent,
+  SkinsComponent,
 ];
 
 const modules = [
@@ -38,13 +39,18 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...components, SkinsComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, ...modules, ServiceWorkerModule.register('ngsw-worker.js', {
-  enabled: environment.production,
-  // Register the ServiceWorker as soon as the app is stable
-  // or after 30 seconds (whichever comes first).
-  registrationStrategy: 'registerWhenStable:30000'
-})],
+  declarations: [AppComponent, ...components],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    ...modules,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

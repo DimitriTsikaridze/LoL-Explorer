@@ -5,10 +5,18 @@
   gap: 1rem;
 }
 
-img {
+.img-wrapper {
   border-radius: 5px;
+  overflow: hidden;
+}
+
+img {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: 0.2s;
   cursor: url("../../../assets/hover.png"), auto;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 @media only screen and (max-width: 900px) {
