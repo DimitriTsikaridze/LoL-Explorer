@@ -6,6 +6,8 @@
     (clickEvent)="onGetSummoner()"
   ></app-search-bar>
 </section>
+<app-title *ngIf="isError" title="Error"></app-title>
+
 <ng-container *ngIf="summonerInfo">
   <div class="summoner-profile">
     <div class="profile-icon">

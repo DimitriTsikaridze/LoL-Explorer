@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs';
+import { catchError, map, tap } from 'rxjs';
 import { apiEnvironment } from '../../../../environments/environment.api';
 import { ChampionMastery, SummonerInfo } from '../models/summoner-info';
 
@@ -32,6 +32,9 @@ export class SearchSummonerService {
             championMasteries: [],
           };
           return this.summonerInfo;
+        }),
+        catchError((error: HttpErrorResponse) => {
+          throw error;
         })
       );
   }
