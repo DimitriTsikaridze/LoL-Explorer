@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { catchError, map } from 'rxjs';
 import { apiEnvironment } from '../../../../environments/environment.api';
 
 @Injectable({
@@ -22,6 +22,9 @@ export class RotationService {
           });
         }
         return this.freeChampion;
+      }),
+      catchError((error: HttpErrorResponse) => {
+        throw error;
       })
     );
   }
