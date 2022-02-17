@@ -19,9 +19,6 @@
 .image {
   overflow: hidden;
   border-radius: 8px;
-  &:hover img {
-    transform: scale(1.1);
-  }
 }
 
 img {
