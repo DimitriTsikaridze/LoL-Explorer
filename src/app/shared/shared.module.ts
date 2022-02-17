@@ -10,6 +10,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchBarComponent } from '../components/search-bar/search-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ZoomInDirective } from '../directives/zoom-in.directive';
 
 const components = [TitleComponent, SearchBarComponent];
 
@@ -25,8 +26,8 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [components],
+  declarations: [components, ZoomInDirective],
   imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule],
-  exports: [components, modules],
+  exports: [components, modules, ZoomInDirective],
 })
 export class SharedModule {}

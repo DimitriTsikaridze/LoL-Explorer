@@ -5,7 +5,7 @@
 <div class="container">
   <ng-container *ngFor="let champion of champion">
     <div class="img-wrapper">
-      <img [src]="champion.imageURL" alt="champion-img" />
+      <img appZoomIn [src]="champion.imageURL" alt="champion-img" />
     </div>
   </ng-container>
 </div>
