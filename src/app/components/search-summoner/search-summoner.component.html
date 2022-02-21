@@ -3,7 +3,8 @@
   <app-search-bar
     placeHolder="Search Summoner"
     [valueControl]="summonerName"
-    (clickEvent)="onGetSummoner()"
+    appThrottleClick
+    (throttledClick)="onGetSummoner()"
   ></app-search-bar>
 </section>
 <app-title *ngIf="isError" title="API KEY HAS EXPIRED"></app-title>

@@ -11,6 +11,7 @@ import { SearchBarComponent } from '../components/search-bar/search-bar.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ZoomInDirective } from '../directives/zoom-in.directive';
+import { ThrottleClickDirective } from '../directives/throttle-click.directive';
 
 const components = [TitleComponent, SearchBarComponent];
 
@@ -25,9 +26,11 @@ const modules = [
   FontAwesomeModule,
 ];
 
+const directives = [ZoomInDirective, ThrottleClickDirective];
+
 @NgModule({
-  declarations: [components, ZoomInDirective],
+  declarations: [components, directives],
   imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule],
-  exports: [components, modules, ZoomInDirective],
+  exports: [components, modules, directives],
 })
 export class SharedModule {}
