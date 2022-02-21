@@ -75,4 +75,12 @@ article {
     flex-direction: column;
     text-align: center;
   }
+
+  .champion {
+    &-card {
+      img {
+        height: 230px;
+      }
+    }
+  }
 }

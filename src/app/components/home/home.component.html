@@ -1,21 +1,43 @@
 <app-title title="Home"></app-title>
 <div class="grid-container">
-  <img
-    routerLink="/champions"
-    class="grid-item animate__animated animate__slideInLeft"
-    src="../../../assets/components/home/champions.jpg"
-    alt="champion-details-image"
-  />
-  <img
-    routerLink="/champions/Akali"
-    class="grid-item animate__animated animate__slideInRight"
-    src="../../../assets/components/home/champion-details.jpg"
-    alt="champion-images"
-  />
-  <img
-    routerLink="/champions/Akali"
-    class="grid-item animate__animated animate__slideInRight"
-    src="../../../assets/components/home/skins.jpg"
-    alt="champion-images"
-  />
+  <article class="grid-item">
+    <div class="img-wrapper">
+      <img
+        appZoomIn
+        routerLink="/champions"
+        src="../../../assets/components/home/champions.jpg"
+        alt="champions"
+      />
+    </div>
+  </article>
+  <article class="grid-item">
+    <div class="img-wrapper">
+      <img
+        appZoomIn
+        routerLink="/champions/Akali"
+        src="../../../assets/components/home/details.png"
+        alt="champion-details"
+      />
+    </div>
+  </article>
+  <article class="grid-item">
+    <div class="img-wrapper">
+      <img
+        appZoomIn
+        routerLink="/champions/Akali"
+        src="../../../assets/components/home/skins.jpg"
+        alt="champion-skins"
+      />
+    </div>
+  </article>
+  <article class="grid-item">
+    <div class="img-wrapper">
+      <img
+        appZoomIn
+        routerLink="/search-summoner"
+        src="../../../assets/components/home/summoner.jpg"
+        alt="summoner-stats"
+      />
+    </div>
+  </article>
 </div>

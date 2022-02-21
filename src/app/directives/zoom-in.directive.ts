@@ -8,7 +8,7 @@ export class ZoomInDirective {
 
   @HostListener('mouseover', ['$event'])
   zoomIn() {
-    this.renderer.setStyle(this.el.nativeElement, 'transform', 'scale(1.1)');
+    this.renderer.setStyle(this.el.nativeElement, 'transform', 'scale(1.08)');
   }
 
   @HostListener('mouseout', ['$event'])
