@@ -1,5 +1,5 @@
 <section>
-  <app-title title="Search Summoner"></app-title>
+  <app-title>search summoner</app-title>
   <app-search-bar
     placeHolder="Search Summoner"
     [valueControl]="summonerName"
@@ -7,7 +7,7 @@
     (throttledClick)="onGetSummoner()"
   ></app-search-bar>
 </section>
-<app-title *ngIf="isError" title="API KEY HAS EXPIRED"></app-title>
+<app-title *ngIf="isError">api key has expired</app-title>
 
 <ng-container *ngIf="summonerInfo">
   <div class="summoner-profile">
@@ -26,7 +26,7 @@
     <h2>{{ summonerInfo.name }}</h2>
   </div>
 
-  <app-title title="HIGHEST MASTERY CHAMPIONS"></app-title>
+  <app-title>highest mastery champions</app-title>
   <div class="container">
     <div
       class="champion-overview champion-{{

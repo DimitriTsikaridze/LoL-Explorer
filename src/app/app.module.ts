@@ -18,6 +18,7 @@ import { ChampionRotationsComponent } from './components/champion-rotations/cham
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SkinsComponent } from './components/champions/champion-details/skins/skins.component';
+import { SkinPreviewComponent } from './components/champions/champion-details/skin-preview/skin-preview.component';
 
 const components = [
   HeaderComponent,
@@ -29,6 +30,7 @@ const components = [
   ErrorComponent,
   ChampionRotationsComponent,
   SkinsComponent,
+  SkinPreviewComponent,
 ];
 
 const modules = [

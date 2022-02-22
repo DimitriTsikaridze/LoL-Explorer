@@ -13,6 +13,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ZoomInDirective } from '../directives/zoom-in.directive';
 import { ThrottleClickDirective } from '../directives/throttle-click.directive';
 import { ShortTextPipe } from '../pipes/short-text.pipe';
+import {
+  MatDialogModule,
+  MAT_DIALOG_DEFAULT_OPTIONS,
+} from '@angular/material/dialog';
 
 const components = [TitleComponent, SearchBarComponent];
 
@@ -29,6 +33,7 @@ const modules = [
   MatListModule,
   NgxPaginationModule,
   FontAwesomeModule,
+  MatDialogModule,
 ];
 
 @NgModule({

@@ -1,12 +1,15 @@
 <section class="skins-container">
   <div class="skin" *ngFor="let skin of skins">
     <div class="title">
-      <app-title [title]="skin.name"></app-title>
+      <app-title>{{ skin.name }}</app-title>
     </div>
     <div class="image">
-      <a [href]="skin.url" target="_blank">
-        <img appZoomIn [src]="skin.url" alt="champion-skin" />
-      </a>
+      <img
+        appZoomIn
+        (click)="openDialog(skin)"
+        [src]="skin.url"
+        alt="champion-skin"
+      />
     </div>
   </div>
 </section>
