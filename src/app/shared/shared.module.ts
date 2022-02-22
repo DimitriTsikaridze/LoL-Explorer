@@ -12,8 +12,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ZoomInDirective } from '../directives/zoom-in.directive';
 import { ThrottleClickDirective } from '../directives/throttle-click.directive';
+import { ShortTextPipe } from '../pipes/short-text.pipe';
 
 const components = [TitleComponent, SearchBarComponent];
+
+const directives = [ZoomInDirective, ThrottleClickDirective];
+
+const pipes = [ShortTextPipe];
 
 const modules = [
   MatSidenavModule,
@@ -26,11 +31,9 @@ const modules = [
   FontAwesomeModule,
 ];
 
-const directives = [ZoomInDirective, ThrottleClickDirective];
-
 @NgModule({
-  declarations: [components, directives],
+  declarations: [components, directives, pipes],
   imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule],
-  exports: [components, modules, directives],
+  exports: [components, modules, directives, pipes],
 })
 export class SharedModule {}
