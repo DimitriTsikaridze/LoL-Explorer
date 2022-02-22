@@ -1,18 +1,18 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appZoomIn]',
 })
 export class ZoomInDirective {
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  @HostBinding('style.transform') scale!: string;
 
   @HostListener('mouseover', ['$event'])
   zoomIn() {
-    this.renderer.setStyle(this.el.nativeElement, 'transform', 'scale(1.08)');
+    this.scale = 'scale(1.08)';
   }
 
   @HostListener('mouseout', ['$event'])
   zoomOut() {
-    this.renderer.setStyle(this.el.nativeElement, 'transform', 'scale(1)');
+    this.scale = 'scale(1.00)';
   }
 }
