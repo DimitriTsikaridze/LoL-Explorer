@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, tap } from 'rxjs';
+import { catchError, map } from 'rxjs';
 import { apiEnvironment } from '../../../../environments/environment.api';
 import { ChampionMastery, SummonerInfo } from '../models/summoner-info';
 
