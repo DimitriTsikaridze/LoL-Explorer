@@ -35,8 +35,13 @@ export class SkinsComponent implements OnInit {
 
   openDialog(skin: Skin) {
     this.dialog.open(SkinPreviewComponent, {
-      data: skin,
+      data: {
+        skin: skin,
+        key: this.champion.key,
+      },
       height: '90vh',
+      width: '80vw',
+      maxWidth: '80vw',
     });
   }
 }

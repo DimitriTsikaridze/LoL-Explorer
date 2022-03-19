@@ -1,0 +1,14 @@
+.img-wrapper {
+  position: relative;
+}
+
+img {
+  object-fit: cover;
+  max-height: 100%;
+}
+
+.center-icon,
+.splash-icon {
+  color: black;
+  font-size: 2rem;
+}

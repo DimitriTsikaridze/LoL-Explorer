@@ -1,14 +1,29 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Skin } from '../models/champion-details';
+import { faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-skin-preview',
   templateUrl: './skin-preview.component.html',
   styleUrls: ['./skin-preview.component.scss'],
 })
-export class SkinPreviewComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public skin: Skin) {}
+export class SkinPreviewComponent {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
-  ngOnInit(): void {}
+  skinURL = this.data.skin.url;
+
+  centeredIcon = faUser;
+  splashIcon = faUsers;
+
+  isSplash = true;
+
+  loadSplash() {
+    this.skinURL = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/${this.data.key}/${this.data.skin.id}.jpg`;
+    this.isSplash = true;
+  }
+
+  loadCentered() {
+    this.skinURL = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/${this.data.key}/${this.data.skin.id}.jpg`;
+    this.isSplash = false;
+  }
 }

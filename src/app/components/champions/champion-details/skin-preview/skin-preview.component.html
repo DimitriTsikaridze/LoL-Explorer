@@ -1,2 +1,16 @@
-<app-title matDialogTitle margin="0 0 1.5rem 0">{{ skin.name }}</app-title>
-<img [src]="skin.url" alt="skinURL" />
+<app-title margin="0 0 2rem 0">{{ data.skin.name }}</app-title>
+<div class="img-wrapper">
+  <fa-icon
+    class="splash-icon"
+    [icon]="splashIcon"
+    (click)="loadSplash()"
+    *ngIf="!isSplash"
+  ></fa-icon>
+  <fa-icon
+    *ngIf="isSplash"
+    class="center-icon"
+    [icon]="centeredIcon"
+    (click)="loadCentered()"
+  ></fa-icon>
+  <img [src]="skinURL" alt="skinURL" />
+</div>
