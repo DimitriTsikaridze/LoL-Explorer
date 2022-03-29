@@ -10,7 +10,7 @@ import { SearchSummonerService } from './services/search-summoner.service';
   templateUrl: './search-summoner.component.html',
   styleUrls: ['./search-summoner.component.scss'],
 })
-export class SearchSummonerComponent implements OnInit {
+export class SearchSummonerComponent {
   constructor(
     private summonerService: SearchSummonerService,
     private cDragon: CdragonChampionsService,
@@ -20,8 +20,6 @@ export class SearchSummonerComponent implements OnInit {
   summonerName: FormControl = new FormControl('AlphaFrog');
   summonerInfo!: SummonerInfo | null;
   isError = false;
-
-  ngOnInit(): void {}
 
   onGetSummoner() {
     this.summonerService.getSummonerInfo(this.summonerName.value).subscribe({

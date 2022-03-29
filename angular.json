@@ -134,9 +134,21 @@
             "firebaseProject": "lolapi-55c01",
             "firebaseHostingSite": "lolapi-55c01"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "league-of-legends-api"
+  "defaultProject": "league-of-legends-api",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
