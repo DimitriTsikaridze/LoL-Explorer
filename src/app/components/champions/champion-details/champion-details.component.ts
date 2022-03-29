@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { ChampionDetails } from './models/champion-details';
@@ -19,10 +20,12 @@ export class ChampionDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private championDetailsService: ChampionDetailsService
+    private championDetailsService: ChampionDetailsService,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('Champion Details');
     this.championDetailsService
       .getChampionNames()
       .subscribe((data) => (this.championNames = data));

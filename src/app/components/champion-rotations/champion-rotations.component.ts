@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { RotationService } from './services/rotation.service';
 
 @Component({
@@ -7,12 +8,16 @@ import { RotationService } from './services/rotation.service';
   styleUrls: ['./champion-rotations.component.scss'],
 })
 export class ChampionRotationsComponent implements OnInit {
-  constructor(private champRotations: RotationService) {}
+  constructor(
+    private champRotations: RotationService,
+    private titleService: Title
+  ) {}
 
   champion!: any;
   isError = false;
 
   ngOnInit(): void {
+    this.titleService.setTitle('Champion Rotations');
     if (this.champRotations.freeChampion.length) {
       this.champion = this.champRotations.freeChampion;
     } else {

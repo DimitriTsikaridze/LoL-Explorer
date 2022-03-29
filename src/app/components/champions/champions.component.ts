@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Champion } from './models/champion-response';
 import { ChampionsService } from './services/champions.service';
 
@@ -11,9 +12,13 @@ export class ChampionsComponent implements OnInit {
   champions!: Champion[];
   p: number = 1;
 
-  constructor(private championsService: ChampionsService) {}
+  constructor(
+    private championsService: ChampionsService,
+    private titleService: Title
+  ) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('Champions');
     if (this.championsService.champions.length) {
       this.champions = this.championsService.champions;
     } else {

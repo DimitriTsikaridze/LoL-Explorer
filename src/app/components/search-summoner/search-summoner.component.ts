@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { CdragonChampionsService } from '../../services/cdragon-champions.service';
 import { SummonerInfo } from './models/summoner-info';
@@ -10,16 +11,21 @@ import { SearchSummonerService } from './services/search-summoner.service';
   templateUrl: './search-summoner.component.html',
   styleUrls: ['./search-summoner.component.scss'],
 })
-export class SearchSummonerComponent {
+export class SearchSummonerComponent implements OnInit {
   constructor(
     private summonerService: SearchSummonerService,
     private cDragon: CdragonChampionsService,
-    private router: Router
+    private router: Router,
+    private titleService: Title
   ) {}
 
   summonerName: FormControl = new FormControl('AlphaFrog');
   summonerInfo!: SummonerInfo | null;
   isError = false;
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Search Summoner');
+  }
 
   onGetSummoner() {
     this.summonerService.getSummonerInfo(this.summonerName.value).subscribe({
