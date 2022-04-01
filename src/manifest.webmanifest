@@ -31,35 +31,5 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ],
-  "shortcuts": [
-    {
-      "name": "Search Summoner",
-      "short_name": "Summoner",
-      "url": "/search-summoner?utm_source=homescreen",
-      "description": "Find highest mastery champions on summoner",
-      "icons": [
-        {
-          "src": "assets/icons/manifest-icon-192.maskable.png",
-          "sizes": "256x256",
-          "type": "image/png",
-          "purpose": "any"
-        }
-      ]
-    },
-    {
-      "name": "Champion Rotations",
-      "short_name": "Rotations",
-      "url": "/champion-rotations?utm_source=homescreen",
-      "description": "See free champion rotations",
-      "icons": [
-        {
-          "src": "assets/icons/manifest-icon-192.maskable.png",
-          "sizes": "256x256",
-          "type": "image/png",
-          "purpose": "any"
-        }
-      ]
-    }
   ]
 }
