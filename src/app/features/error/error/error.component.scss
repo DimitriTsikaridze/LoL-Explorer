@@ -1,0 +1,20 @@
+section {
+  background-image: url("../../../../assets/components/error/poro.jpg");
+  color: white;
+  background-size: cover;
+  min-height: 100%;
+  padding-top: 2rem;
+}
+
+h2,
+a {
+  text-align: center;
+  font-size: 2rem;
+}
+a {
+  display: block;
+  text-decoration: none;
+  &:visited {
+    color: unset;
+  }
+}

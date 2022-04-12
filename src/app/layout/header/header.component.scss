@@ -1,4 +1,8 @@
-@import "../../../styles/palette.scss";
+@import "/src/styles/palette.scss";
+
+:host {
+  display: block;
+}
 
 header {
   background-color: $dark-blue;

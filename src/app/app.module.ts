@@ -4,44 +4,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { LayoutModule } from './layout/layout.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
-import { SearchSummonerComponent } from './components/search-summoner/search-summoner.component';
-import { ErrorComponent } from './components/error/error.component';
-import { SharedModule } from './shared/shared.module';
-import { ServiceWorkerModule } from '@angular/service-worker';
+
 import { environment } from '../environments/environment';
 
-const components = [
-  HeaderComponent,
-  SearchSummonerComponent,
-  HomeComponent,
-  ErrorComponent,
-];
-
-const modules = [
-  HttpClientModule,
-  RouterModule,
-  AppRoutingModule,
-  SharedModule,
-];
-
 @NgModule({
-  declarations: [AppComponent, ...components],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ...modules,
+    HttpClientModule,
+    RouterModule,
+    AppRoutingModule,
+    LayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

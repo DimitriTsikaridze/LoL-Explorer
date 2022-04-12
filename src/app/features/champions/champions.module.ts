@@ -9,7 +9,8 @@ import { SkinPreviewComponent } from './champion-details/skin-preview/skin-previ
 import { SkinsComponent } from './champion-details/skins/skins.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SharedModule } from '../../shared/shared.module';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     ChampionDetailsComponent,
@@ -22,7 +23,9 @@ import { SharedModule } from '../../shared/shared.module';
     CommonModule,
     ChampionsRoutingModule,
     NgxPaginationModule,
+    MatDialogModule,
     SharedModule,
+    FontAwesomeModule,
   ],
 })
 export class ChampionsModule {}
