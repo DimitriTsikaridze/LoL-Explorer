@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+import { ChampionResponse } from '@models/champion-response.model';
+import { Champion } from '@models/champion.model';
 import { RiotApiService } from './riot-api.service';
-import { Champion, ChampionResponse } from '../models/champion-response';
 
 @Injectable({
   providedIn: 'root',

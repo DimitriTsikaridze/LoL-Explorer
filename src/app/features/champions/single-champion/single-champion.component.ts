@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Champion } from '../../../models/champion-response';
+import { Champion } from '@models/champion.model';
 
 @Component({
   selector: 'app-single-champion',

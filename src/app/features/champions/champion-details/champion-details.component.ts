@@ -2,8 +2,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { ChampionDetails } from '../../../models/champion-details';
-import { ChampionDetailsService } from '../../../services/champion-details.service';
+import { ChampionDetails } from '@models/champion-details.model';
+import { ChampionDetailsService } from '@services/champion-details.service';
 
 @Component({
   selector: 'app-champion-details',

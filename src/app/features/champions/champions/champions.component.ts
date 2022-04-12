@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Champion } from '../../../models/champion-response';
-import { ChampionsService } from '../../../services/champions.service';
+import { Champion } from '@models/champion.model';
+import { ChampionsService } from '@services/champions.service';
 
 @Component({
   selector: 'app-champions',

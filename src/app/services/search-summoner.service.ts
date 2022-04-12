@@ -1,8 +1,9 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs';
-import { environment } from '../../environments/environment';
-import { ChampionMastery, SummonerInfo } from '../models/summoner-info';
+import { environment } from '@environments/environment';
+import { ChampionMastery } from '@models/championo-mastery.model';
+import { SummonerInfo } from '@models/summoner-info.model';
 
 @Injectable({
   providedIn: 'root',

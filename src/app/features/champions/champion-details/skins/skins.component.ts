@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ChampionDetails, Skin } from '../../../../models/champion-details';
+import { MatDialog } from '@angular/material/dialog';
+import { ChampionDetails } from '@models/champion-details.model';
+import { Skin } from '@models/skin.model';
 import { SkinPreviewComponent } from '../skin-preview/skin-preview.component';
 
 @Component({

@@ -9,7 +9,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
 
-import { environment } from '../environments/environment';
+import { environment } from '@environments/environment';
 
 @NgModule({
   declarations: [AppComponent],

@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { CdragonChampionsService } from '../../../services/cdragon-champions.service';
-import { SummonerInfo } from '../../../models/summoner-info';
-import { SearchSummonerService } from '../../../services/search-summoner.service';
+import { CdragonChampionsService } from '@services/cdragon-champions.service';
+import { SummonerInfo } from '@models/summoner-info.model';
+import { SearchSummonerService } from '@services/search-summoner.service';
 
 @Component({
   selector: 'app-search-summoner',
