@@ -1,13 +1,13 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs';
-import { apiEnvironment } from '../../../../environments/environment.api';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RotationService {
-  private rotationsURL = `https://eun1.api.riotgames.com/lol/platform/v3/champion-rotations/?api_key=${apiEnvironment.key}`;
+  private rotationsURL = `https://eun1.api.riotgames.com/lol/platform/v3/champion-rotations/?api_key=${environment.apiKey}`;
   freeChampion: any[] = [];
 
   constructor(private http: HttpClient) {}

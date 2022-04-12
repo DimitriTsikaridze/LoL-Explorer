@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs';
-import { apiEnvironment } from '../../../../environments/environment.api';
+import { environment } from '../../../../environments/environment';
 import { ChampionMastery, SummonerInfo } from '../models/summoner-info';
 
 @Injectable({
@@ -19,7 +19,7 @@ export class SearchSummonerService {
   getSummonerInfo(summonerName: string) {
     return this.http
       .get<SummonerInfo>(
-        `${this.INFO_URL}/${summonerName}?api_key=${apiEnvironment.key}`
+        `${this.INFO_URL}/${summonerName}?api_key=${environment.apiKey}`
       )
       .pipe(
         map((info: SummonerInfo) => {
@@ -42,7 +42,7 @@ export class SearchSummonerService {
   getSummonerMasteries(summonerID: string) {
     return this.http
       .get<ChampionMastery[]>(
-        `${this.MASTERIES_URL}/${summonerID}?api_key=${apiEnvironment.key}`
+        `${this.MASTERIES_URL}/${summonerID}?api_key=${environment.apiKey}`
       )
       .pipe(
         map((championMastery: ChampionMastery[]) => {

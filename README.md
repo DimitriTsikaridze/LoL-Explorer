@@ -12,11 +12,13 @@ Install Angular CLI with NPM
 npm install @angular/cli -g
 ```
 
-Clone repository, go to [Riot Developer Portal](https://developer.riotgames.com/), register product and get API key. <br/> create `environment.api.ts` file in environments folder and put your API key there in this format.
+Clone repository, go to [Riot Developer Portal](https://developer.riotgames.com/), register product and get API key. <br/>
+put API key in `environment.ts` file.
 
 ```js
-export const apiEnvironment = {
-  key: "YOUR_API_KEY",
+export const environment = {
+  production: false,
+  apiKey: "YOUR API KEY", //Development API key expires every 24 hours
 };
 ```
 
