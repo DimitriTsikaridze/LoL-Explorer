@@ -9,28 +9,18 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchSummonerComponent } from './components/search-summoner/search-summoner.component';
-import { ChampionsComponent } from './components/champions/champions.component';
-import { SingleChampionComponent } from './components/champions/single-champion/single-champion.component';
-import { ChampionDetailsComponent } from './components/champions/champion-details/champion-details.component';
 import { ErrorComponent } from './components/error/error.component';
 import { SharedModule } from './shared/shared.module';
 import { ChampionRotationsComponent } from './components/champion-rotations/champion-rotations.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { SkinsComponent } from './components/champions/champion-details/skins/skins.component';
-import { SkinPreviewComponent } from './components/champions/champion-details/skin-preview/skin-preview.component';
 
 const components = [
   HeaderComponent,
   SearchSummonerComponent,
   HomeComponent,
-  ChampionsComponent,
-  SingleChampionComponent,
-  ChampionDetailsComponent,
   ErrorComponent,
   ChampionRotationsComponent,
-  SkinsComponent,
-  SkinPreviewComponent,
 ];
 
 const modules = [

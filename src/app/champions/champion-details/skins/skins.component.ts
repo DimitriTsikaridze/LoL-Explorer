@@ -39,9 +39,9 @@ export class SkinsComponent implements OnInit {
         skin: skin,
         key: this.champion.key,
       },
-      height: '90vh',
+      minHeight: '80vh',
+      maxHeight: '90vh',
       width: '80vw',
-      maxWidth: '80vw',
     });
   }
 }
