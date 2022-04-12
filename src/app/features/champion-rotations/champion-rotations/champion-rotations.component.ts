@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { RotationService } from './services/rotation.service';
+import { RotationService } from '../../../services/rotation.service';
 
 @Component({
   selector: 'app-champion-rotations',
