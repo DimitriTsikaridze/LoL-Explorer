@@ -24,8 +24,6 @@ $league-of-legends-api-theme: mat.define-light-theme(
 
 @include mat.all-component-themes($league-of-legends-api-theme);
 
-@import "./styles/palette.scss";
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -61,3 +59,5 @@ img {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+$blue: blue;

@@ -11,7 +11,6 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchSummonerComponent } from './components/search-summoner/search-summoner.component';
 import { ErrorComponent } from './components/error/error.component';
 import { SharedModule } from './shared/shared.module';
-import { ChampionRotationsComponent } from './components/champion-rotations/champion-rotations.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -20,7 +19,6 @@ const components = [
   SearchSummonerComponent,
   HomeComponent,
   ErrorComponent,
-  ChampionRotationsComponent,
 ];
 
 const modules = [

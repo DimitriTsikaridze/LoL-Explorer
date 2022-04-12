@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TitleComponent } from '../components/title/title.component';
+import { TitleComponent } from './title/title.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
-import { SearchBarComponent } from '../components/search-bar/search-bar.component';
+import { SearchBarComponent } from '../components/search-summoner/search-bar/search-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ZoomInDirective } from '../directives/zoom-in.directive';

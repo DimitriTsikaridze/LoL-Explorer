@@ -8,7 +8,7 @@ import { ChampionsComponent } from './champions.component';
 import { SkinPreviewComponent } from './champion-details/skin-preview/skin-preview.component';
 import { SkinsComponent } from './champion-details/skins/skins.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
