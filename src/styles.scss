@@ -1,4 +1,5 @@
 @use "@angular/material" as mat;
+@use "./styles/reset";
 
 @include mat.core();
 
@@ -23,41 +24,3 @@ $league-of-legends-api-theme: mat.define-light-theme(
 );
 
 @include mat.all-component-themes($league-of-legends-api-theme);
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-:root {
-  font-size: 16px;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-
-$blue: blue;
