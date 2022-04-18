@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ChampionsRoutingModule } from './champions-routing.module';
 import { ChampionDetailsComponent } from './champion-details/champion-details.component';
 import { SingleChampionComponent } from './single-champion/single-champion.component';
 import { ChampionsComponent } from './champions/champions.component';
@@ -12,6 +11,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { SharedModule } from '../../shared/shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', component: ChampionsComponent },
+  { path: ':id', component: ChampionDetailsComponent },
+];
 @NgModule({
   declarations: [
     ChampionDetailsComponent,
@@ -22,7 +27,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     CommonModule,
-    ChampionsRoutingModule,
+    RouterModule.forChild(routes),
     NgxPaginationModule,
     MatDialogModule,
     SharedModule,

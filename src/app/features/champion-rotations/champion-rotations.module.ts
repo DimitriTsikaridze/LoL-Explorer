@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ChampionRotationsRoutingModule } from './champion-rotations-routing.module';
 import { ChampionRotationsComponent } from './champion-rotations/champion-rotations.component';
 import { SharedModule } from '../../shared/shared.module';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [{ path: '', component: ChampionRotationsComponent }];
 
 @NgModule({
   declarations: [ChampionRotationsComponent],
-  imports: [CommonModule, ChampionRotationsRoutingModule, SharedModule],
+  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
 })
 export class ChampionRotationsModule {}
