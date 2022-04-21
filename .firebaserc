@@ -1,21 +1,14 @@
 {
   "targets": {
-    "lolapi-19ff6": {
+    "lol-explorer-b075e": {
       "hosting": {
         "league-of-legends-api": [
-          "lolapi-19ff6"
-        ]
-      }
-    },
-    "lolapi-55c01": {
-      "hosting": {
-        "league-of-legends-api": [
-          "lolapi-55c01"
+          "lol-explorer-b075e"
         ]
       }
     }
   },
   "projects": {
-    "default": "lolapi-55c01"
+    "default": "lol-explorer-b075e"
   }
 }

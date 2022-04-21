@@ -131,8 +131,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "league-of-legends-api:build:production",
-            "firebaseProject": "lolapi-55c01",
-            "firebaseHostingSite": "lolapi-55c01"
+            "firebaseProject": "lol-explorer-b075e",
+            "firebaseHostingSite": "lol-explorer-b075e"
           }
         },
         "lint": {
