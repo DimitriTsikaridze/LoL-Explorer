@@ -38,10 +38,6 @@ export class ChampionDetailsComponent implements OnInit {
     });
   }
 
-  onBack() {
-    this.router.navigate(['/champions']);
-  }
-
   @HostListener('document:keyup', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key === 'ArrowRight' && this.currentId != 'Zyra') {
