@@ -4,17 +4,20 @@
   (pageChange)="p = $event"
 ></pagination-controls>
 <div class="container">
-  <div
-    *ngFor="
-      let champion of champions | paginate: { itemsPerPage: 6, currentPage: p };
-      let i = index
-    "
-  >
-    <app-single-champion
-      [index]="i"
-      [champion]="champion"
-    ></app-single-champion>
-  </div>
+  <ng-container *ngIf="champions$ | async as champions">
+    <div
+      *ngFor="
+        let champion of champions
+          | paginate: { itemsPerPage: 6, currentPage: p };
+        let i = index
+      "
+    >
+      <app-single-champion
+        [index]="i"
+        [champion]="champion"
+      ></app-single-champion>
+    </div>
+  </ng-container>
 </div>
 <pagination-controls
   class="pagination"

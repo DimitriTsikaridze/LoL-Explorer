@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Champion } from '@models/champion.model';
 import { ChampionsService } from '@services/champions.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-champions',
@@ -9,7 +10,7 @@ import { ChampionsService } from '@services/champions.service';
   styleUrls: ['./champions.component.scss'],
 })
 export class ChampionsComponent implements OnInit {
-  champions!: Champion[];
+  champions$!: Observable<Champion[]>;
   p: number = 1;
 
   constructor(
@@ -20,11 +21,9 @@ export class ChampionsComponent implements OnInit {
   ngOnInit(): void {
     this.titleService.setTitle('Champions');
     if (this.championsService.champions.length) {
-      this.champions = this.championsService.champions;
+      this.champions$ = of(this.championsService.champions);
     } else {
-      this.championsService.getChampions().subscribe((championsData) => {
-        this.champions = championsData;
-      });
+      this.champions$ = this.championsService.getChampions();
     }
   }
 }
