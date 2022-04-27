@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiKey: 'RGAPI-96b310fa-f759-4673-8cf7-31f55642281d', //API key expires in 24 hours
+  apiKey: 'RGAPI-99b20d79-8312-4cce-8a00-ce931e6e8369', //API key expires in 24 hours
 };
 
 /*

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { RotationService } from '@services/rotation.service';
+import { FreeChampion, RotationService } from '@services/rotation.service';
 
 @Component({
   selector: 'app-champion-rotations',
@@ -13,7 +13,7 @@ export class ChampionRotationsComponent implements OnInit {
     private titleService: Title
   ) {}
 
-  champion!: any;
+  champion!: FreeChampion[] | null;
   isError = false;
 
   ngOnInit(): void {
@@ -22,7 +22,9 @@ export class ChampionRotationsComponent implements OnInit {
       this.champion = this.champRotations.freeChampion;
     } else {
       this.champRotations.getFreeChampionIDs().subscribe({
-        next: (data) => (this.champion = data),
+        next: (data) => {
+          this.champion = data;
+        },
         error: () => {
           this.champion = null;
           this.isError = true;

@@ -3,18 +3,28 @@ import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs';
 import { environment } from '@environments/environment';
 
+interface ChampionRotationRespone {
+  freeChampionIds: number[];
+}
+
+export interface FreeChampion {
+  championID: number;
+  imageURL: string;
+}
+
+const ROTATIONS_URL = `https://eun1.api.riotgames.com/lol/platform/v3/champion-rotations/?api_key=${environment.apiKey}`;
+
 @Injectable({
   providedIn: 'root',
 })
 export class RotationService {
-  private rotationsURL = `https://eun1.api.riotgames.com/lol/platform/v3/champion-rotations/?api_key=${environment.apiKey}`;
-  freeChampion: any[] = [];
+  freeChampion: FreeChampion[] = [];
 
   constructor(private http: HttpClient) {}
 
   getFreeChampionIDs() {
-    return this.http.get(this.rotationsURL).pipe(
-      map((value: any) => {
+    return this.http.get<ChampionRotationRespone>(ROTATIONS_URL).pipe(
+      map((value: ChampionRotationRespone) => {
         for (let id of value.freeChampionIds) {
           this.freeChampion.push({
             championID: id,
