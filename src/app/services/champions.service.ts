@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { ChampionResponse } from '@models/champion-response.model';
 import { Champion } from '@models/champion.model';
-import { RiotApiService } from './riot-api.service';
+import { environment } from '@environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,10 +11,10 @@ import { RiotApiService } from './riot-api.service';
 export class ChampionsService {
   readonly champions: Champion[] = [];
 
-  constructor(private http: HttpClient, private riotAPI: RiotApiService) {}
+  constructor(private http: HttpClient) {}
 
   getChampions() {
-    return this.http.get<ChampionResponse>(this.riotAPI.championsURL).pipe(
+    return this.http.get<ChampionResponse>(environment.championsURL).pipe(
       map((value: ChampionResponse) => {
         for (let champion in value.data) {
           const { id, key, name, blurb, title, tags } = value.data[champion];

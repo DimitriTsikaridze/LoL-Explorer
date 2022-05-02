@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import { RiotApiService } from './riot-api.service';
 import { ChampionDetails } from '@models/champion-details.model';
+import { environment } from '@environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -12,12 +12,12 @@ export class ChampionDetailsService {
 
   private championNames: string[] = [];
 
-  constructor(private http: HttpClient, private riotAPI: RiotApiService) {}
+  constructor(private http: HttpClient) {}
 
   getSingleChampion(championID: string) {
     return this.http
       .get<ChampionDetails>(
-        `${this.riotAPI.championDetailsURL}${championID}.json`
+        `${environment.championDetailsURL}${championID}.json`
       )
       .pipe(
         map((value: any) => {
@@ -32,7 +32,7 @@ export class ChampionDetailsService {
             allyTips: allytips,
             enemyTips: enemytips,
             tags: tags,
-            imageURL: `${this.riotAPI.championIconURL}splash/${championID}_0.jpg`,
+            imageURL: `${environment.championIconURL}splash/${championID}_0.jpg`,
             difficulty: value.data[championID].info.difficulty,
             skins: value.data[championID].skins,
           };
@@ -42,7 +42,7 @@ export class ChampionDetailsService {
   }
 
   getChampionNames() {
-    return this.http.get(this.riotAPI.championsURL).pipe(
+    return this.http.get(environment.championsURL).pipe(
       map((value: any) => {
         for (let name in value.data) {
           this.championNames.push(name);

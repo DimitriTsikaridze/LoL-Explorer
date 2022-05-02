@@ -12,8 +12,6 @@ export interface FreeChampion {
   imageURL: string;
 }
 
-const ROTATIONS_URL = `https://eun1.api.riotgames.com/lol/platform/v3/champion-rotations/?api_key=${environment.apiKey}`;
-
 @Injectable({
   providedIn: 'root',
 })
@@ -23,19 +21,21 @@ export class RotationService {
   constructor(private http: HttpClient) {}
 
   getFreeChampionIDs() {
-    return this.http.get<ChampionRotationRespone>(ROTATIONS_URL).pipe(
-      map((value: ChampionRotationRespone) => {
-        for (let id of value.freeChampionIds) {
-          this.freeChampion.push({
-            championID: id,
-            imageURL: `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/${id}/${id}000.jpg`,
-          });
-        }
-        return this.freeChampion;
-      }),
-      catchError((error: HttpErrorResponse) => {
-        throw error;
-      })
-    );
+    return this.http
+      .get<ChampionRotationRespone>(environment.ROTATIONS_URL)
+      .pipe(
+        map((value: ChampionRotationRespone) => {
+          for (let id of value.freeChampionIds) {
+            this.freeChampion.push({
+              championID: id,
+              imageURL: `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/${id}/${id}000.jpg`,
+            });
+          }
+          return this.freeChampion;
+        }),
+        catchError((error: HttpErrorResponse) => {
+          throw error;
+        })
+      );
   }
 }
