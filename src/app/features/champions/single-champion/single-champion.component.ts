@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { Champion } from '@models/champion.model';
 
 @Component({
@@ -11,10 +10,4 @@ import { Champion } from '@models/champion.model';
 export class SingleChampionComponent {
   @Input() champion!: Champion;
   @Input() index!: number;
-
-  constructor(private router: Router) {}
-
-  onChampionClick(championID: string) {
-    this.router.navigate(['/champions', championID]);
-  }
 }

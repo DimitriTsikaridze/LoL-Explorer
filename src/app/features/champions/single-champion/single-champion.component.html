@@ -1,6 +1,6 @@
 <div class="container animate__animated animate__fadeIn">
   <section class="champion-card">
-    <div (click)="onChampionClick(champion.id)" class="top-content">
+    <div [routerLink]="['/champions', champion.id]" class="top-content">
       <img appZoomIn [src]="champion.imageURL" alt="champion-image" />
       <div class="details">
         <div class="champion-details">
