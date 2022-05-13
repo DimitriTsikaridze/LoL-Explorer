@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -10,6 +10,7 @@ import { SearchSummonerService } from '@services/search-summoner.service';
   selector: 'app-search-summoner',
   templateUrl: './search-summoner.component.html',
   styleUrls: ['./search-summoner.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchSummonerComponent implements OnInit {
   constructor(

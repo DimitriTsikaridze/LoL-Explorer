@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Champion } from '@models/champion.model';
 import { ChampionsService } from '@services/champions.service';
@@ -8,6 +8,7 @@ import { Observable, of } from 'rxjs';
   selector: 'app-champions',
   templateUrl: './champions.component.html',
   styleUrls: ['./champions.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChampionsComponent implements OnInit {
   champions$!: Observable<Champion[]>;

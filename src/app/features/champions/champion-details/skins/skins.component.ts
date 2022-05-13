@@ -1,4 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ChampionDetails } from '@models/champion-details.model';
 import { Skin } from '@models/skin.model';
@@ -8,6 +13,7 @@ import { SkinPreviewComponent } from '../skin-preview/skin-preview.component';
   selector: 'app-skins',
   templateUrl: './skins.component.html',
   styleUrls: ['./skins.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkinsComponent implements OnInit {
   private SKIN_URL =
