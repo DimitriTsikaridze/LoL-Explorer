@@ -5,11 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from './layout/layout.module';
-import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
-
-import { environment } from '@environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,10 +17,6 @@ import { environment } from '@environments/environment';
     RouterModule,
     AppRoutingModule,
     LayoutModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      registrationStrategy: 'registerWhenStable:30000',
-    }),
   ],
   bootstrap: [AppComponent],
 })
