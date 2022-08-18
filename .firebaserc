@@ -1,14 +1,14 @@
 {
   "targets": {
-    "lol-explorer-b075e": {
+    "lol-explorer-cf65e": {
       "hosting": {
         "league-of-legends-api": [
-          "lol-explorer-b075e"
+          "lol-explorer-cf65e"
         ]
       }
     }
   },
   "projects": {
-    "default": "lol-explorer-b075e"
+    "default": "lol-explorer-cf65e"
   }
 }
