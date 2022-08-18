@@ -6,6 +6,13 @@
           "lol-explorer-cf65e"
         ]
       }
+    },
+    "lol-explorer-cf65e": {
+      "hosting": {
+        "league-of-legends-api": [
+          "lol-explorer-cf65e"
+        ]
+      }
     }
   },
   "projects": {

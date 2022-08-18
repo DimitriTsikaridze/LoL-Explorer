@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
 
@@ -6,6 +6,7 @@ import { faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
   selector: 'app-skin-preview',
   templateUrl: './skin-preview.component.html',
   styleUrls: ['./skin-preview.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkinPreviewComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}

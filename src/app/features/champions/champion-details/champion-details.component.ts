@@ -1,4 +1,9 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  OnInit,
+} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +14,7 @@ import { ChampionDetailsService } from '@services/champion-details.service';
   selector: 'app-champion-details',
   templateUrl: './champion-details.component.html',
   styleUrls: ['./champion-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChampionDetailsComponent implements OnInit {
   champion!: ChampionDetails | null;

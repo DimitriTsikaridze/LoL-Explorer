@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { FreeChampion, RotationService } from '@services/rotation.service';
 
@@ -6,6 +6,7 @@ import { FreeChampion, RotationService } from '@services/rotation.service';
   selector: 'app-champion-rotations',
   templateUrl: './champion-rotations.component.html',
   styleUrls: ['./champion-rotations.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChampionRotationsComponent implements OnInit {
   constructor(
