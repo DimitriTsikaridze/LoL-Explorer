@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
-import { LoadingComponent, TitleComponent } from '@shared/index';
+import { LoadingComponent, TitleComponent } from '@shared/components';
 
 const routes: Routes = [
   {

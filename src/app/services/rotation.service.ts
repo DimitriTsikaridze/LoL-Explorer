@@ -25,7 +25,7 @@ export class RotationService {
       .get<ChampionRotationRespone>(environment.ROTATIONS_URL)
       .pipe(
         map((value: ChampionRotationRespone) => {
-          for (let id of value.freeChampionIds) {
+          for (const id of value.freeChampionIds) {
             this.freeChampion.push({
               championID: id,
               imageURL: `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/${id}/${id}000.jpg`,

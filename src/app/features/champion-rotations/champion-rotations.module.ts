@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChampionRotationsComponent } from './champion-rotations/champion-rotations.component';
 import { RouterModule, Routes } from '@angular/router';
-import { TitleComponent } from '../../shared/components/title/title.component';
-import { LoadingComponent } from '../../shared/components/loading/loading.component';
+import { TitleComponent, LoadingComponent } from '@shared/components';
 
 const routes: Routes = [{ path: '', component: ChampionRotationsComponent }];
 
