@@ -8,10 +8,11 @@ import { SkinPreviewComponent } from './champion-details/skin-preview/skin-previ
 import { SkinsComponent } from './champion-details/skins/skins.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-import { SharedModule } from '../../shared/shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
+import { ShortTextPipe } from '../../shared/pipes/short-text.pipe';
+import { TitleComponent } from '../../shared/components/title/title.component';
 
 const routes: Routes = [
   { path: '', component: ChampionsComponent },
@@ -30,8 +31,9 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     NgxPaginationModule,
     MatDialogModule,
-    SharedModule,
     FontAwesomeModule,
+    ShortTextPipe,
+    TitleComponent,
   ],
 })
 export class ChampionsModule {}

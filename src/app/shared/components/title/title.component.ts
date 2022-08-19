@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
@@ -14,6 +15,8 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   `,
   styleUrls: ['./title.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [CommonModule],
 })
 export class TitleComponent {
   @Input() title = 'Default Title';

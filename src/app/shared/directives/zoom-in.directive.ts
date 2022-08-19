@@ -2,6 +2,7 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appZoomIn]',
+  standalone: true,
 })
 export class ZoomInDirective {
   @HostBinding('style.transform') scale!: string;
