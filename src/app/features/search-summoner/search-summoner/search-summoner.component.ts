@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -17,7 +22,8 @@ export class SearchSummonerComponent implements OnInit {
     private summonerService: SearchSummonerService,
     private cDragon: CdragonChampionsService,
     private router: Router,
-    private titleService: Title
+    private titleService: Title,
+    private cd: ChangeDetectorRef
   ) {}
 
   summonerName: UntypedFormControl = new UntypedFormControl('AlphaFrog');
@@ -26,9 +32,11 @@ export class SearchSummonerComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle('Search Summoner');
+    this.onGetSummoner();
   }
 
   onGetSummoner() {
+    this.summonerInfo = null;
     this.summonerService.getSummonerInfo(this.summonerName.value).subscribe({
       next: (summoner: SummonerInfo) => {
         this.isError = false;
@@ -43,6 +51,7 @@ export class SearchSummonerComponent implements OnInit {
                 .subscribe((data: any) => {
                   this.summonerInfo!.championMasteries[i].championName =
                     data.alias;
+                  this.cd.detectChanges();
                 });
             }
           });

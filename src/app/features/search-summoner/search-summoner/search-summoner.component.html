@@ -3,13 +3,12 @@
   <app-search-bar
     placeHolder="Search Summoner"
     [valueControl]="summonerName"
-    appThrottleClick
-    (throttledClick)="onGetSummoner()"
+    (clickEvent)="onGetSummoner()"
   ></app-search-bar>
 </section>
 <app-title *ngIf="isError">api key has expired</app-title>
 
-<ng-container *ngIf="summonerInfo">
+<ng-container *ngIf="summonerInfo; else loading">
   <div class="summoner-profile">
     <div class="profile-icon">
       <img
@@ -69,3 +68,7 @@
     </div>
   </div>
 </ng-container>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>
