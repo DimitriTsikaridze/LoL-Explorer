@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
 import { ShortTextPipe } from '../../shared/pipes/short-text.pipe';
 import { TitleComponent } from '../../shared/components/title/title.component';
+import { LoadingComponent } from '../../shared/components/loading/loading.component';
 
 const routes: Routes = [
   { path: '', component: ChampionsComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
     FontAwesomeModule,
     ShortTextPipe,
     TitleComponent,
+    LoadingComponent,
   ],
 })
 export class ChampionsModule {}

@@ -2,10 +2,12 @@
 
 <app-title *ngIf="isError">API KEY HAS EXPIRED</app-title>
 
-<div class="container">
-  <ng-container *ngFor="let champion of champion">
-    <div class="img-wrapper">
-      <img appZoomIn [src]="champion.imageURL" alt="champion-img" />
-    </div>
-  </ng-container>
+<div *ngIf="champion; else loading" class="container">
+  <div *ngFor="let champion of champion" class="img-wrapper">
+    <img appZoomIn [src]="champion.imageURL" alt="champion-img" />
+  </div>
 </div>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

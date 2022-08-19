@@ -1,4 +1,4 @@
-<div *ngIf="champion" class="wrapper">
+<div *ngIf="champion; else loading" class="wrapper">
   <fa-icon
     *ngIf="currentId !== 'Aatrox'"
     (click)="previousChampion(champion.id)"
@@ -53,3 +53,7 @@
     </section>
   </div>
 </div>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>
