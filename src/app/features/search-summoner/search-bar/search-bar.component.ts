@@ -6,7 +6,7 @@ import {
   Output,
 } from '@angular/core';
 
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -16,7 +16,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchBarComponent {
-  @Input() valueControl = new FormControl();
+  @Input() valueControl = new UntypedFormControl();
   @Input() maxWidth: number = 540;
   @Input() placeHolder = 'Default Text';
 

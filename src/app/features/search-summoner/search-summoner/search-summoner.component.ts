@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { CdragonChampionsService } from '@services/cdragon-champions.service';
@@ -20,7 +20,7 @@ export class SearchSummonerComponent implements OnInit {
     private titleService: Title
   ) {}
 
-  summonerName: FormControl = new FormControl('AlphaFrog');
+  summonerName: UntypedFormControl = new UntypedFormControl('AlphaFrog');
   summonerInfo!: SummonerInfo | null;
   isError = false;
 
