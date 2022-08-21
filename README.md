@@ -18,7 +18,7 @@ put API key in `environment.ts` file.
 ```js
 export const environment = {
   production: false,
-  apiKey: "YOUR API KEY", //Development API key expires every 24 hours
+  apiKey: 'YOUR API KEY', //Development API key expires every 24 hours
 };
 ```
 
