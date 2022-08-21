@@ -1,27 +1,27 @@
 <div *ngIf="champion; else loading" class="wrapper">
   <fa-icon
     *ngIf="currentId !== 'Aatrox'"
+    [icon]="leftArrow"
     (click)="previousChampion(champion.id)"
     class="left-arrow"
-    [icon]="leftArrow"
   ></fa-icon>
   <fa-icon
     *ngIf="currentId !== 'Zyra'"
+    [icon]="rightArrow"
     (click)="nextChampion(champion.id)"
     class="right-arrow"
-    [icon]="rightArrow"
   ></fa-icon>
 
   <div class="container">
     <img
-      src="../../../../assets/components/champions/back-arrow.svg"
       class="back-arrow"
+      src="../../../../assets/components/champions/back-arrow.svg"
       alt="arrow"
       routerLink="/champions"
     />
     <img
-      class="champion-image animate__animated animate__fadeInDown"
       [src]="champion.imageURL"
+      class="champion-image animate__animated animate__fadeInDown"
       alt="champion-image"
     />
 

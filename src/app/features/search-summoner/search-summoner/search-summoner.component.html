@@ -1,9 +1,9 @@
 <section>
   <app-title>search summoner</app-title>
   <app-search-bar
-    placeHolder="Search Summoner"
     [valueControl]="summonerName"
     (clickEvent)="onGetSummoner()"
+    placeHolder="Search Summoner"
   ></app-search-bar>
 </section>
 <app-title *ngIf="isError">api key has expired</app-title>
@@ -28,11 +28,11 @@
   <app-title>highest mastery champions</app-title>
   <div class="container">
     <div
+      *ngFor="let champion of summonerInfo.championMasteries; let i = index"
+      (click)="onChampionClick(champion.championName!)"
       class="champion-overview champion-{{
         i
       }} animate__animated animate__fadeIn"
-      *ngFor="let champion of summonerInfo.championMasteries; let i = index"
-      (click)="onChampionClick(champion.championName!)"
     >
       <img
         class="champion-icon"

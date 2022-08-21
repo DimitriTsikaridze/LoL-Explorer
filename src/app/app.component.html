@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-  <mat-sidenav mode="over" #sidenav>
+  <mat-sidenav #sidenav mode="over">
     <mat-nav-list>
       <a class="mat-list" mat-list-item routerLink="/home">HOME</a>
       <a class="mat-list" mat-list-item routerLink="/search-summoner"
@@ -13,7 +13,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <app-header></app-header>
-    <button class="hamburger-menu" mat-icon-button (click)="sidenav.toggle()">
+    <button (click)="sidenav.toggle()" class="hamburger-menu" mat-icon-button>
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
     <router-outlet></router-outlet>

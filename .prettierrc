@@ -3,5 +3,16 @@
   "useTabs": false,
   "singleQuote": true,
   "bracketSpacing": true,
-  "trailingComma": "es5"
+  "trailingComma": "es5",
+  "attributeGroups": [
+    "$ANGULAR_STRUCTURAL_DIRECTIVE",
+    "$ANGULAR_ELEMENT_REF",
+    "$ANGULAR_ANIMATION",
+    "$ANGULAR_ANIMATION_INPUT",
+    "$ANGULAR_TWO_WAY_BINDING",
+    "$ANGULAR_INPUT",
+    "$ANGULAR_OUTPUT",
+    "$ID",
+    "$CLASS"
+  ]
 }

@@ -4,7 +4,7 @@
 
 <div *ngIf="champion; else loading" class="container">
   <div *ngFor="let champion of champion" class="img-wrapper">
-    <img appZoomIn [src]="champion.imageURL" alt="champion-img" />
+    <img [src]="champion.imageURL" appZoomIn alt="champion-img" />
   </div>
 </div>
 

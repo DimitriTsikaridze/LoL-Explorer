@@ -1,7 +1,7 @@
 <app-title>champions</app-title>
 <pagination-controls
-  class="pagination"
   (pageChange)="p = $event"
+  class="pagination"
 ></pagination-controls>
 <div class="container">
   <ng-container *ngIf="champions$ | async as champions">
@@ -20,6 +20,6 @@
   </ng-container>
 </div>
 <pagination-controls
-  class="pagination"
   (pageChange)="p = $event"
+  class="pagination"
 ></pagination-controls>
