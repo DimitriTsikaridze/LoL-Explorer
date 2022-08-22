@@ -1,4 +1,4 @@
-<div *ngIf="champion$ | async as champion; else loading" class="wrapper">
+<div *ngIf="champion$ | async as champion" class="wrapper">
   <fa-icon
     *ngIf="currentId !== 'Aatrox'"
     [icon]="leftArrow"
@@ -54,6 +54,6 @@
   </div>
 </div>
 
-<ng-template #loading>
+<ng-template #loadingBar>
   <app-loading></app-loading>
 </ng-template>

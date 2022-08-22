@@ -5,11 +5,11 @@ import {
   OnInit,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute,  Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { ChampionDetails } from '@models/champion-details.model';
 import { ChampionDetailsService } from '@services/champion-details.service';
-import { map, Observable,  switchMap, tap } from 'rxjs';
+import { map, Observable, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-champion-details',
@@ -18,7 +18,7 @@ import { map, Observable,  switchMap, tap } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChampionDetailsComponent implements OnInit {
-  champion$!: Observable<ChampionDetails | null>;
+  champion$: Observable<ChampionDetails>;
   championNames!: string[];
   currentId!: string;
   leftArrow = faArrowLeft;
@@ -33,17 +33,16 @@ export class ChampionDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.champion$ = this.route.params.pipe(
-      map(params => params.id),
-      switchMap(name => this.championDetailsService.getSingleChampion(name)),
-      tap(({name, id}) => {
-        this.currentId = id
-        this.titleService.setTitle(`${name} details`)
+      map((params) => params.id),
+      switchMap((name) => this.championDetailsService.getSingleChampion(name)),
+      tap(({ name, id }) => {
+        this.currentId = id;
+        this.titleService.setTitle(`${name} Details`);
       })
-    )
+    );
     this.championDetailsService
       .getChampionNames()
       .subscribe((data) => (this.championNames = data));
-
   }
 
   @HostListener('document:keyup', ['$event'])

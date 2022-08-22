@@ -17,6 +17,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ShortTextPipe } from '@shared/pipes';
 import { TitleComponent, LoadingComponent } from '@shared/components';
+import { ZoomInDirective } from '@shared/directives';
 
 const routes: Routes = [
   { path: '', component: ChampionsComponent },
@@ -39,6 +40,7 @@ const routes: Routes = [
     ShortTextPipe,
     TitleComponent,
     LoadingComponent,
+    ZoomInDirective,
   ],
 })
 export class ChampionsModule {}
