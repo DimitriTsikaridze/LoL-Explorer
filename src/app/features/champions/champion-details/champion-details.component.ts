@@ -5,10 +5,11 @@ import {
   OnInit,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute,  Router } from '@angular/router';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { ChampionDetails } from '@models/champion-details.model';
 import { ChampionDetailsService } from '@services/champion-details.service';
+import { map, Observable,  switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-champion-details',
@@ -17,7 +18,7 @@ import { ChampionDetailsService } from '@services/champion-details.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChampionDetailsComponent implements OnInit {
-  champion!: ChampionDetails | null;
+  champion$!: Observable<ChampionDetails | null>;
   championNames!: string[];
   currentId!: string;
   leftArrow = faArrowLeft;
@@ -31,17 +32,18 @@ export class ChampionDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.titleService.setTitle('Champion Details');
+    this.champion$ = this.route.params.pipe(
+      map(params => params.id),
+      switchMap(name => this.championDetailsService.getSingleChampion(name)),
+      tap(({name, id}) => {
+        this.currentId = id
+        this.titleService.setTitle(`${name} details`)
+      })
+    )
     this.championDetailsService
       .getChampionNames()
       .subscribe((data) => (this.championNames = data));
 
-    this.route.params.subscribe((params: Params) => {
-      this.currentId = params['id'];
-      this.championDetailsService
-        .getSingleChampion(params['id'])
-        .subscribe((champion) => (this.champion = champion));
-    });
   }
 
   @HostListener('document:keyup', ['$event'])
@@ -55,14 +57,12 @@ export class ChampionDetailsComponent implements OnInit {
   }
 
   previousChampion(id: string) {
-    this.champion = null;
     let currentChampion =
       this.championNames[this.championNames.indexOf(id) - 1];
     this.router.navigate(['/champions', currentChampion]);
   }
 
   nextChampion(id: string) {
-    this.champion = null;
     let currentChampion =
       this.championNames[this.championNames.indexOf(id) + 1];
     this.router.navigate(['/champions', currentChampion]);

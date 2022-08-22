@@ -1,4 +1,4 @@
-<div *ngIf="champion; else loading" class="wrapper">
+<div *ngIf="champion$ | async as champion; else loading" class="wrapper">
   <fa-icon
     *ngIf="currentId !== 'Aatrox'"
     [icon]="leftArrow"
