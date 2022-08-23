@@ -7,6 +7,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./features/home/home.module').then((m) => m.HomeModule),
+    title: 'Home',
   },
 
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       import('./features/search-summoner/search-summoner.module').then(
         (m) => m.SearchSummonerModule
       ),
+    title: 'Search Summoner',
   },
   {
     path: 'champions',
@@ -22,6 +24,7 @@ const routes: Routes = [
       import('./features/champions/champions.module').then(
         (m) => m.ChampionsModule
       ),
+    title: 'Champions',
   },
   {
     path: 'champion-rotations',
@@ -29,11 +32,13 @@ const routes: Routes = [
       import('./features/champion-rotations/champion-rotations.module').then(
         (m) => m.ChampionRotationsModule
       ),
+    title: 'Champion Rotationns',
   },
   {
     path: 'not-found',
     loadChildren: () =>
       import('./features/error/error.module').then((m) => m.ErrorModule),
+    title: 'Page not found',
   },
   { path: '**', redirectTo: '/not-found', pathMatch: 'full' },
 ];

@@ -5,7 +5,6 @@ import {
   OnInit,
 } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { CdragonChampionsService } from '@services/cdragon-champions.service';
 import { SummonerInfo } from '@models/summoner-info.model';
@@ -22,7 +21,6 @@ export class SearchSummonerComponent implements OnInit {
     private summonerService: SearchSummonerService,
     private cDragon: CdragonChampionsService,
     private router: Router,
-    private titleService: Title,
     private cd: ChangeDetectorRef
   ) {}
 
@@ -31,7 +29,6 @@ export class SearchSummonerComponent implements OnInit {
   isError = false;
 
   ngOnInit(): void {
-    this.titleService.setTitle('Search Summoner');
     this.onGetSummoner();
   }
 

@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +6,4 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent implements OnInit {
-  constructor(private titleService: Title) {}
-  ngOnInit(): void {
-    this.titleService.setTitle('Home');
-  }
-}
+export class HomeComponent {}
