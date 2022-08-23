@@ -27,7 +27,7 @@ export class SearchSummonerComponent implements OnInit {
   ) {}
 
   summonerName: UntypedFormControl = new UntypedFormControl('AlphaFrog');
-  summonerInfo!: SummonerInfo | null;
+  summonerInfo: SummonerInfo | null;
   isError = false;
 
   ngOnInit(): void {

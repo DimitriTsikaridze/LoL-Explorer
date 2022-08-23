@@ -8,6 +8,6 @@ import { Champion } from '@models/champion.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SingleChampionComponent {
-  @Input() champion!: Champion;
-  @Input() index!: number;
+  @Input() champion: Champion;
+  @Input() index: number;
 }

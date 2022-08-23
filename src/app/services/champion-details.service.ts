@@ -8,7 +8,7 @@ import { environment } from '@environments/environment';
   providedIn: 'root',
 })
 export class ChampionDetailsService {
-  private champion!: ChampionDetails;
+  private champion: ChampionDetails;
 
   private championNames: string[] = [];
 

@@ -14,7 +14,7 @@ export class ChampionRotationsComponent implements OnInit {
     private titleService: Title
   ) {}
 
-  champion!: FreeChampion[] | null;
+  champion: FreeChampion[] | null;
   isError = false;
 
   ngOnInit(): void {

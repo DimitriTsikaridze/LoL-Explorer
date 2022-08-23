@@ -19,8 +19,8 @@ import { map, Observable, switchMap, tap } from 'rxjs';
 })
 export class ChampionDetailsComponent implements OnInit {
   champion$: Observable<ChampionDetails>;
-  championNames!: string[];
-  currentId!: string;
+  championNames: string[];
+  currentId: string;
   leftArrow = faArrowLeft;
   rightArrow = faArrowRight;
 

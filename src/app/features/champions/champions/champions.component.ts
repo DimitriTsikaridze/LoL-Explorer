@@ -11,7 +11,7 @@ import { Observable, of } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChampionsComponent implements OnInit {
-  champions$!: Observable<Champion[]>;
+  champions$: Observable<Champion[]>;
   p: number = 1;
 
   constructor(

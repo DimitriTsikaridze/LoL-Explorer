@@ -19,7 +19,7 @@ export class SkinsComponent implements OnInit {
   private SKIN_URL =
     'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/';
 
-  @Input() champion!: ChampionDetails;
+  @Input() champion: ChampionDetails;
   skins: Skin[] = [];
 
   constructor(public dialog: MatDialog) {}

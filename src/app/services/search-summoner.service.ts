@@ -13,7 +13,7 @@ export class SearchSummonerService {
     'https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name';
   private MASTERIES_URL =
     'https://eun1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner';
-  private summonerInfo!: SummonerInfo;
+  private summonerInfo: SummonerInfo;
 
   constructor(private http: HttpClient) {}
 
