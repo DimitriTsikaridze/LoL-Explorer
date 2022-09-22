@@ -5,7 +5,6 @@ import {
   OnInit,
 } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
-import { Router } from '@angular/router';
 import { CdragonChampionsService } from '@services/cdragon-champions.service';
 import { SummonerInfo } from '@models/summoner-info.model';
 import { SearchSummonerService } from '@services/search-summoner.service';
@@ -20,7 +19,6 @@ export class SearchSummonerComponent implements OnInit {
   constructor(
     private summonerService: SearchSummonerService,
     private cDragon: CdragonChampionsService,
-    private router: Router,
     private cd: ChangeDetectorRef
   ) {}
 
@@ -58,9 +56,5 @@ export class SearchSummonerComponent implements OnInit {
         this.isError = true;
       },
     });
-  }
-
-  onChampionClick(id: string) {
-    this.router.navigate(['/champions/', id]);
   }
 }

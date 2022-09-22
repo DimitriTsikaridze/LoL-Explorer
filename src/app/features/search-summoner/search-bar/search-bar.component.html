@@ -6,5 +6,9 @@
     type="text"
     placeholder="Summoner Name"
   />
-  <fa-icon [size]="'lg'" [icon]="searchIcon" (click)="onClick()"></fa-icon>
+  <fa-icon
+    [size]="'lg'"
+    [icon]="searchIcon"
+    (click)="clickEvent.emit()"
+  ></fa-icon>
 </div>

@@ -23,8 +23,4 @@ export class SearchBarComponent {
   searchIcon = faSearch;
 
   @Output() clickEvent = new EventEmitter();
-
-  onClick() {
-    this.clickEvent.emit();
-  }
 }

@@ -7,7 +7,7 @@
   ></app-search-bar>
 </section>
 
-<ng-container *ngIf="isError; else error">
+<ng-container *ngIf="!isError; else error">
   <ng-container *ngIf="summonerInfo; else loading">
     <div class="summoner-profile">
       <div class="profile-icon">
@@ -29,7 +29,7 @@
     <div class="container">
       <div
         *ngFor="let champion of summonerInfo.championMasteries; let i = index"
-        (click)="onChampionClick(champion.championName!)"
+        [routerLink]="['/champions', champion.championName]"
         class="champion-overview champion-{{
           i
         }} animate__animated animate__fadeIn"

@@ -1,6 +1,6 @@
 const dataDragonURL = `https://ddragon.leagueoflegends.com/cdn/`;
 const lolAPIURL = `https://eun1.api.riotgames.com/lol/`;
-const API_KEY = 'RGAPI-5cc66695-ec05-4cb4-b8d1-f445c4bf0e68';
+const API_KEY = 'RGAPI-a04df90c-4d8e-47b8-a397-559074c6d405';
 
 export const environment = {
   production: true,
