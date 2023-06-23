@@ -21,20 +21,18 @@ const routes: Routes = [
   { path: ':id', component: ChampionDetailsComponent },
 ];
 @NgModule({
-  declarations: [
-    ChampionDetailsComponent,
-    SingleChampionComponent,
-    ChampionsComponent,
-    SkinsComponent,
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    NgxPaginationModule,
-    ShortTextPipe,
-    TitleComponent,
-    LoadingComponent,
-    ZoomInDirective,
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        NgxPaginationModule,
+        ShortTextPipe,
+        TitleComponent,
+        LoadingComponent,
+        ZoomInDirective,
+        ChampionDetailsComponent,
+        SingleChampionComponent,
+        ChampionsComponent,
+        SkinsComponent,
+    ],
 })
 export class ChampionsModule {}

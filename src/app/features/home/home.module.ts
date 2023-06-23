@@ -8,12 +8,12 @@ import { ZoomInDirective } from '@shared/directives';
 const routes: Routes = [{ path: '', component: HomeComponent }];
 
 @NgModule({
-  declarations: [HomeComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    TitleComponent,
-    ZoomInDirective,
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        TitleComponent,
+        ZoomInDirective,
+        HomeComponent,
+    ],
 })
 export class HomeModule {}

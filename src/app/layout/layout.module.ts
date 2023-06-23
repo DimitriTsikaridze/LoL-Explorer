@@ -4,8 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [HeaderComponent],
-  imports: [CommonModule, RouterModule],
-  exports: [RouterModule, HeaderComponent],
+    imports: [CommonModule, RouterModule, HeaderComponent],
+    exports: [RouterModule, HeaderComponent],
 })
 export class LayoutModule {}

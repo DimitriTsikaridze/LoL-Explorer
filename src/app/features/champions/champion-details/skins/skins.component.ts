@@ -6,12 +6,21 @@ import {
 } from '@angular/core';
 import { ChampionDetails } from '@models/champion-details.model';
 import { Skin } from '@models/skin.model';
+import { ZoomInDirective } from '../../../../shared/directives/zoom-in.directive';
+import { TitleComponent } from '../../../../shared/components/title/title.component';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-skins',
-  templateUrl: './skins.component.html',
-  styleUrls: ['./skins.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-skins',
+    templateUrl: './skins.component.html',
+    styleUrls: ['./skins.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        NgFor,
+        TitleComponent,
+        ZoomInDirective,
+    ],
 })
 export class SkinsComponent implements OnInit {
   private SKIN_URL =
