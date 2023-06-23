@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "league-of-legends-api": {
+    "lol-explorer": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -42,7 +42,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/league-of-legends-api",
+            "outputPath": "dist/lol-explorer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -89,10 +89,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "league-of-legends-api:build:production"
+              "browserTarget": "lol-explorer:build:production"
             },
             "development": {
-              "browserTarget": "league-of-legends-api:build:development"
+              "browserTarget": "lol-explorer:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -100,23 +100,13 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "league-of-legends-api:build"
+            "browserTarget": "lol-explorer:build"
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
-          }
-        },
-        "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {
-            "prerender": false,
-            "ssr": false,
-            "browserTarget": "league-of-legends-api:build:production",
-            "firebaseProject": "lol-explorer-5a1a6",
-            "firebaseHostingSite": "lol-explorer-5a1a6"
           }
         }
       }
