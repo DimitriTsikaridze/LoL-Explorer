@@ -1,4 +1,4 @@
-<div class="container animate__animated animate__fadeIn">
+<div class="container">
   <section class="champion-card">
     <div [routerLink]="['/champions', champion.id]" class="top-content">
       <img [src]="champion.imageURL" appZoomIn alt="champion-image" />
@@ -14,7 +14,7 @@
       </div>
     </div>
     <article>
-      <p>{{ champion.blurb | shortText: 25 }}</p>
+      <p>{{ champion.blurb | shortText : 25 }}</p>
     </article>
   </section>
 </div>

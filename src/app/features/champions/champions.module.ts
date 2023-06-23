@@ -5,13 +5,11 @@ import {
   ChampionDetailsComponent,
   SingleChampionComponent,
   ChampionsComponent,
-  SkinPreviewComponent,
   SkinsComponent,
 } from './index';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 
-import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ShortTextPipe } from '@shared/pipes';
@@ -27,14 +25,12 @@ const routes: Routes = [
     ChampionDetailsComponent,
     SingleChampionComponent,
     ChampionsComponent,
-    SkinPreviewComponent,
     SkinsComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     NgxPaginationModule,
-    MatDialogModule,
     ShortTextPipe,
     TitleComponent,
     LoadingComponent,

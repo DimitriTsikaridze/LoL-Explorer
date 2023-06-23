@@ -5,10 +5,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   selector: 'app-title',
   template: `
     <div>
-      <h1
-        [ngStyle]="{ margin: margin }"
-        class="animate__animated animate__fadeInDown"
-      >
+      <h1 [ngStyle]="{ margin: margin }">
         <ng-content></ng-content>
       </h1>
     </div>

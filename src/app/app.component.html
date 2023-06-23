@@ -1,21 +1,2 @@
-<mat-sidenav-container>
-  <mat-sidenav #sidenav mode="over">
-    <mat-nav-list>
-      <a class="mat-list" mat-list-item routerLink="/home">HOME</a>
-      <a class="mat-list" mat-list-item routerLink="/search-summoner"
-        >SEARCH SUMMONER</a
-      >
-      <a class="mat-list" mat-list-item routerLink="/champions">CHAMPIONS</a>
-      <a class="mat-list" mat-list-item routerLink="/champion-rotations"
-        >ROTATIONS</a
-      >
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <app-header></app-header>
-    <button (click)="sidenav.toggle()" class="hamburger-menu" mat-icon-button>
-      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<app-header></app-header>
+<router-outlet></router-outlet>

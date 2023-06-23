@@ -4,12 +4,7 @@
       <app-title>{{ skin.name }}</app-title>
     </div>
     <div class="image">
-      <img
-        [src]="skin.url"
-        (click)="openDialog(skin)"
-        appZoomIn
-        alt="champion-skin"
-      />
+      <img [src]="skin.url" appZoomIn alt="champion-skin" />
     </div>
   </div>
 </section>

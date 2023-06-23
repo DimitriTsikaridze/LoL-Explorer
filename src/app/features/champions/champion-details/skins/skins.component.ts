@@ -4,10 +4,8 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { ChampionDetails } from '@models/champion-details.model';
 import { Skin } from '@models/skin.model';
-import { SkinPreviewComponent } from '../skin-preview/skin-preview.component';
 
 @Component({
   selector: 'app-skins',
@@ -21,8 +19,6 @@ export class SkinsComponent implements OnInit {
 
   @Input() champion: ChampionDetails;
   skins: Skin[] = [];
-
-  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getSkins(this.champion.key);
@@ -38,17 +34,5 @@ export class SkinsComponent implements OnInit {
         url: `${this.SKIN_URL}${key}/${id}.jpg`,
       });
     }
-  }
-
-  openDialog(skin: Skin) {
-    this.dialog.open(SkinPreviewComponent, {
-      data: {
-        skin: skin,
-        key: this.champion.key,
-      },
-      minHeight: '80vh',
-      maxHeight: '90vh',
-      width: '80vw',
-    });
   }
 }
