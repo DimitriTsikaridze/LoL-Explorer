@@ -10,14 +10,14 @@ const routes: Routes = [
     title: 'Home',
   },
 
-  {
-    path: 'search-summoner',
-    loadChildren: () =>
-      import('./features/search-summoner/search-summoner.module').then(
-        (m) => m.SearchSummonerModule
-      ),
-    title: 'Search Summoner',
-  },
+  // {
+  //   path: 'search-summoner',
+  //   loadChildren: () =>
+  //     import('./features/search-summoner/search-summoner.module').then(
+  //       (m) => m.SearchSummonerModule
+  //     ),
+  //   title: 'Search Summoner',
+  // },
   {
     path: 'champions',
     loadChildren: () =>
@@ -26,14 +26,14 @@ const routes: Routes = [
       ),
     title: 'Champions',
   },
-  {
-    path: 'champion-rotations',
-    loadChildren: () =>
-      import('./features/champion-rotations/champion-rotations.module').then(
-        (m) => m.ChampionRotationsModule
-      ),
-    title: 'Champion Rotationns',
-  },
+  // {
+  //   path: 'champion-rotations',
+  //   loadChildren: () =>
+  //     import('./features/champion-rotations/champion-rotations.module').then(
+  //       (m) => m.ChampionRotationsModule
+  //     ),
+  //   title: 'Champion Rotationns',
+  // },
   {
     path: 'not-found',
     loadChildren: () =>
