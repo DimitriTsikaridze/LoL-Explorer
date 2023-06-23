@@ -17,6 +17,7 @@
 .left-arrow {
   left: 50px;
 }
+
 .right-arrow {
   right: 50px;
 }
@@ -62,9 +63,11 @@
   width: 100%;
   top: -100px;
   left: 0;
+
   h1 {
     font-size: 3rem;
   }
+
   h2 {
     font-size: 1.1rem;
     font-weight: 500;
@@ -80,10 +83,12 @@
   padding: 30px;
   justify-content: center;
   position: relative;
+
   h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
   }
+
   h4 {
     font-size: 1rem;
     font-weight: 500;
@@ -95,6 +100,7 @@
   h4 {
     font-size: 22px;
   }
+
   span {
     color: $red;
   }
@@ -104,6 +110,7 @@
   margin-left: 50px;
   position: relative;
   align-self: center;
+
   &::before {
     content: '';
     position: absolute;
@@ -133,6 +140,7 @@
   .champion-lore {
     grid-column: span 2;
     margin-left: 0;
+
     &::before {
       display: none;
     }
@@ -148,21 +156,26 @@
   .right-arrow {
     top: 300px;
   }
+
   .left-arrow {
     left: 10px;
   }
+
   .right-arrow {
     right: 10px;
   }
+
   .champion-name {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
   }
+
   .champion-image {
     object-position: center;
     border-radius: 0;
   }
+
   .champion-details {
     grid-template-columns: 1fr;
     margin: 0 10px;

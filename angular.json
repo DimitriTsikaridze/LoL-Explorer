@@ -20,10 +20,12 @@
           "skipTests": true
         },
         "@schematics/angular:guard": {
-          "skipTests": true
+          "skipTests": true,
+          "functional": true
         },
         "@schematics/angular:interceptor": {
-          "skipTests": true
+          "skipTests": true,
+          "functional": true
         },
         "@schematics/angular:pipe": {
           "skipTests": true

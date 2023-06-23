@@ -47,9 +47,3 @@ testem.log
 Thumbs.db
 
 environment.api.ts
-
-
-# Firebase
-.firebase
-*-debug.log
-.runtimeconfig.json
