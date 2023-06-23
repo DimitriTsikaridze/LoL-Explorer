@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { LayoutModule } from './layout/layout.module';
+
 
 import { AppComponent } from './app.component';
 
@@ -16,8 +16,7 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-    LayoutModule,
-  ],
+],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
