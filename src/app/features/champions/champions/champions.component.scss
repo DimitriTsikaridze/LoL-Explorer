@@ -1,4 +1,4 @@
-@import '/src/styles/palette.scss';
+@import 'colors';
 
 .container {
   display: grid;
@@ -15,6 +15,7 @@ h1 {
 //pagination control styles
 ::ng-deep {
   .pagination {
+
     &-previous,
     &-next {
       display: none !important;
@@ -28,6 +29,7 @@ h1 {
       a:hover {
         border-radius: 50%;
       }
+
       .current {
         background-color: $red;
         border-radius: 50%;

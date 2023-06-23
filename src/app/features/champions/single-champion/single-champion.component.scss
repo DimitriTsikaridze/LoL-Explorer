@@ -1,4 +1,4 @@
-@import '/src/styles/palette.scss';
+@import 'colors';
 
 .top-content {
   position: relative;
@@ -10,7 +10,6 @@
     border-radius: 16px;
     overflow: hidden;
     transition: 0.2s;
-    animation-name: fadeInDown;
 
     img {
       width: 100%;
@@ -21,6 +20,7 @@
     }
   }
 }
+
 .details {
   display: flex;
   align-items: center;
@@ -30,9 +30,11 @@
   left: 15px;
   bottom: 15px;
   color: white;
+
   h4 {
     font-size: 1.5rem;
   }
+
   h5 {
     font-size: 0.9rem;
     font-weight: 500;
@@ -42,6 +44,7 @@
 .tags {
   display: flex;
   gap: 1rem;
+
   h6 {
     background-color: $dark-blue;
     font-size: 0.8rem;
@@ -50,6 +53,7 @@
     border-radius: 16px;
     padding: 5px 12px;
     transition: 0.2s;
+
     &:hover {
       color: white;
       background-color: $red;
@@ -61,6 +65,7 @@ article {
   border-top: 4px solid $red;
   background-color: $dark-blue;
   padding: 15px 10px;
+
   p {
     color: white;
     font-size: 14px;

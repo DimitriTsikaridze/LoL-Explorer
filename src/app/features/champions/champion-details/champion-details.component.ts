@@ -3,16 +3,16 @@ import {
   Component,
   HostListener,
   OnInit,
+  inject,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { ChampionDetails } from '@models/champion-details.model';
 import { ChampionDetailsService } from '@services/champion-details.service';
 import { map, Observable, switchMap, tap } from 'rxjs';
-import { LoadingComponent } from '../../../shared/components/loading/loading.component';
 import { SkinsComponent } from './skins/skins.component';
-import { TitleComponent } from '../../../shared/components/title/title.component';
 import { NgIf, AsyncPipe } from '@angular/common';
+import { TitleComponent, LoadingComponent } from '@shared/components';
 
 @Component({
   selector: 'app-champion-details',
@@ -30,16 +30,14 @@ import { NgIf, AsyncPipe } from '@angular/common';
   ],
 })
 export class ChampionDetailsComponent implements OnInit {
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private championDetailsService = inject(ChampionDetailsService);
+  private titleService = inject(Title);
+
   champion$: Observable<ChampionDetails>;
   championNames: string[];
   currentId: string;
-
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private championDetailsService: ChampionDetailsService,
-    private titleService: Title
-  ) {}
 
   ngOnInit(): void {
     this.champion$ = this.route.params.pipe(

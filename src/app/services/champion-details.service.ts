@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs';
 import { ChampionDetails } from '@models/champion-details.model';
 import { environment } from '@environments/environment';
@@ -12,7 +12,7 @@ export class ChampionDetailsService {
 
   private championNames: string[] = [];
 
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   getSingleChampion(championID: string) {
     return this.http

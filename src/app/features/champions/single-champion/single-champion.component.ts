@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Champion } from '@models/champion.model';
-import { ShortTextPipe } from '../../../shared/pipes/short-text.pipe';
 import { NgIf, UpperCasePipe } from '@angular/common';
-import { ZoomInDirective } from '../../../shared/directives/zoom-in.directive';
 import { RouterLink } from '@angular/router';
+import { ZoomInDirective } from '@shared/directives';
+import { ShortTextPipe } from '@shared/pipes';
 
 @Component({
   selector: 'app-single-champion',

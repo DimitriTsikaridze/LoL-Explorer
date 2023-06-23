@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs';
 import { ChampionResponse } from '@models/champion-response.model';
 import { Champion } from '@models/champion.model';
@@ -11,7 +11,7 @@ import { environment } from '@environments/environment';
 export class ChampionsService {
   readonly champions: Champion[] = [];
 
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   getChampions() {
     return this.http.get<ChampionResponse>(environment.championsURL).pipe(

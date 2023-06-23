@@ -1,11 +1,16 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  inject,
+} from '@angular/core';
 import { Champion } from '@models/champion.model';
 import { ChampionsService } from '@services/champions.service';
 import { Observable, of } from 'rxjs';
 import { SingleChampionComponent } from '../single-champion/single-champion.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { TitleComponent } from '../../../shared/components/title/title.component';
+import { TitleComponent } from '@shared/components';
 
 @Component({
   selector: 'app-champions',
@@ -26,7 +31,7 @@ export class ChampionsComponent implements OnInit {
   champions$: Observable<Champion[]>;
   p: number = 1;
 
-  constructor(private championsService: ChampionsService) {}
+  private championsService = inject(ChampionsService);
 
   ngOnInit(): void {
     if (this.championsService.champions.length) {

@@ -6,7 +6,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   template: `
     <div>
       <h1 [ngStyle]="{ margin: margin }">
-        <ng-content></ng-content>
+        <ng-content />
       </h1>
     </div>
   `,

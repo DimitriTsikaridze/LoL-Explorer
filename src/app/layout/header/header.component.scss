@@ -1,4 +1,4 @@
-@import '/src/styles/palette.scss';
+@import 'colors';
 
 :host {
   display: block;
@@ -9,6 +9,7 @@ header {
   color: white;
   border-bottom: 4px solid $red;
 }
+
 ul {
   display: flex;
   align-items: center;
@@ -26,6 +27,7 @@ a {
   font-size: 1rem;
   color: white;
   transition: 0.2s;
+
   &:hover {
     color: $red;
   }

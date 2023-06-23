@@ -1,8 +1,5 @@
 <app-title>champions</app-title>
-<pagination-controls
-  (pageChange)="p = $event"
-  class="pagination"
-></pagination-controls>
+<pagination-controls (pageChange)="p = $event" class="pagination" />
 <div class="container">
   <ng-container *ngIf="champions$ | async as champions">
     <div
@@ -12,14 +9,8 @@
         let i = index
       "
     >
-      <app-single-champion
-        [index]="i"
-        [champion]="champion"
-      ></app-single-champion>
+      <app-single-champion [index]="i" [champion]="champion" />
     </div>
   </ng-container>
 </div>
-<pagination-controls
-  (pageChange)="p = $event"
-  class="pagination"
-></pagination-controls>
+<pagination-controls (pageChange)="p = $event" class="pagination" />
