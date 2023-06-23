@@ -15,19 +15,19 @@ import { TitleComponent } from '../../../shared/components/title/title.component
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
-    selector: 'app-champion-details',
-    templateUrl: './champion-details.component.html',
-    styleUrls: ['./champion-details.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [
-        NgIf,
-        RouterLink,
-        TitleComponent,
-        SkinsComponent,
-        LoadingComponent,
-        AsyncPipe,
-    ],
+  selector: 'app-champion-details',
+  templateUrl: './champion-details.component.html',
+  styleUrls: ['./champion-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    RouterLink,
+    TitleComponent,
+    SkinsComponent,
+    LoadingComponent,
+    AsyncPipe,
+  ],
 })
 export class ChampionDetailsComponent implements OnInit {
   champion$: Observable<ChampionDetails>;

@@ -8,19 +8,19 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { TitleComponent } from '../../../shared/components/title/title.component';
 
 @Component({
-    selector: 'app-champions',
-    templateUrl: './champions.component.html',
-    styleUrls: ['./champions.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [
-        TitleComponent,
-        NgxPaginationModule,
-        NgIf,
-        NgFor,
-        SingleChampionComponent,
-        AsyncPipe,
-    ],
+  selector: 'app-champions',
+  templateUrl: './champions.component.html',
+  styleUrls: ['./champions.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    TitleComponent,
+    NgxPaginationModule,
+    NgIf,
+    NgFor,
+    SingleChampionComponent,
+    AsyncPipe,
+  ],
 })
 export class ChampionsComponent implements OnInit {
   champions$: Observable<Champion[]>;
