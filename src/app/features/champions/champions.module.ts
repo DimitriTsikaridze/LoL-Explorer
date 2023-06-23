@@ -12,7 +12,6 @@ import {
 import { NgxPaginationModule } from 'ngx-pagination';
 
 import { MatDialogModule } from '@angular/material/dialog';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ShortTextPipe } from '@shared/pipes';
@@ -36,7 +35,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     NgxPaginationModule,
     MatDialogModule,
-    FontAwesomeModule,
     ShortTextPipe,
     TitleComponent,
     LoadingComponent,

@@ -1,17 +1,4 @@
 <div *ngIf="champion$ | async as champion" class="wrapper">
-  <fa-icon
-    *ngIf="currentId !== 'Aatrox'"
-    [icon]="leftArrow"
-    (click)="previousChampion(champion.id)"
-    class="left-arrow"
-  ></fa-icon>
-  <fa-icon
-    *ngIf="currentId !== 'Zyra'"
-    [icon]="rightArrow"
-    (click)="nextChampion(champion.id)"
-    class="right-arrow"
-  ></fa-icon>
-
   <div class="container">
     <img
       class="back-arrow"

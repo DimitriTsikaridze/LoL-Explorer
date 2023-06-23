@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  OnInit,
 } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
 import { CdragonChampionsService } from '@services/cdragon-champions.service';
@@ -15,7 +14,7 @@ import { SearchSummonerService } from '@services/search-summoner.service';
   styleUrls: ['./search-summoner.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchSummonerComponent implements OnInit {
+export class SearchSummonerComponent {
   constructor(
     private summonerService: SearchSummonerService,
     private cDragon: CdragonChampionsService,
@@ -25,10 +24,6 @@ export class SearchSummonerComponent implements OnInit {
   summonerName: UntypedFormControl = new UntypedFormControl('AlphaFrog');
   summonerInfo: SummonerInfo | null;
   isError = false;
-
-  ngOnInit(): void {
-    this.onGetSummoner();
-  }
 
   onGetSummoner() {
     this.summonerInfo = null;

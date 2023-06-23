@@ -1,15 +1,2 @@
 <app-title margin="0 0 2rem 0">{{ data.skin.name }}</app-title>
-
-<fa-icon
-  *ngIf="!isSplash"
-  [icon]="splashIcon"
-  (click)="loadSplash()"
-  class="splash-icon"
-></fa-icon>
-<fa-icon
-  *ngIf="isSplash"
-  [icon]="centeredIcon"
-  (click)="loadCentered()"
-  class="center-icon"
-></fa-icon>
 <img [src]="skinURL" alt="skinURL" />

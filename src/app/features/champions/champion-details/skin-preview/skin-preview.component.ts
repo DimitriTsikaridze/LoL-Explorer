@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-skin-preview',
@@ -12,9 +11,6 @@ export class SkinPreviewComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
   skinURL = this.data.skin.url;
-
-  centeredIcon = faUser;
-  splashIcon = faUsers;
 
   isSplash = true;
 

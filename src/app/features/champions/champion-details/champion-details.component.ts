@@ -6,7 +6,6 @@ import {
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { ChampionDetails } from '@models/champion-details.model';
 import { ChampionDetailsService } from '@services/champion-details.service';
 import { map, Observable, switchMap, tap } from 'rxjs';
@@ -21,8 +20,6 @@ export class ChampionDetailsComponent implements OnInit {
   champion$: Observable<ChampionDetails>;
   championNames: string[];
   currentId: string;
-  leftArrow = faArrowLeft;
-  rightArrow = faArrowRight;
 
   constructor(
     private route: ActivatedRoute,

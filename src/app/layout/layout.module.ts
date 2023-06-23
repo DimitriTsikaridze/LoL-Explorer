@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -16,7 +15,6 @@ const modules = [
   MatSidenavModule,
   MatIconModule,
   MatListModule,
-  FontAwesomeModule,
   RouterModule,
 ];
 
