@@ -7,10 +7,10 @@ import {
 import { Champion } from '@models/champion.model';
 import { ChampionsService } from '@services/champions.service';
 import { Observable, of } from 'rxjs';
-import { SingleChampionComponent } from '../single-champion/single-champion.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TitleComponent } from '@shared/components';
+import { SingleChampionComponent } from './single-champion/single-champion.component';
 
 @Component({
   selector: 'app-champions',
@@ -30,6 +30,10 @@ import { TitleComponent } from '@shared/components';
 export class ChampionsComponent implements OnInit {
   champions$: Observable<Champion[]>;
   p: number = 1;
+
+  test() {
+    console.log('click');
+  }
 
   private championsService = inject(ChampionsService);
 

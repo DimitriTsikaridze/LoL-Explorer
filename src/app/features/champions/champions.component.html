@@ -1,0 +1,15 @@
+<app-title>champions</app-title>
+
+<pagination-controls (pageChange)="p = $event" class="pagination" />
+<div *ngIf="champions$ | async as champions" class="container">
+  <div
+    *ngFor="
+      let champion of champions
+        | paginate : { itemsPerPage: 6, currentPage: p };
+      let i = index
+    "
+  >
+    <app-single-champion [index]="i" [champion]="champion" />
+  </div>
+</div>
+<pagination-controls (pageChange)="p = $event" class="pagination" />

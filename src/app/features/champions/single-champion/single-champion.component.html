@@ -1,20 +1,16 @@
-<div class="container">
-  <section class="champion-card">
-    <div [routerLink]="['/champions', champion.id]" class="top-content">
-      <img [src]="champion.imageURL" appZoomIn alt="champion-image" />
-      <div class="details">
-        <div class="champion-details">
-          <h4>{{ champion.name }}</h4>
-          <h5>{{ champion.title }}</h5>
-        </div>
-        <div class="tags">
-          <h6>{{ champion.tags[0] | uppercase }}</h6>
-          <h6 *ngIf="champion.tags[1]">{{ champion.tags[1] | uppercase }}</h6>
-        </div>
-      </div>
+<div [routerLink]="['/champions', champion.id]" class="top-content">
+  <img [src]="champion.imageURL" appZoomIn alt="champion-image" />
+  <div class="details">
+    <div class="champion-details">
+      <h4>{{ champion.name }}</h4>
+      <h5>{{ champion.title }}</h5>
     </div>
-    <article>
-      <p>{{ champion.blurb | shortText : 25 }}</p>
-    </article>
-  </section>
+    <div class="tags">
+      <h6>{{ champion.tags[0] | uppercase }}</h6>
+      <h6 *ngIf="champion.tags[1]">{{ champion.tags[1] | uppercase }}</h6>
+    </div>
+  </div>
 </div>
+<article>
+  <p>{{ champion.blurb | shortText : 25 }}</p>
+</article>

@@ -1,10 +1,8 @@
-<section class="skins-container">
-  <div *ngFor="let skin of skins" class="skin">
-    <div class="title">
-      <app-title>{{ skin.name }}</app-title>
-    </div>
-    <div class="image">
-      <img [src]="skin.url" appZoomIn alt="champion-skin" />
-    </div>
+<div *ngFor="let skin of skins" class="skin">
+  <div class="title">
+    <app-title>{{ skin.name }}</app-title>
   </div>
-</section>
+  <div class="image">
+    <img [src]="skin.url" appZoomIn alt="champion-skin" />
+  </div>
+</div>

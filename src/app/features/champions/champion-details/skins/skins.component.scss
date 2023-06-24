@@ -1,6 +1,6 @@
 @import 'colors';
 
-.skins-container {
+:host {
   padding: 2rem 2rem 8rem 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

@@ -4,11 +4,9 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 @Component({
   selector: 'app-title',
   template: `
-    <div>
-      <h1 [ngStyle]="{ margin: margin }">
-        <ng-content />
-      </h1>
-    </div>
+    <h1 [ngStyle]="{ margin: margin }">
+      <ng-content />
+    </h1>
   `,
   styleUrls: ['./title.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
