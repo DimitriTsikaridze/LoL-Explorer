@@ -2,14 +2,15 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
+  Input,
   OnInit,
   inject,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ChampionDetails } from '@models/champion-details.model';
 import { ChampionDetailsService } from '@services/champion-details.service';
-import { map, Observable, switchMap, tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { SkinsComponent } from './skins/skins.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { TitleComponent, LoadingComponent } from '@shared/components';
@@ -30,24 +31,26 @@ import { TitleComponent, LoadingComponent } from '@shared/components';
   ],
 })
 export class ChampionDetailsComponent implements OnInit {
-  private route = inject(ActivatedRoute);
   private router = inject(Router);
   private championDetailsService = inject(ChampionDetailsService);
   private titleService = inject(Title);
+
+  @Input() id: string;
 
   champion$: Observable<ChampionDetails>;
   championNames: string[];
   currentId: string;
 
   ngOnInit(): void {
-    this.champion$ = this.route.params.pipe(
-      map((params) => params.id),
-      switchMap((name) => this.championDetailsService.getSingleChampion(name)),
-      tap(({ name, id }) => {
-        this.currentId = id;
-        this.titleService.setTitle(`${name} Details`);
-      })
-    );
+    this.champion$ = this.championDetailsService
+      .getSingleChampion(this.id)
+      .pipe(
+        tap(({ name, id }) => {
+          this.currentId = id;
+          this.titleService.setTitle(`${name} Details`);
+        })
+      );
+
     this.championDetailsService
       .getChampionNames()
       .subscribe((data) => (this.championNames = data));
