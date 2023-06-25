@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { map } from 'rxjs';
+import { map, of } from 'rxjs';
 import { ChampionResponse } from '@models/champion-response.model';
 import { Champion } from '@models/champion.model';
 import { environment } from '@environments/environment';
@@ -14,6 +14,10 @@ export class ChampionsService {
   private http = inject(HttpClient);
 
   getChampions() {
+    if (this.champions.length) {
+      return of(this.champions);
+    }
+
     return this.http.get<ChampionResponse>(environment.championsURL).pipe(
       map((value: ChampionResponse) => {
         for (let champion in value.data) {

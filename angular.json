@@ -50,7 +50,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/assets", "src/manifest.webmanifest"],
+            "assets": ["src/assets"],
             "styles": ["src/styles.scss"],
             "scripts": [],
             "stylePreprocessorOptions": {
