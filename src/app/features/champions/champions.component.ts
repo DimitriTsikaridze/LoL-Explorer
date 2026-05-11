@@ -13,16 +13,16 @@ import { TitleComponent } from '@shared/components';
 import { SingleChampionComponent } from './single-champion/single-champion.component';
 
 @Component({
-    selector: 'app-champions',
-    templateUrl: './champions.component.html',
-    styleUrls: ['./champions.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
+  selector: 'app-champions',
+  templateUrl: './champions.component.html',
+  styleUrls: ['./champions.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
     TitleComponent,
     NgxPaginationModule,
     SingleChampionComponent,
-    AsyncPipe
-]
+    AsyncPipe,
+  ],
 })
 export class ChampionsComponent implements OnInit {
   champions$: Observable<Champion[]>;

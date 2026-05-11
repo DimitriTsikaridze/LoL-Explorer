@@ -4,18 +4,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@models/*": [
-        "src/app/models/*"
-      ],
-      "@services/*": [
-        "src/app/services/*"
-      ],
-      "@environments/*": [
-        "src/environments/*"
-      ],
-      "@shared/*": [
-        "src/app/shared/*"
-      ]
+      "@models/*": ["src/app/models/*"],
+      "@services/*": ["src/app/services/*"],
+      "@environments/*": ["src/environments/*"],
+      "@shared/*": ["src/app/shared/*"]
     },
     "outDir": "./dist/out-tsc",
     "esModuleInterop": true,

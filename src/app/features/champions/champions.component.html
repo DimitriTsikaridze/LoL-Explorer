@@ -2,16 +2,13 @@
 
 <pagination-controls (pageChange)="p = $event" class="pagination" />
 @if (champions$ | async; as champions) {
-  <div class="container">
-    @for (
-      champion of champions
-      | paginate : { itemsPerPage: 6, currentPage: p }; track
-      champion; let i = $index) {
-      <div
-        >
-        <app-single-champion [index]="i" [champion]="champion" />
-      </div>
-    }
+<div class="container">
+  @for ( champion of champions | paginate : { itemsPerPage: 6, currentPage: p };
+  track champion; let i = $index) {
+  <div>
+    <app-single-champion [index]="i" [champion]="champion" />
   </div>
+  }
+</div>
 }
 <pagination-controls (pageChange)="p = $event" class="pagination" />

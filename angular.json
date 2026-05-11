@@ -48,22 +48,14 @@
               "base": "dist/lol-explorer"
             },
             "index": "src/index.html",
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": [],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/styles"
-              ]
+              "includePaths": ["src/styles"]
             },
             "browser": "src/main.ts",
             "server": "src/main.server.ts",
@@ -130,37 +122,6 @@
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
-        },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "lol-explorer:build:development",
-              "serverTarget": "lol-explorer:server:development"
-            },
-            "production": {
-              "browserTarget": "lol-explorer:build:production",
-              "serverTarget": "lol-explorer:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "routes": ["/"]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "lol-explorer:build:production",
-              "serverTarget": "lol-explorer:server:production"
-            },
-            "development": {
-              "browserTarget": "lol-explorer:build:development",
-              "serverTarget": "lol-explorer:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }

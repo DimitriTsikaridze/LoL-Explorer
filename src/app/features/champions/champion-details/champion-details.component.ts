@@ -2,9 +2,9 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
-  Input,
   OnInit,
   inject,
+  input,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, RouterLink } from '@angular/router';
@@ -16,24 +16,24 @@ import { AsyncPipe } from '@angular/common';
 import { TitleComponent, LoadingComponent } from '@shared/components';
 
 @Component({
-    selector: 'app-champion-details',
-    templateUrl: './champion-details.component.html',
-    styleUrls: ['./champion-details.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
+  selector: 'app-champion-details',
+  templateUrl: './champion-details.component.html',
+  styleUrls: ['./champion-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
     RouterLink,
     TitleComponent,
     SkinsComponent,
     LoadingComponent,
-    AsyncPipe
-]
+    AsyncPipe,
+  ],
 })
 export class ChampionDetailsComponent implements OnInit {
   private router = inject(Router);
   private championDetailsService = inject(ChampionDetailsService);
   private titleService = inject(Title);
 
-  @Input() id: string;
+  readonly id = input<string>();
 
   champion$: Observable<ChampionDetails>;
   championNames: string[];
@@ -41,7 +41,7 @@ export class ChampionDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.champion$ = this.championDetailsService
-      .getSingleChampion(this.id)
+      .getSingleChampion(this.id())
       .pipe(
         tap(({ name, id }) => {
           this.currentId = id;
