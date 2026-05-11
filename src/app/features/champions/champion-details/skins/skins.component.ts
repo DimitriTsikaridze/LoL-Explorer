@@ -21,7 +21,7 @@ export class SkinsComponent implements OnInit {
   private SKIN_URL =
     'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/';
 
-  readonly champion = input<ChampionDetails>();
+  readonly champion = input.required<ChampionDetails>();
   skins: Skin[] = [];
 
   ngOnInit(): void {

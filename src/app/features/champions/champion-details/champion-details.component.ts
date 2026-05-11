@@ -33,7 +33,7 @@ export class ChampionDetailsComponent implements OnInit {
   private championDetailsService = inject(ChampionDetailsService);
   private titleService = inject(Title);
 
-  readonly id = input<string>();
+  readonly id = input.required<string>();
 
   champion$: Observable<ChampionDetails>;
   championNames: string[];
