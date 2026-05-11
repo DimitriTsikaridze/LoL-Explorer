@@ -20,7 +20,7 @@ export class ChampionsService {
 
     return this.http.get<ChampionResponse>(environment.championsURL).pipe(
       map((value: ChampionResponse) => {
-        for (let champion in value.data) {
+        for (const champion in value.data) {
           const { id, key, name, blurb, title, tags } = value.data[champion];
           this.champions.push({
             id: id,

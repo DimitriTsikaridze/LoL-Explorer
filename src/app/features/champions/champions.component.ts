@@ -26,7 +26,7 @@ import { SingleChampionComponent } from './single-champion/single-champion.compo
 })
 export class ChampionsComponent implements OnInit {
   champions$: Observable<Champion[]>;
-  p: number = 1;
+  p = 1;
 
   private championsService = inject(ChampionsService);
 

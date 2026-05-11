@@ -1,5 +1,8 @@
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { ApplicationConfig } from '@angular/core';
+import {
+  ApplicationConfig,
+  provideZonelessChangeDetection,
+} from '@angular/core';
 import {
   provideRouter,
   withEnabledBlockingInitialNavigation,
@@ -17,6 +20,7 @@ export const appConfig: ApplicationConfig = {
       withComponentInputBinding(),
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
     ),
+    provideZonelessChangeDetection(),
     provideHttpClient(withInterceptors([errorInterceptor])),
   ],
 };

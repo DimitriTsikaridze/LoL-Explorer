@@ -44,7 +44,7 @@ export class ChampionDetailsService {
   getChampionNames() {
     return this.http.get(environment.championsURL).pipe(
       map((value: any) => {
-        for (let name in value.data) {
+        for (const name in value.data) {
           this.championNames.push(name);
         }
         return this.championNames;

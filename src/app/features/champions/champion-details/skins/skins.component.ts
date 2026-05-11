@@ -30,7 +30,7 @@ export class SkinsComponent implements OnInit {
 
   getSkins(key: string) {
     for (let i = 1; i < this.champion().skins.length; i++) {
-      let { num, id, name } = this.champion().skins[i];
+      const { num, id, name } = this.champion().skins[i];
       this.skins.push({
         num: num,
         id: id,

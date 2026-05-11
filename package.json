@@ -19,32 +19,25 @@
     "@angular/forms": "^21.2.12",
     "@angular/material": "^21.2.10",
     "@angular/platform-browser": "^21.2.12",
-    "@angular/platform-browser-dynamic": "^21.2.12",
     "@angular/platform-server": "^21.2.12",
     "@angular/router": "^21.2.12",
+    "@angular/ssr": "^21.2.10",
     "express": "^5.1.0",
     "ngx-pagination": "6.0.3",
     "rxjs": "7.8.1",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.15.1"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular-eslint/builder": "21.3.1",
-    "@angular-eslint/eslint-plugin": "21.3.1",
-    "@angular-eslint/eslint-plugin-template": "21.3.1",
-    "@angular-eslint/schematics": "21.3.1",
-    "@angular-eslint/template-parser": "21.3.1",
     "@angular/build": "^21.2.10",
     "@angular/cli": "^21.2.10",
     "@angular/compiler-cli": "^21.2.12",
-    "@nguniversal/builders": "^16.2.0",
+    "@eslint/js": "^10.0.1",
     "@types/express": "^5.0.1",
     "@types/node": "20.3.1",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "eslint": "^8.57.0",
+    "angular-eslint": "21.3.1",
+    "eslint": "^10.0.3",
     "prettier": "^2.7.1",
-    "prettier-plugin-organize-attributes": "^0.0.5",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "8.56.1"
   }
 }

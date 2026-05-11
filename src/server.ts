@@ -5,9 +5,13 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const browserDistFolder = join(import.meta.dirname, '../browser');
+const browserDistFolder = join(
+  dirname(fileURLToPath(import.meta.url)),
+  '../browser'
+);
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();

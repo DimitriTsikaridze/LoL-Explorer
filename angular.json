@@ -44,11 +44,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": {
-              "base": "dist/lol-explorer"
-            },
             "index": "src/index.html",
-            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/assets"],
@@ -96,26 +92,19 @@
               "namedChunks": true
             }
           },
-
           "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "lol-explorer:build:production"
+              "buildTarget": "lol-explorer:build:production"
             },
             "development": {
-              "browserTarget": "lol-explorer:build:development"
+              "buildTarget": "lol-explorer:build:development"
             }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n",
-          "options": {
-            "browserTarget": "lol-explorer:build"
-          }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
@@ -127,14 +116,6 @@
     }
   },
   "cli": {
-    "schematicCollections": ["@angular-eslint/schematics"]
-  },
-  "schematics": {
-    "@angular-eslint/schematics:application": {
-      "setParserOptionsProject": true
-    },
-    "@angular-eslint/schematics:library": {
-      "setParserOptionsProject": true
-    }
+    "schematicCollections": ["angular-eslint"]
   }
 }

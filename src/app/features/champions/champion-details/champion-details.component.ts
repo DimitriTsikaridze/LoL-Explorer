@@ -65,13 +65,13 @@ export class ChampionDetailsComponent implements OnInit {
   }
 
   previousChampion(id: string) {
-    let currentChampion =
+    const currentChampion =
       this.championNames[this.championNames.indexOf(id) - 1];
     this.router.navigate(['/champions', currentChampion]);
   }
 
   nextChampion(id: string) {
-    let currentChampion =
+    const currentChampion =
       this.championNames[this.championNames.indexOf(id) + 1];
     this.router.navigate(['/champions', currentChampion]);
   }

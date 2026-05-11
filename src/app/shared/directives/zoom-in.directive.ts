@@ -7,12 +7,12 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
 export class ZoomInDirective {
   @HostBinding('style.transform') scale: string;
 
-  @HostListener('mouseover', ['$event'])
+  @HostListener('mouseover')
   zoomIn() {
     this.scale = 'scale(1.08)';
   }
 
-  @HostListener('mouseout', ['$event'])
+  @HostListener('mouseout')
   zoomOut() {
     this.scale = 'scale(1.00)';
   }

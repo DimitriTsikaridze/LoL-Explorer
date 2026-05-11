@@ -9,27 +9,28 @@
       "@environments/*": ["src/environments/*"],
       "@shared/*": ["src/app/shared/*"]
     },
-    "outDir": "./dist/out-tsc",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "strictPropertyInitialization": false,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": false,
+    "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
-    "declaration": false,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
     "experimentalDecorators": true,
-    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "es2020"
+    "module": "preserve"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
 }
