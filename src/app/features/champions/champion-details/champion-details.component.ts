@@ -12,23 +12,21 @@ import { ChampionDetails } from '@models/champion-details.model';
 import { ChampionDetailsService } from '@services/champion-details.service';
 import { Observable, tap } from 'rxjs';
 import { SkinsComponent } from './skins/skins.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { TitleComponent, LoadingComponent } from '@shared/components';
 
 @Component({
-  selector: 'app-champion-details',
-  templateUrl: './champion-details.component.html',
-  styleUrls: ['./champion-details.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [
-    NgIf,
+    selector: 'app-champion-details',
+    templateUrl: './champion-details.component.html',
+    styleUrls: ['./champion-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
     RouterLink,
     TitleComponent,
     SkinsComponent,
     LoadingComponent,
-    AsyncPipe,
-  ],
+    AsyncPipe
+]
 })
 export class ChampionDetailsComponent implements OnInit {
   private router = inject(Router);

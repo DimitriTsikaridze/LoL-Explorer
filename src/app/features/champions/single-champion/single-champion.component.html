@@ -7,7 +7,9 @@
     </div>
     <div class="tags">
       <h6>{{ champion.tags[0] | uppercase }}</h6>
-      <h6 *ngIf="champion.tags[1]">{{ champion.tags[1] | uppercase }}</h6>
+      @if (champion.tags[1]) {
+        <h6>{{ champion.tags[1] | uppercase }}</h6>
+      }
     </div>
   </div>
 </div>
