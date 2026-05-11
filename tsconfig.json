@@ -18,6 +18,7 @@
       ]
     },
     "outDir": "./dist/out-tsc",
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "strictPropertyInitialization": false,
@@ -27,16 +28,11 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ]
+    "module": "es2020"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
