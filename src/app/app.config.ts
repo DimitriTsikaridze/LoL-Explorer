@@ -1,11 +1,14 @@
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+} from '@angular/common/http';
 import {
   ApplicationConfig,
   provideZonelessChangeDetection,
 } from '@angular/core';
 import {
   provideRouter,
-  withEnabledBlockingInitialNavigation,
   withComponentInputBinding,
   withInMemoryScrolling,
 } from '@angular/router';
@@ -16,11 +19,10 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(
       routes,
-      withEnabledBlockingInitialNavigation(),
       withComponentInputBinding(),
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
     ),
     provideZonelessChangeDetection(),
-    provideHttpClient(withInterceptors([errorInterceptor])),
+    provideHttpClient(withInterceptors([errorInterceptor]), withFetch()),
   ],
 };
