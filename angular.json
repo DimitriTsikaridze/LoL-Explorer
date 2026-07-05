@@ -56,7 +56,7 @@
             "browser": "src/main.ts",
             "server": "src/main.server.ts",
             "security": {
-              "allowedHosts": []
+              "allowedHosts": ["lol-explorer.alphafrog.xyz"]
             },
             "outputMode": "server",
             "ssr": {
