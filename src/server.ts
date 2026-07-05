@@ -15,7 +15,13 @@ const browserDistFolder = join(
 
 const app = express();
 const angularApp = new AngularNodeAppEngine({
-  trustProxyHeaders: ['x-forwarded-for'],
+  trustProxyHeaders: [
+    'x-forwarded-for',
+    'x-forwarded-host',
+    'x-forwarded-port',
+    'x-forwarded-proto',
+    'x-forwarded-server',
+  ],
 });
 
 /**
