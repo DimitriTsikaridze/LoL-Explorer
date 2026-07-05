@@ -14,7 +14,9 @@ const browserDistFolder = join(
 );
 
 const app = express();
-const angularApp = new AngularNodeAppEngine();
+const angularApp = new AngularNodeAppEngine({
+  trustProxyHeaders: ['x-forwarded-for'],
+});
 
 /**
  * Example Express Rest API endpoints can be defined here.
