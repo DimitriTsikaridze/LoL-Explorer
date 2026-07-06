@@ -1,3 +1,4 @@
+import { NgStyle } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -6,11 +7,12 @@ import {
   Output,
 } from '@angular/core';
 
-import { UntypedFormControl } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
+  imports: [ReactiveFormsModule, NgStyle],
   styleUrls: ['./search-bar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

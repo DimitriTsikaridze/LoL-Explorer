@@ -45,7 +45,7 @@
   gap: 1rem;
 
   h6 {
-    background-color: $dark-blue;
+    background-color: #1e272e;
     font-size: 0.8rem;
     font-weight: 500;
     border: 2px solid white;
@@ -55,14 +55,14 @@
 
     &:hover {
       color: white;
-      background-color: $red;
+      background-color: #ff3f34;
     }
   }
 }
 
 article {
-  border-top: 4px solid $red;
-  background-color: $dark-blue;
+  border-top: 4px solid #ff3f34;
+  background-color: #1e272e;
   padding: 15px 10px;
 
   p {

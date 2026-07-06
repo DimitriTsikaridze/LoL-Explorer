@@ -5,9 +5,9 @@
 }
 
 header {
-  background-color: $dark-blue;
+  background-color: #1e272e;
   color: white;
-  border-bottom: 4px solid $red;
+  border-bottom: 4px solid #ff3f34;
 }
 
 ul {
@@ -29,12 +29,12 @@ a {
   transition: 0.2s;
 
   &:hover {
-    color: $red;
+    color: #ff3f34;
   }
 }
 
 .active-route {
-  color: $red;
+  color: #ff3f34;
 }
 
 .links {

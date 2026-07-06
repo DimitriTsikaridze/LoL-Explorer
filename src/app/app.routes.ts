@@ -13,22 +13,20 @@ export const routes: Routes = [
     title: 'Champions',
   },
 
-  //   {
-  //   path: 'search-summoner',
-  //   loadChildren: () =>
-  //     import('./features/search-summoner/search-summoner.module').then(
-  //       (m) => m.SearchSummonerModule
-  //     ),
-  //   title: 'Search Summoner',
-  // },
-  //   {
-  //   path: 'champion-rotations',
-  //   loadChildren: () =>
-  //     import('./features/champion-rotations/champion-rotations.module').then(
-  //       (m) => m.ChampionRotationsModule
-  //     ),
-  //   title: 'Champion Rotationns',
-  // },
+  {
+    path: 'search-summoner',
+    loadComponent: () =>
+      import(
+        './features/search-summoner/search-summoner/search-summoner.component'
+      ),
+    title: 'Search Summoner',
+  },
+  {
+    path: 'champion-rotations',
+    loadComponent: () =>
+      import('./features/champion-rotations/champion-rotations.component'),
+    title: 'Champion Rotationns',
+  },
   {
     path: 'not-found',
     loadComponent: () => import('./features/error/error.component'),

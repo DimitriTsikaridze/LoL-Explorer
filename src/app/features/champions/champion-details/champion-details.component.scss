@@ -46,11 +46,11 @@
 }
 
 .champion-details {
-  background-color: $dark-blue;
+  background-color: #1e272e;
   position: relative;
   margin: 0 10vw;
   color: white;
-  border: 3px solid $red;
+  border: 3px solid #ff3f34;
   border-radius: 12px;
   display: grid;
   grid-template-columns: 0.5fr 0.5fr 2fr;
@@ -76,7 +76,7 @@
 
 .stats {
   text-align: center;
-  border: 3px solid $red;
+  border: 3px solid #ff3f34;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -102,7 +102,7 @@
   }
 
   span {
-    color: $red;
+    color: #ff3f34;
   }
 }
 
@@ -116,7 +116,7 @@
     position: absolute;
     left: -20px;
     top: -20%;
-    background-color: $red;
+    background-color: #ff3f34;
     width: 3px;
     height: 140%;
   }

@@ -1,13 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FreeChampion, RotationService } from '@services/rotation.service';
+import { LoadingComponent, TitleComponent } from '@shared/components';
 
 @Component({
   selector: 'app-champion-rotations',
   templateUrl: './champion-rotations.component.html',
   styleUrls: ['./champion-rotations.component.scss'],
+  imports: [TitleComponent, LoadingComponent, CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ChampionRotationsComponent implements OnInit {
+export default class ChampionRotationsComponent implements OnInit {
   constructor(private champRotations: RotationService) {}
 
   champion: FreeChampion[] | null;

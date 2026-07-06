@@ -4,22 +4,35 @@ import {
   Component,
 } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
-import { CdragonChampionsService } from '@services/cdragon-champions.service';
 import { SummonerInfo } from '@models/summoner-info.model';
+import { CdragonChampionsService } from '@services/cdragon-champions.service';
 import { SearchSummonerService } from '@services/search-summoner.service';
+import { LoadingComponent, TitleComponent } from '@shared/components';
+import { SearchBarComponent } from '../search-bar/search-bar.component';
+import { DecimalPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-search-summoner',
   templateUrl: './search-summoner.component.html',
+  imports: [
+    TitleComponent,
+    SearchBarComponent,
+    DecimalPipe,
+    RouterLink,
+    LoadingComponent,
+  ],
   styleUrls: ['./search-summoner.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchSummonerComponent {
+export default class SearchSummonerComponent {
   constructor(
     private summonerService: SearchSummonerService,
     private cDragon: CdragonChampionsService,
     private cd: ChangeDetectorRef
-  ) {}
+  ) {
+    this.onGetSummoner();
+  }
 
   summonerName: UntypedFormControl = new UntypedFormControl('AlphaFrog');
   summonerInfo: SummonerInfo | null;

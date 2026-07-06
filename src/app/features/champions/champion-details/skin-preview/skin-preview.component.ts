@@ -1,14 +1,16 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TitleComponent } from '@shared/components';
 
 @Component({
   selector: 'app-skin-preview',
   templateUrl: './skin-preview.component.html',
+  imports: [TitleComponent],
   styleUrls: ['./skin-preview.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkinPreviewComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+  data = inject(MAT_DIALOG_DATA);
 
   skinURL = this.data.skin.url;
 
